@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 
 const About = () => {
   return (
@@ -15,11 +16,13 @@ const About = () => {
             <p className="font-normal text-center sm:text-left text-black text-[16px] lg:text-[18px] lg:w-[100%]">
               Highlands Coffee® được thành lập vào năm 1999, bắt nguồn từ tình yêu dành cho đất Việt cùng với cà phê và cộng đồng nơi đây.
             </p>
-            <button
-              className="uppercase rounded-md shadow-md text-[#b22830] border-[1px] border-[#b22830] py-3 px-10 mt-5 hover:bg-[#b22830] hover:text-white hover:shadow-lg ease-out duration-300"
-            >
-              Xem Chi Tiết
-            </button>
+            <Link to='/origin'>
+              <button
+                className="uppercase rounded-md shadow-md text-[#b22830] border-[1px] border-[#b22830] py-3 px-10 mt-5 hover:bg-[#b22830] hover:text-white hover:shadow-lg ease-out duration-300"
+              >
+                Xem Chi Tiết
+              </button>
+            </Link>
           </div>
         </div>
         <div className="relative md:w-[65%]">
@@ -53,11 +56,13 @@ const About = () => {
             <p className="font-normal text-center sm:text-left text-black text-[16px] lg:text-[18px] lg:w-[100%]">
               Highlands Coffee® là không gian của chúng mình nên mọi thứ ở đây đều vì sự thoải mái của chúng mình
             </p>
-            <button
-              className="uppercase rounded-md shadow-md text-white border-[1px] border-white py-3 px-10 mt-5 hover:bg-white hover:text-[#b22830] hover:shadow-lg ease-out duration-300"
-            >
-              Xem Chi Tiết
-            </button>
+            <Link to='/services'>
+              <button
+                className="uppercase rounded-md shadow-md text-white border-[1px] border-white py-3 px-10 mt-5 hover:bg-white hover:text-[#b22830] hover:shadow-lg ease-out duration-300"
+              >
+                Xem Chi Tiết
+              </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -75,11 +80,13 @@ const About = () => {
             <p className="font-normal text-center sm:text-left text-black text-[16px] lg:text-[18px] lg:w-[100%]">
               Là điểm hội tụ của cộng đồng, Highlands Coffee® luôn tìm kiếm những thành viên mới với mong muốn không ngừng hoàn thiện một không gian dành cho tất cả mọi người
             </p>
-            <button
-              className="uppercase rounded-md shadow-md text-[#b22830] border-[1px] border-[#b22830] py-3 px-10 mt-5 hover:bg-[#b22830] hover:text-white hover:shadow-lg ease-out duration-300"
-            >
-              Xem Chi Tiết
-            </button>
+            <Link to='/jobs'>
+              <button
+                className="uppercase rounded-md shadow-md text-[#b22830] border-[1px] border-[#b22830] py-3 px-10 mt-5 hover:bg-[#b22830] hover:text-white hover:shadow-lg ease-out duration-300"
+              >
+                Xem Chi Tiết
+              </button>
+            </Link>
           </div>
         </div>
         <div className="relative md:w-[65%]">

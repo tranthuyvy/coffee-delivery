@@ -95,7 +95,7 @@ const Navbar = () => {
                                 <li className="p-3">
                                   <a
                                     className="font-RobotoMedium text-[22px] hover:text-[#E32526]"
-                                    href="#"
+                                    href="/origin"
                                   >
                                     Nguồn gốc
                                   </a>
@@ -107,7 +107,7 @@ const Navbar = () => {
                                 <li className="mb-5 p-3">
                                   <a
                                     className="font-RobotoMedium text-[22px] hover:text-[#E32526]"
-                                    href="#"
+                                    href="/services"
                                   >
                                     Dịch Vụ
                                   </a>
@@ -115,7 +115,7 @@ const Navbar = () => {
                                 <li className="p-3">
                                   <a
                                     className="font-RobotoMedium text-[22px] hover:text-[#E32526]"
-                                    href="#"
+                                    href="/jobs"
                                   >
                                     Nghề Nghiệp
                                   </a>
