@@ -7,3 +7,11 @@
   src: local("RobotoSerif-Medium"),
     url('./assets/font/RobotoSerif-Medium.ttf') format("truetype");
 }
+
+.bg-gradient-to-l {
+  background-image: linear-gradient(to left, transparent, white);
+}
+
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, transparent, #bd945d);
+}

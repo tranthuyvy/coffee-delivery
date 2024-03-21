@@ -22,11 +22,11 @@ const Navbar = () => {
       <nav className="hidden md:block md:p-0 fixed w-full bg-[#b22830] border-gray-200 z-[100] shadow-md">
         <div className="flex flex-wrap md:flex-nowrap justify-between items-center mx-auto md:px-5 md:pr-0 lg:px-14 lg:py-2 lg:pr-0">
           <a
-            className="flex items-center py-[15px] px-[20px] md:py-0 md:px-0"
+            className="flex items-center py-[10px] px-[20px] md:py-0 md:px-0"
             href="/"
           >
             <img
-              className="object-contain w-[50px] sm:w-[70px] lg:w-[100px] object-center"
+              className="object-contain w-[50px] sm:w-[70px] lg:w-[90px] object-center"
               src="https://www.highlandscoffee.com.vn/vnt_upload/weblink/White_logo800.png"
               alt="logo"
             />
@@ -154,12 +154,10 @@ const Navbar = () => {
                     <div className="hidden sm:block w-[90%] left-[5%] absolute mx-auto bg-[#53382c] mt-[10px]">
                       <div className="flex">
                         <div className="w-[30%] text-white p-[60px]">
-                          <h1 className="font-RobotoMedium text-4xl mb-3">
-                            Menus
-                          </h1>
-                          <p className="font-TitilliumRegular text-white">
-                            Coffee Image.
-                          </p>
+                          <img
+                            src="https://www.highlandscoffee.com.vn/vnt_upload/product/04_2023/PHIN_SUA_DA_5.1.png"
+                            alt="coffee"
+                          />
                         </div>
                         <div className="w-[70%] bg-white p-[60px]">
                           <div className="flex">
