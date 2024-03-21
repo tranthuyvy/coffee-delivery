@@ -70,7 +70,7 @@ const Navbar = () => {
                     </svg>
                   </p>
                   {showAboutMenu && (
-                    <div className="hidden sm:block w-[90%] lg:w-[70%] left-[15%] absolute mx-auto bg-[#53382c] mt-[2px]">
+                    <div className="hidden sm:block w-[90%] lg:w-[70%] left-[15%] absolute mx-auto bg-[#53382c] mt-[10px]">
                       <div className="flex">
                         <div className="w-[50%] text-white p-[60px]">
                           <h1 className="font-RobotoMedium text-4xl mb-3">
@@ -151,7 +151,7 @@ const Navbar = () => {
                     </svg>
                   </p>
                   {showMenu && (
-                    <div className="hidden sm:block w-[90%] left-[5%] absolute mx-auto bg-[#53382c] mt-[2px]">
+                    <div className="hidden sm:block w-[90%] left-[5%] absolute mx-auto bg-[#53382c] mt-[10px]">
                       <div className="flex">
                         <div className="w-[30%] text-white p-[60px]">
                           <h1 className="font-RobotoMedium text-4xl mb-3">
