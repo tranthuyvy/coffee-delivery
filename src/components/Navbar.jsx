@@ -279,7 +279,7 @@ const Navbar = () => {
       </nav>
 
       {/* for media < md */}
-      <nav className="md:hidden md:p-0 fixed w-full bg-white border-gray-200 z-[100] shadow-sm">
+      <nav className="md:hidden md:p-0 fixed w-full bg-[#b22830] border-gray-200 z-[100] shadow-sm">
         <div className="flex justify-between items-center mx-auto md:px-5 md:pr-0 lg:px-16 lg:pr-0 flex-wrap md:flex-nowrap">
           <a
             className="flex items-center py-[15px] px-[20px] md:py-0 md:px-0"
