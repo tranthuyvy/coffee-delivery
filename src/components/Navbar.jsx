@@ -76,14 +76,14 @@ const Navbar = () => {
                           <h1 className="font-RobotoMedium text-4xl mb-3">
                             About
                           </h1>
-                          <p className="font-TitilliumRegular text-white">
+                          <p className="font-normal text-white">
                             Highland ...
                           </p>
                         </div>
                         <div className="w-[50%] bg-white p-[60px]">
                           <div className="flex">
                             <div className="w-[50%]">
-                              <ul className="font-TitilliumRegular">
+                              <ul className="font-medium">
                                 <li className="mb-5 p-3">
                                   <a
                                     className="font-RobotoMedium text-[22px] hover:text-[#E32526]"

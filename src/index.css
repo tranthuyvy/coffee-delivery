@@ -8,6 +8,12 @@
     url('./assets/font/RobotoSerif-Medium.ttf') format("truetype");
 }
 
+@font-face {
+  font-family: "RobotoSemiBold";
+  src: local("RobotoSerif-SemiBold"),
+    url('./assets/font/RobotoSerif-SemiBold.ttf') format("truetype");
+}
+
 .bg-gradient-to-l {
   background-image: linear-gradient(to left, transparent, white);
 }

@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         RobotoMedium: ["RobotoMedium"],
+        RobotoSemibold: ["RobotoSemibold"],
       },
     },
   },
