@@ -18,6 +18,10 @@
   background-image: linear-gradient(to left, transparent, white);
 }
 
+.bg-gradient-to-r-white {
+  background-image: linear-gradient(to right, transparent, white);
+}
+
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, transparent, #bd945d);
 }

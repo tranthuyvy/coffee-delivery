@@ -2,15 +2,18 @@
 const Origin = () => {
   return (
     <section>
-      <img
-        src="https://www.highlandscoffee.com.vn/vnt_upload/about/ABOUT-CAREER3.jpg"
-        alt="banner"
-        className="w-full h-full object-cover"
-      />
+      <div className="relative">
+        <img
+          src="https://www.highlandscoffee.com.vn/vnt_upload/about/ABOUT-CAREER3.jpg"
+          alt="banner"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r-white from-transparent to-white"></div>
+      </div>
       <div className="w-[90%] lg:w-[80%] left-[15%] mx-auto bg-white mt-[10px]">
         <div className="flex">
           <div className="w-[50%] text-[#53382c] p-[60px]">
-            <h1 className="uppercase font-RobotoSemibold text-4xl mb-3">
+            <h1 className="uppercase font-RobotoSemibold text-5xl mb-3">
               Nguồn gốc
             </h1>
             <p className="font-normal text-[#53382c]">
