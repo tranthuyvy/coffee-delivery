@@ -1,14 +1,23 @@
-import { useState } from "react";
-import { news } from "../../apis/mock-data";
+import { useEffect, useState } from "react";
 import CardItemNews from "../../components/News/CardItemNews";
 import { sortNewsByDate } from "../../utils/sort";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchNews } from '../../redux/actions/newsActions';
 
 const News = () => {
+  const dispatch = useDispatch();
+  const news = useSelector(state => state.news);
   const sortedNews = sortNewsByDate(news);
   const [displayedNews, setDisplayedNews] = useState(3);
+
+  useEffect(() => {
+    dispatch(fetchNews());
+  }, [dispatch]);
+
   const handleMoreDisplay = () => {
     setDisplayedNews(displayedNews + 3);
   };
+
 
   return (
     <>
