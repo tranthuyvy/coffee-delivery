@@ -5,7 +5,7 @@ export const news = [
       "THANH TOÁN TIỆN, RƯỚC LIỀN DEAL XỊN ƯU ĐÃI 20.000 VNĐ CHO HÓA ĐƠN TỪ 45.000 VNĐ",
     image:
       "https://www.highlandscoffee.com.vn/vnt_upload/news/03_2024/thumbs/470_crop_PNS_20K-OFF_FBPBLog-thumbnail.png",
-    date: "13/03/2024, 09:17",
+    date: "2024-03-13T09:17:00",
     description:
       "Thanh toán tiện, rước liền deal xịn Ưu đãi 20.000 VNĐ cho hóa đơn từ 45.000 VNĐ",
   },
@@ -15,7 +15,7 @@ export const news = [
       "[TẾT MÀ] CHỦ NHÂN SIÊU XE BẠC TỶ ĐÃ LỘ DIỆN",
     image:
       "https://www.highlandscoffee.com.vn/vnt_upload/news/02_2024/thumbs/470_crop_428299745_792319336254411_4995378142312099918_n.jpg",
-    date: "27/02/2024, 12:27",
+    date: "2024-03-27T12:27:00",
     description:
       "[Tết Mà] Chủ nhân siêu xe bạc tỷ đã lộ diện",
   },
@@ -25,7 +25,7 @@ export const news = [
       "LỊCH HOẠT ĐỘNG TẾT NGUYÊN ĐÁN 2024 CỦA HIGHLANDS COFFEE TRÊN TOÀN QUỐC",
     image:
       "https://www.highlandscoffee.com.vn/vnt_upload/news/LICH_TET_2024/thumbs/470_crop_HCO_7727_TET_2024_OPERATION_TIME_BANNER_WEB_03.jpg",
-    date: "25/01/2024, 11:28",
+    date: "2024-01-25T11:28:00",
     description:
       "",
   },
@@ -35,7 +35,7 @@ export const news = [
       "24 NĂM CHÚNG MÌNH, HIGHLANDS CÓ PHIN SỮA ĐÁ 19K",
     image:
       "https://www.highlandscoffee.com.vn/vnt_upload/news/11_2023/BIRTHDAYHIGHLANDS/thumbs/470_crop_HCO-7723-24TH-BIRTHDAY-DIGITAL-471X314.jpg",
-    date: "03/11/2023, 14:39",
+    date: "2024-04-04T05:00:00",
     description:
       "24 Năm chúng mình, Highlands có phin sữa đá 19K",
   },
@@ -45,7 +45,7 @@ export const news = [
       "CHƯƠNG TRÌNH THÀNH VIÊN HIGHLANDS COFFEE ĐÃ CHÍNH THỨC CÓ MẶT",
     image:
       "https://www.highlandscoffee.com.vn/vnt_upload/news/10_2023/thumbs/470_crop_Vani-x-HLC_Blog-thumbnail.png",
-    date: "26/10/2023, 19:10",
+    date: "2023-10-26T19:10:00",
     description:
       "Chương trình thành viên Highlands Coffee đã chính thức có mặt",
   },
@@ -55,7 +55,7 @@ export const news = [
       "THƠM QUẢ MỌNG, NGỌT ANH ĐÀO! BỘ ĐÔI TRÀ & FREEZE",
     image:
       "https://www.highlandscoffee.com.vn/vnt_upload/news/10_2023/Cherry/thumbs/470_crop_HCO_7719_CHERRY_BERRY_DIGITAL-Banner_471x3142x_1.png",
-    date: "31/10/2023, 18:50",
+    date: "2023-10-31T18:50:00",
     description:
       "Thơm quả mọng, ngọt anh đào! Bộ đôi Trà & Freeze",
   },
@@ -65,9 +65,8 @@ export const news = [
       "KEMDI, THẾ HỆ KEM MỚI CỦA HIGHLANDS COFFEE",
     image:
       "https://www.highlandscoffee.com.vn/vnt_upload/news/10_2023/KEMDI/thumbs/470_crop_THUMNAIL_471x314.jpg",
-    date: "15/10/2023, 08:50",
+    date: "2024-04-01T09:09:00",
     description:
       "KemDi, thế hệ kem mới của Highlands Coffee",
   },
-  
 ];

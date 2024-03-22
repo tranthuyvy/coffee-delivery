@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { news } from "../../apis/mock-data";
 import CardItemNews from "../../components/News/CardItemNews";
+import { sortNewsByDate } from "../../utils/sort";
 
 const News = () => {
+  const sortedNews = sortNewsByDate(news);
   const [displayedNews, setDisplayedNews] = useState(3);
   const handleMoreDisplay = () => {
     setDisplayedNews(displayedNews + 3);
@@ -16,7 +18,7 @@ const News = () => {
         </div>
         <div className="w-full lg:w-[85%] mx-auto">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {news.slice(0, displayedNews).map((item, index) => (
+            {sortedNews.slice(0, displayedNews).map((item, index) => (
               <CardItemNews key={index} {...item} />
             ))}
           </div>

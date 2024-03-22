@@ -115,9 +115,9 @@ const Navbar = () => {
                                 <li className="p-3">
                                   <a
                                     className="font-RobotoMedium text-[22px] hover:text-[#E32526]"
-                                    href="/jobs"
+                                    href="/card"
                                   >
-                                    Nghề Nghiệp
+                                    Thẻ
                                   </a>
                                 </li>
                               </ul>

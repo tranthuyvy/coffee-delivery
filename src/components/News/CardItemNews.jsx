@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { format } from 'date-fns';
 
 const CardItemNews = ({ title, image, date, id }) => {
+  const formattedDate = format(new Date(date), "dd/MM/yyyy, HH:mm");
 
   return (
     <div className="mb-[30px] sm:mb-0">
@@ -24,10 +26,10 @@ const CardItemNews = ({ title, image, date, id }) => {
           <img
             src="https://firebasestorage.googleapis.com/v0/b/wed-invitation-790a1.appspot.com/o/calendar.png?alt=media&token=1094466b-cfd2-4402-8a30-113a763bc106"
             alt="icon-calendar"
-            className="w-4 h-4 mr-[3px]"
+            className="w-4 h-4 mr-[5px]"
           />
-          <p className="text-zinc-500 text-[12px] 3xl:text-base font-medium">
-            {date}
+          <p className="text-zinc-500 text-[12px] 4xl:text-base font-medium">
+            {formattedDate}
           </p>
         </div>
       </div>
