@@ -70,3 +70,24 @@ export const news = [
       "KemDi, thế hệ kem mới của Highlands Coffee",
   },
 ];
+
+export const address = [
+  {
+    id: 1,
+    address:"97 Man Thiện, Phường Hiệp Phú, Quận 9, TP.HCM",
+    lat:0.0,
+    lng:0.0,
+  },
+  {
+    id: 2,
+    address:"85 Làng Tăng Phú, Phường Tăng Nhơn Phú A, Quận 9, TP.HCM",
+    lat:0.0, 
+    lng:0.0,
+  },
+  {
+    id: 3,
+    address:"99 Man Thiện, Phường Hiệp Phú, Quận 9, TP.HCM",
+    lat:0.0,
+    lng:0.0,
+  },
+];

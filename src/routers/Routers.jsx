@@ -6,6 +6,7 @@ import Services from "../pages/About/Services";
 import Jobs from "../pages/About/Jobs";
 import News from "../pages/News/News";
 import Card from "../pages/Card";
+import Maps from "../pages/Maps";
 
 const Routers = () => {
   return (
@@ -17,6 +18,7 @@ const Routers = () => {
       <Route path="/jobs" element={<Jobs />} />
       <Route path="/news" element={<News />} />
       <Route path="/card" element={<Card />} />
+      <Route path="/maps" element={<Maps />} />
     </Routes>
   )
 }
