@@ -91,3 +91,45 @@ export const address = [
     lng:0.0,
   },
 ];
+
+export const coffee = [
+  {
+    id: 1,
+    name: "Phindi Choco",
+    price: 51000,
+    location: "Tất Cả Chi Nhánh",
+    images: [
+      "https://www.highlandscoffee.com.vn/vnt_upload/product/06_2023/thumbs/270_crop_HLC_New_logo_5.1_Products__PHINDI_CHOCO.jpg",
+      "https://www.highlandscoffee.com.vn/vnt_upload/product/06_2023/thumbs/270_crop_HLC_New_logo_5.1_Products__PHINDI_CHOCO.jpg",
+    ],
+    category: "Coffee",
+    description:
+      "",
+  },
+  {
+    id: 2,
+    name: "Phin Đen Đá",
+    price: 39000,
+    location: "Tất Cả Chi Nhánh",
+    images: [
+      "https://www.highlandscoffee.com.vn/vnt_upload/product/04_2023/thumbs/270_crop_HLC_New_logo_5.1_Products__PHIN_DEN_DA.jpg",
+      "https://www.highlandscoffee.com.vn/vnt_upload/product/04_2023/thumbs/270_crop_HLC_New_logo_5.1_Products__PHIN_DEN_DA.jpg",
+    ],
+    category: "Coffee",
+    description:
+      "",
+  },
+  {
+    id: 3,
+    name: "Phin Sữa Đá",
+    price: 29000,
+    location: "Tất Cả Chi Nhánh",
+    images: [
+      "https://www.highlandscoffee.com.vn/vnt_upload/product/04_2023/New_product/thumbs/270_crop_HLC_New_logo_5.1_Products__PHIN_SUADA.jpg",
+      "https://www.highlandscoffee.com.vn/vnt_upload/product/04_2023/New_product/thumbs/270_crop_HLC_New_logo_5.1_Products__PHIN_SUADA.jpg",
+    ],
+    category: "Tea",
+    description:
+      "",
+  },
+];

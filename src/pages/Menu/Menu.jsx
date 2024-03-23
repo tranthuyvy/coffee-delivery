@@ -16,7 +16,7 @@ const Menu = () => {
             <p className="font-normal text-center sm:text-left text-[#faebd7] text-[16px] lg:text-[18px] lg:w-[100%]">
               Sự kết hợp hoàn hảo giữa hạt cà phê Robusta & Arabica thượng hạng được trồng trên những vùng cao nguyên Việt Nam màu mỡ, qua những bí quyết rang xay độc đáo, Highlands Coffee chúng tôi tự hào giới thiệu những dòng sản phẩm Cà phê mang hương vị đậm đà và tinh tế.
             </p>
-            <Link to='/menu/coffee'>
+            <Link to='/products'>
               <button
                 className="uppercase rounded-md shadow-md text-[#faebd7] border-[1px] border-[#faebd7] py-3 px-10 mt-5 hover:bg-[#b22830] hover:text-white hover:shadow-lg ease-out duration-300"
               >
@@ -54,7 +54,7 @@ const Menu = () => {
             <p className="font-normal text-center sm:text-left text-[#006400] text-[16px] lg:text-[18px] lg:w-[100%]">
               Sảng khoái với thức uống đá xay phong cách Việt. Freeze là thức uống đá xay mát lạnh được pha chế từ những nguyên liệu thuần túy của Việt Nam.
             </p>
-            <Link to='/menu/freeze'>
+            <Link to='/products'>
               <button
                 className="uppercase rounded-md shadow-md text-[#006400] border-[1px] border-[#006400] py-3 px-10 mt-5 hover:bg-[#b22830] hover:text-white hover:shadow-lg ease-out duration-300"
               >
@@ -79,7 +79,7 @@ const Menu = () => {
             <p className="font-normal text-center sm:text-left text-white text-[16px] lg:text-[18px] lg:w-[100%]">
               Hương vị tự nhiên, thơm ngon của Trà Việt với phong cách hiện đại tại Highlands Coffee sẽ giúp bạn gợi mở vị giác của bản thân và tận hưởng một cảm giác thật khoan khoái, tươi mới.
             </p>
-            <Link to='/menu/tea'>
+            <Link to='/products'>
               <button
                 className="uppercase rounded-md shadow-md text-white border-[1px] border-white py-3 px-10 mt-5 hover:bg-[#b22830] hover:text-white hover:shadow-lg ease-out duration-300"
               >

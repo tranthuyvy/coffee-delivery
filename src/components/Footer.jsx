@@ -72,9 +72,9 @@ const Footer = () => {
             </p>
           </a>
 
-          <a href="/jobs">
+          <a href="/card">
             <p className="uppercase text-xs text-white mb-2 font-bold hover:text-[#e32426] ease-out duration-300">
-              Nghề Nghiệp
+              Thẻ
             </p>
           </a>
         </div>

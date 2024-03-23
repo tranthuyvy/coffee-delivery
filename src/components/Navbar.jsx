@@ -164,7 +164,7 @@ const Navbar = () => {
                             <div className="w-[35%]">
                               <a
                                 className="font-RobotoMedium text-[30px] hover:text-[#E32526]"
-                                href="/menu/coffee"
+                                href="/products"
                               >
                                 Cà Phê
                               </a>
@@ -172,7 +172,7 @@ const Navbar = () => {
                                 <li>
                                   <a
                                     className="text-[20px] font-RobotoMedium hover:text-[#E32526]"
-                                    href="#"
+                                    href="/products"
                                   >
                                     Cà Phê Phin
                                   </a>
@@ -180,7 +180,7 @@ const Navbar = () => {
                                 <li>
                                   <a
                                     className="text-[20px] font-RobotoMedium hover:text-[#E32526]"
-                                    href="#"
+                                    href="/products"
                                   >
                                     Phindi
                                   </a>
@@ -188,7 +188,7 @@ const Navbar = () => {
                                 <li>
                                   <a
                                     className="text-[20px] font-RobotoMedium hover:text-[#E32526]"
-                                    href="#"
+                                    href="/products"
                                   >
                                     Cà Phê Espresso
                                   </a>
@@ -198,7 +198,7 @@ const Navbar = () => {
                             <div className="w-[35%]">
                               <a
                                 className="font-RobotoMedium text-[30px] hover:text-[#E32526]"
-                                href="/menu/freeze"
+                                href="/products"
                               >
                                 FREEZE
                               </a>
@@ -206,7 +206,7 @@ const Navbar = () => {
                                 <li>
                                   <a
                                     className="text-[20px] font-RobotoMedium hover:text-[#E32526]"
-                                    href="#"
+                                    href="/products"
                                   >
                                     Freeze Cà Phê Phin
                                   </a>
@@ -214,7 +214,7 @@ const Navbar = () => {
                                 <li>
                                   <a
                                     className="text-[20px] font-RobotoMedium hover:text-[#E32526]"
-                                    href="#"
+                                    href="/products"
                                   >
                                     Freeze Không Cà Phê
                                   </a>
@@ -224,7 +224,7 @@ const Navbar = () => {
                             <div className="w-[30%]">
                               <a
                                 className="font-RobotoMedium text-[30px] hover:text-[#E32526]"
-                                href="/menu/tea"
+                                href="/products"
                               >
                                 Trà
                               </a>
@@ -232,7 +232,7 @@ const Navbar = () => {
                                 <li>
                                   <a
                                     className="text-[20px] font-RobotoMedium hover:text-[#E32526]"
-                                    href="#"
+                                    href="/products"
                                   >
                                     Trà Sen Vàng Mới
                                   </a>
@@ -240,7 +240,7 @@ const Navbar = () => {
                                 <li>
                                   <a
                                     className="text-[20px] font-RobotoMedium hover:text-[#E32526]"
-                                    href="#"
+                                    href="/products"
                                   >
                                     Trà Thanh Đào
                                   </a>

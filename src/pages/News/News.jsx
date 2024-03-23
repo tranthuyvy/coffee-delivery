@@ -21,7 +21,7 @@ const News = () => {
 
   return (
     <>
-      <section className="absolute bg-gradient-to-b from-white to-[#e8e1d3] pt-[50px] lg:pt-48 pb-[50px] md:pb-[100px] px-4 md:px-8 lg:-mt-44">
+      <section className="relative bg-gradient-to-b from-white to-[#e8e1d3] pt-[50px] lg:pt-48 pb-[50px] md:pb-[100px] px-4 md:px-8 lg:-mt-44">
         <div className="text-center mb-8 pb-6">
           <h3 className="font-RobotoSemibold text-5xl mt-[110px] uppercase text-[#53382c]">Tin Tức</h3>
         </div>
