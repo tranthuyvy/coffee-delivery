@@ -7,6 +7,7 @@ import Jobs from "../pages/About/Jobs";
 import News from "../pages/News/News";
 import Card from "../pages/Card";
 import Maps from "../pages/Maps";
+import Menu from "../pages/Menu/Menu";
 
 const Routers = () => {
   return (
@@ -19,6 +20,7 @@ const Routers = () => {
       <Route path="/news" element={<News />} />
       <Route path="/card" element={<Card />} />
       <Route path="/maps" element={<Maps />} />
+      <Route path="/menu" element={<Menu />} />
     </Routes>
   )
 }

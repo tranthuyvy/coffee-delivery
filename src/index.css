@@ -25,3 +25,11 @@
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, transparent, #bd945d);
 }
+
+.bg-gradient-to-t {
+  background-image: linear-gradient(to top, transparent, white);
+}
+
+.bg-gradient-to-b {
+  background-image: linear-gradient(to bottom, transparent, white);
+}
