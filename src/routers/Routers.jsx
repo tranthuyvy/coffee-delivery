@@ -10,10 +10,12 @@ import Maps from "../pages/Maps";
 import Menu from "../pages/Menu/Menu";
 import Products from "../pages/Menu/Products";
 import Page404 from "../pages/Page404";
+import Contact from "../pages/Contact";
 
 const Routers = () => {
   return (
     <Routes>
+      <Route path="*" element={<Page404 />} />
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/origin" element={<Origin />} />
@@ -24,7 +26,8 @@ const Routers = () => {
       <Route path="/maps" element={<Maps />} />
       <Route path="/menu" element={<Menu />} />
       <Route path="/products" element={<Products />} />
-      <Route path="*" element={<Page404 />} />
+      <Route path="/contact" element={<Contact />} />
+
     </Routes>
   )
 }

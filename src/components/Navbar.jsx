@@ -279,6 +279,15 @@ const Navbar = () => {
                   Thẻ
                 </a>
               </li>
+
+              <li className="hidden sm:block w-full text-left md:w-fit border-[#fff] hover:border-b-2 hover:border-[#fff]">
+                <a
+                  className="font-RobotoMedium uppercase block text-white text-[20px] md:text-[17px] xl:text-[18px] py-[15px] px-0 sm:py-2 sm:pl-3 sm:pr-10 border-none sm:border-b border-b border-gray-100 hover:bg-transparent lg:hover:bg-transparent lg:border-0 lg:hover:text-[#fff] md:py-4 lg:py-6"
+                  href="/contact"
+                >
+                  Liên Hệ
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -371,15 +380,23 @@ const Navbar = () => {
                         href="/news"
                         className="flex text-left items-center font-RobotoMedium uppercase text-[18px] py-[15px] px-0 sm:py-2 sm:pl-3 sm:pr-4 text-black w-full hover:text-red-600"
                       >
-                        News
+                        Quán Cà Phê
                       </a>
                     </li>
                     <li className="w-full text-left md:w-fit">
                       <a
-                        href="/jobs"
+                        href="/news"
                         className="flex text-left items-center font-RobotoMedium uppercase text-[18px] py-[15px] px-0 sm:py-2 sm:pl-3 sm:pr-4 text-black w-full hover:text-red-600"
                       >
-                        Nghề Nghiệp
+                        Tin Tức
+                      </a>
+                    </li>
+                    <li className="w-full text-left md:w-fit">
+                      <a
+                        href="/card"
+                        className="flex text-left items-center font-RobotoMedium uppercase text-[18px] py-[15px] px-0 sm:py-2 sm:pl-3 sm:pr-4 text-black w-full hover:text-red-600"
+                      >
+                        Thẻ
                       </a>
                     </li>
                     <li className="w-full text-left md:w-fit">
@@ -387,7 +404,7 @@ const Navbar = () => {
                         href="/contact"
                         className="flex text-left items-center font-RobotoMedium uppercase text-[18px] py-[15px] px-0 sm:py-2 sm:pl-3 sm:pr-4 text-black w-full hover:text-red-600"
                       >
-                        Contact Us
+                        Liên Hệ
                       </a>
                     </li>
                   </ul>
@@ -498,9 +515,9 @@ const Navbar = () => {
                   <li className="w-full text-left md:w-fit">
                     <a
                       className="uppercase font-RobotoMedium text-black block text-[18px] py-[15px] px-0 sm:py-2 sm:pl-3 sm:pr-4 hover:text-red-600"
-                      href="/card"
+                      href="/jobs"
                     >
-                      Thẻ
+                      Nghề Nghiệp
                     </a>
                   </li>
                 </ul>
