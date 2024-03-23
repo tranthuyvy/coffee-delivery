@@ -224,7 +224,7 @@ const Navbar = () => {
                             <div className="w-[30%]">
                               <a
                                 className="font-RobotoMedium text-[30px] hover:text-[#E32526]"
-                                href="/menu/teas"
+                                href="/menu/tea"
                               >
                                 Trà
                               </a>

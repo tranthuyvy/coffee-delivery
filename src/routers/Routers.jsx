@@ -8,6 +8,8 @@ import News from "../pages/News/News";
 import Card from "../pages/Card";
 import Maps from "../pages/Maps";
 import Menu from "../pages/Menu/Menu";
+import Coffee from "../pages/Menu/Coffee";
+import Page404 from "../pages/Page404";
 
 const Routers = () => {
   return (
@@ -21,6 +23,8 @@ const Routers = () => {
       <Route path="/card" element={<Card />} />
       <Route path="/maps" element={<Maps />} />
       <Route path="/menu" element={<Menu />} />
+      <Route path="/menu/coffee" element={<Coffee />} />
+      <Route path="*" element={<Page404 />} />
     </Routes>
   )
 }
