@@ -11,6 +11,8 @@ import Menu from "../pages/Menu/Menu";
 import Products from "../pages/Menu/Products";
 import Page404 from "../pages/Page404";
 import Contact from "../pages/Contact";
+import NewDetail from "../pages/News/NewDetail";
+import ProductDetail from "../pages/Menu/ProductDetail";
 
 const Routers = () => {
   return (
@@ -22,10 +24,12 @@ const Routers = () => {
       <Route path="/services" element={<Services />} />
       <Route path="/jobs" element={<Jobs />} />
       <Route path="/news" element={<News />} />
+      <Route path="/news/:id" element={<NewDetail />} />
       <Route path="/card" element={<Card />} />
       <Route path="/maps" element={<Maps />} />
       <Route path="/menu" element={<Menu />} />
       <Route path="/products" element={<Products />} />
+      <Route path="/products/:id" element={<ProductDetail />} />
       <Route path="/contact" element={<Contact />} />
 
     </Routes>

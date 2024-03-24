@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 
-const CardProductItem = ({ product }) => {
+const CardProductSimilar = ({ product }) => {
   const { id, name, price, location, images, category } = product;
   const formattedPrice = price.toLocaleString('en');
 
   return (
-    <div className="bg-white rounded-xl shadow-lg mb-10 relative justify-between col-span-1 w-full md:w-[48%] xl:w-[32%] hover:scale-105 transition duration-500 ease-in-out">
+    <div className="bg-white rounded-xl shadow-lg mb-10 relative justify-between col-span-1 w-full md:w-[80%] xl:w-[90%] hover:scale-105 transition duration-500 ease-in-out">
       <div>
         <div className='bg-[#53382c] rounded-bl-[35px] py-2 pl-8 pr-5 text-center absolute top-0 right-0 w-fit'>
           <p className='text-white font-RobotoMedium text-sm 3xl:text-base'>{category}</p>
@@ -44,7 +44,7 @@ const CardProductItem = ({ product }) => {
   );
 };
 
-CardProductItem.propTypes = {
+CardProductSimilar.propTypes = {
   product: PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
@@ -55,4 +55,4 @@ CardProductItem.propTypes = {
   }).isRequired,
 };
 
-export default CardProductItem
+export default CardProductSimilar

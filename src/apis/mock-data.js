@@ -132,4 +132,17 @@ export const coffee = [
     description:
       "",
   },
+  {
+    id: 4,
+    name: "Freeze Trà Xanh",
+    price: 59000,
+    location: "Tất Cả Chi Nhánh",
+    images: [
+      "https://www.highlandscoffee.com.vn/vnt_upload/product/06_2023/HLC_New_logo_5.1_Products__FREEZE_TRA_XANH.jpg",
+      "https://www.highlandscoffee.com.vn/vnt_upload/product/04_2023/New_product/thumbs/270_crop_HLC_New_logo_5.1_Products__PHIN_SUADA.jpg",
+    ],
+    category: "Freeze",
+    description:
+      "",
+  },
 ];
