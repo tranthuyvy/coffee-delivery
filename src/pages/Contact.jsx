@@ -152,7 +152,11 @@ const Contact = () => {
               maxLength={100}
             />
             <div className="flex justify-center items-center gap-2 border-b-[1px] border-black">
-              <span className="p-5">+84</span>
+              <img
+                className="inline"
+                src="https://firebasestorage.googleapis.com/v0/b/wed-invitation-790a1.appspot.com/o/vietnam.png?alt=media&token=b3a98704-0c5c-43cd-a376-e3bee778bd09"
+              />
+              <span className="py-5 px-1 inline font-bold">+84</span>
               <input
                 type="text"
                 name="Phone"
