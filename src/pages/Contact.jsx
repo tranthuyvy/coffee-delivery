@@ -1,5 +1,27 @@
-
 const Contact = () => {
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(import.meta.env.VITE_SCRIPT_GG_SHEET_ACTION, {
+        method: 'POST',
+        body: formData
+      });
+
+      if (response.ok) {
+        console.log('Biểu mẫu đã được gửi thành công!');
+      } else {
+        throw new Error('Có lỗi xảy ra khi gửi biểu mẫu.');
+      }
+    } catch (error) {
+      console.error('Lỗi khi gửi biểu mẫu:', error);
+    }
+  };
+
   return (
     <>
       <section className="relative flex flex-col-reverse md:flex-row items-center bg-white">
@@ -120,27 +142,34 @@ const Contact = () => {
           </div>
         </div>
         <div className="w-full sm:w-3/4 xl:w-2/4 mx-auto">
-          <form action="">
+          <form onSubmit={handleSubmit}>
             <input
               type="text"
+              name="Name"
               className="outline-none font-normal p-0 py-3 md:py-2 lg:py-4 w-full border-b-[1px] border-black text-black mb-5"
               placeholder="Họ Và Tên"
               required
               maxLength={100}
             />
-            <input
-              type="email"
-              className="outline-none font-normal p-0 py-3 md:py-2 lg:py-4 w-full border-b-[1px] border-black text-black mb-5"
-              placeholder="Email"
-              required
-              maxLength={100}
-            />
+            <div className="flex justify-center items-center gap-2 border-b-[1px] border-black">
+              <span className="p-5">+84</span>
+              <input
+                type="text"
+                name="Phone"
+                className="outline-none font-normal p-0 w-full text-black "
+                placeholder="Phone Number"
+                required
+                maxLength={100}
+              />
+            </div>
+
             <textarea
               type="text"
+              name="Comment"
               placeholder="Ý Kiến Đóng Góp"
               className="outline-none font-normal p-0 py-3 md:py-2 lg:py-4 w-full border-b-[1px] border-black text-black mb-5"
               rows="4"
-            ></textarea>
+            />
 
             <button className="flex justify-center mx-auto items-center">
               <div className="rounded-lg p-5 py-3 w-full text-white bg-[#b22830] hover:bg-[#880E0E] flex justify-center items-center transition ease-in delay-75">
