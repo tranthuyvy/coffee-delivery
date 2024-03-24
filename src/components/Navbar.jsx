@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="hidden md:block md:p-0 fixed w-full bg-[#b22830] border-gray-200 z-[100] shadow-md">
+      <nav className="hidden md:block md:p-0 fixed w-full bg-main border-gray-200 z-[100] shadow-md">
         <div className="flex flex-wrap md:flex-nowrap justify-between items-center mx-auto md:px-5 md:pr-0 lg:px-14 lg:py-2 lg:pr-0">
           <a
             className="flex items-center py-[10px] px-[20px] md:py-0 md:px-0"
@@ -31,7 +31,7 @@ const Navbar = () => {
               alt="logo"
             />
           </a>
-          <button className="inline-flex items-center bg-[#0D182B] md:bg-transparent py-[15px] px-[10px] md:py-2 md:px-2 ml-1 text-sm text-white md:hidden focus:outline-none focus:text-[#fff]">
+          <button className="inline-flex items-center bg-primary md:bg-transparent py-[15px] px-[10px] md:py-2 md:px-2 ml-1 text-sm text-white md:hidden focus:outline-none focus:text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -47,10 +47,10 @@ const Navbar = () => {
               ></path>
             </svg>
           </button>
-          <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 bg-[#0D182B] md:bg-transparent py-[10px] px-[30px] md:py-0 md:px-0">
+          <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 bg-primary md:bg-transparent py-[10px] px-[30px] md:py-0 md:px-0">
             <ul className="flex flex-col mt-0 md:flex-row md:space-x-2 lg:space-x-8 md:mt-0 items-center">
               <li className="hidden sm:block w-full text-left md:w-fit">
-                <div className="border-b-2 border-[#b22830] hover:border-b-2 hover:border-[#fff]">
+                <div className="border-b-2 border-main hover:border-b-2 hover:border-white">
                   <p className="font-RobotoMedium uppercase text-[20px] md:text-[17px] xl:text-[18px] py-[15px] px-0 sm:py-2 sm:pl-3 sm:pr-4 text-white border-none sm:border-b border-gray-100 hover:bg-transparent lg:hover:bg-transparent lg:border-0 md:py-4 lg:py-6 flex justify-center items-center cursor-pointer">
                     <a href="/about">Về Chúng Tôi</a>
                     <svg
@@ -70,7 +70,7 @@ const Navbar = () => {
                     </svg>
                   </p>
                   {showAboutMenu && (
-                    <div className="hidden sm:block w-[90%] lg:w-[70%] left-[15%] absolute mx-auto bg-[#53382c] mt-[10px]">
+                    <div className="hidden sm:block w-[90%] lg:w-[70%] left-[15%] absolute mx-auto bg-primary mt-[10px]">
                       <div className="flex">
                         <div className="w-[50%] text-white p-[60px]">
                           <h1 className="font-RobotoMedium text-4xl mb-3">
@@ -86,7 +86,7 @@ const Navbar = () => {
                               <ul className="font-medium">
                                 <li className="mb-5 p-3">
                                   <a
-                                    className="font-RobotoMedium text-[22px] hover:text-[#E32526]"
+                                    className="font-RobotoMedium text-[22px] hover:text-red"
                                     href="/about"
                                   >
                                     Giới Thiệu
@@ -94,7 +94,7 @@ const Navbar = () => {
                                 </li>
                                 <li className="p-3">
                                   <a
-                                    className="font-RobotoMedium text-[22px] hover:text-[#E32526]"
+                                    className="font-RobotoMedium text-[22px] hover:text-red"
                                     href="/origin"
                                   >
                                     Nguồn gốc
@@ -106,7 +106,7 @@ const Navbar = () => {
                               <ul className="font-RobotoMedium">
                                 <li className="mb-5 p-3">
                                   <a
-                                    className="font-RobotoMedium text-[22px] hover:text-[#E32526]"
+                                    className="font-RobotoMedium text-[22px] hover:text-red"
                                     href="/services"
                                   >
                                     Dịch Vụ
@@ -114,7 +114,7 @@ const Navbar = () => {
                                 </li>
                                 <li className="p-3">
                                   <a
-                                    className="font-RobotoMedium text-[22px] hover:text-[#E32526]"
+                                    className="font-RobotoMedium text-[22px] hover:text-red"
                                     href="/jobs"
                                   >
                                     Nghề Nghiệp
@@ -131,8 +131,8 @@ const Navbar = () => {
               </li>
 
               <li className="hidden sm:block w-full text-left md:w-fit">
-                <div className="border-b-2 border-[#b22830] hover:border-b-2 hover:border-[#fff]">
-                  <p className="font-RobotoMedium uppercase text-[20px] md:text-[17px] xl:text-[18px] py-[15px] px-0 sm:py-2 sm:pl-3 sm:pr-4 text-white border-none sm:border-b border-gray-100 hover:bg-transparent lg:hover:bg-transparent lg:border-0 lg:hover:text-[#fff] md:py-4 lg:py-6 flex justify-center items-center cursor-pointer">
+                <div className="border-b-2 border-main hover:border-b-2 hover:border-white">
+                  <p className="font-RobotoMedium uppercase text-[20px] md:text-[17px] xl:text-[18px] py-[15px] px-0 sm:py-2 sm:pl-3 sm:pr-4 text-white border-none sm:border-b border-gray-100 hover:bg-transparent lg:hover:bg-transparent lg:border-0 lg:hover:text-white md:py-4 lg:py-6 flex justify-center items-center cursor-pointer">
                     <a href="/menu">Thực Đơn</a>
                     <svg
                       onClick={toggleMenu}
@@ -151,7 +151,7 @@ const Navbar = () => {
                     </svg>
                   </p>
                   {showMenu && (
-                    <div className="hidden sm:block w-[90%] left-[5%] absolute mx-auto bg-[#53382c] mt-[10px]">
+                    <div className="hidden sm:block w-[90%] left-[5%] absolute mx-auto bg-primary mt-[10px]">
                       <div className="flex">
                         <div className="w-[30%] text-white p-[60px]">
                           <img
@@ -163,7 +163,7 @@ const Navbar = () => {
                           <div className="flex">
                             <div className="w-[35%]">
                               <a
-                                className="font-RobotoMedium text-[30px] hover:text-[#E32526]"
+                                className="font-RobotoMedium text-[30px] hover:text-red"
                                 href="/products"
                               >
                                 Cà Phê
@@ -171,7 +171,7 @@ const Navbar = () => {
                               <ul>
                                 <li>
                                   <a
-                                    className="text-[20px] font-RobotoMedium hover:text-[#E32526]"
+                                    className="text-[20px] font-RobotoMedium hover:text-red"
                                     href="/products"
                                   >
                                     Cà Phê Phin
@@ -179,7 +179,7 @@ const Navbar = () => {
                                 </li>
                                 <li>
                                   <a
-                                    className="text-[20px] font-RobotoMedium hover:text-[#E32526]"
+                                    className="text-[20px] font-RobotoMedium hover:text-red"
                                     href="/products"
                                   >
                                     Phindi
@@ -187,7 +187,7 @@ const Navbar = () => {
                                 </li>
                                 <li>
                                   <a
-                                    className="text-[20px] font-RobotoMedium hover:text-[#E32526]"
+                                    className="text-[20px] font-RobotoMedium hover:text-red"
                                     href="/products"
                                   >
                                     Cà Phê Espresso
@@ -197,7 +197,7 @@ const Navbar = () => {
                             </div>
                             <div className="w-[35%]">
                               <a
-                                className="font-RobotoMedium text-[30px] hover:text-[#E32526]"
+                                className="font-RobotoMedium text-[30px] hover:text-red"
                                 href="/products"
                               >
                                 FREEZE
@@ -205,7 +205,7 @@ const Navbar = () => {
                               <ul>
                                 <li>
                                   <a
-                                    className="text-[20px] font-RobotoMedium hover:text-[#E32526]"
+                                    className="text-[20px] font-RobotoMedium hover:text-red"
                                     href="/products"
                                   >
                                     Freeze Cà Phê Phin
@@ -213,7 +213,7 @@ const Navbar = () => {
                                 </li>
                                 <li>
                                   <a
-                                    className="text-[20px] font-RobotoMedium hover:text-[#E32526]"
+                                    className="text-[20px] font-RobotoMedium hover:text-red"
                                     href="/products"
                                   >
                                     Freeze Không Cà Phê
@@ -223,7 +223,7 @@ const Navbar = () => {
                             </div>
                             <div className="w-[30%]">
                               <a
-                                className="font-RobotoMedium text-[30px] hover:text-[#E32526]"
+                                className="font-RobotoMedium text-[30px] hover:text-red"
                                 href="/products"
                               >
                                 Trà
@@ -231,7 +231,7 @@ const Navbar = () => {
                               <ul>
                                 <li>
                                   <a
-                                    className="text-[20px] font-RobotoMedium hover:text-[#E32526]"
+                                    className="text-[20px] font-RobotoMedium hover:text-red"
                                     href="/products"
                                   >
                                     Trà Sen Vàng Mới
@@ -239,7 +239,7 @@ const Navbar = () => {
                                 </li>
                                 <li>
                                   <a
-                                    className="text-[20px] font-RobotoMedium hover:text-[#E32526]"
+                                    className="text-[20px] font-RobotoMedium hover:text-red"
                                     href="/products"
                                   >
                                     Trà Thanh Đào
@@ -256,22 +256,22 @@ const Navbar = () => {
               </li>
 
               <li className="hidden sm:block w-full text-left md:w-fit">
-                <div className="border-[#fff] hover:border-b-2 hover:border-[#fff]">
-                  <p className="font-RobotoMedium uppercase text-[20px] md:text-[17px] xl:text-[18px] py-[15px] px-0 sm:py-2 sm:pl-3 sm:pr-4 text-white border-none sm:border-b border-gray-100 hover:bg-transparent lg:hover:bg-transparent lg:border-0 lg:hover:text-[#fff] md:py-4 lg:py-6 flex justify-center items-center cursor-pointer">
+                <div className="border-white hover:border-b-2 hover:border-white">
+                  <p className="font-RobotoMedium uppercase text-[20px] md:text-[17px] xl:text-[18px] py-[15px] px-0 sm:py-2 sm:pl-3 sm:pr-4 text-white border-none sm:border-b border-gray-100 hover:bg-transparent lg:hover:bg-transparent lg:border-0 lg:hover:text-white md:py-4 lg:py-6 flex justify-center items-center cursor-pointer">
                     <a href="/maps">Quán Cà Phê</a>
                   </p>
                 </div>
               </li>
 
               <li className="hidden sm:block w-full text-left md:w-fit">
-                <div className="border-[#fff] hover:border-b-2 hover:border-[#fff]">
-                  <p className="font-RobotoMedium uppercase text-[20px] md:text-[17px] xl:text-[18px] py-[15px] px-0 sm:py-2 sm:pl-3 sm:pr-4 text-white border-none sm:border-b border-gray-100 hover:bg-transparent lg:hover:bg-transparent lg:border-0 lg:hover:text-[#fff] md:py-4 lg:py-6 flex justify-center items-center cursor-pointer">
+                <div className="border-white hover:border-b-2 hover:border-white">
+                  <p className="font-RobotoMedium uppercase text-[20px] md:text-[17px] xl:text-[18px] py-[15px] px-0 sm:py-2 sm:pl-3 sm:pr-4 text-white border-none sm:border-b border-gray-100 hover:bg-transparent lg:hover:bg-transparent lg:border-0 lg:hover:text-white md:py-4 lg:py-6 flex justify-center items-center cursor-pointer">
                     <a href="/news">Tin Tức</a>
                   </p>
                 </div>
               </li>
 
-              <li className="hidden sm:block w-full text-left md:w-fit border-[#fff] hover:border-b-2 hover:border-[#fff]">
+              <li className="hidden sm:block w-full text-left md:w-fit border-white hover:border-b-2 hover:border-white">
                 <a
                   className="font-RobotoMedium uppercase block text-white text-[20px] md:text-[17px] xl:text-[18px] py-[15px] px-0 sm:py-2 sm:pl-3 sm:pr-10 border-none sm:border-b border-b border-gray-100 hover:bg-transparent lg:hover:bg-transparent lg:border-0 lg:hover:text-[#fff] md:py-4 lg:py-6"
                   href="/card"
@@ -280,9 +280,9 @@ const Navbar = () => {
                 </a>
               </li>
 
-              <li className="hidden sm:block w-full text-left md:w-fit border-[#fff] hover:border-b-2 hover:border-[#fff]">
+              <li className="hidden sm:block w-full text-left md:w-fit border-white hover:border-b-2 hover:border-white">
                 <a
-                  className="font-RobotoMedium uppercase block text-white text-[20px] md:text-[17px] xl:text-[18px] py-[15px] px-0 sm:py-2 sm:pl-3 sm:pr-10 border-none sm:border-b border-b border-gray-100 hover:bg-transparent lg:hover:bg-transparent lg:border-0 lg:hover:text-[#fff] md:py-4 lg:py-6"
+                  className="font-RobotoMedium uppercase block text-white text-[20px] md:text-[17px] xl:text-[18px] py-[15px] px-0 sm:py-2 sm:pl-3 sm:pr-10 border-none sm:border-b border-b border-gray-100 hover:bg-transparent lg:hover:bg-transparent lg:border-0 lg:hover:text-white md:py-4 lg:py-6"
                   href="/contact"
                 >
                   Liên Hệ
@@ -294,7 +294,7 @@ const Navbar = () => {
       </nav>
 
       {/* for media < md */}
-      <nav className="md:hidden md:p-0 fixed w-full bg-[#b22830] border-gray-200 z-[100] shadow-sm">
+      <nav className="md:hidden md:p-0 fixed w-full bg-main border-gray-200 z-[100] shadow-sm">
         <div className="flex justify-between items-center mx-auto md:px-5 md:pr-0 lg:px-16 lg:pr-0 flex-wrap md:flex-nowrap">
           <a
             className="flex items-center py-[15px] px-[20px] md:py-0 md:px-0"
@@ -308,7 +308,7 @@ const Navbar = () => {
           </a>
           <button
             onClick={handleToggle}
-            className="inline-flex items-center bg-[#b22830] md:bg-transparent py-[15px] px-[10px] md:py-2 md:px-2 ml-1 text-sm text-white md:hidden focus:outline-none transition duration-300 transform hover:translate-x-1"
+            className="inline-flex items-center bg-main md:bg-transparent py-[15px] px-[10px] md:py-2 md:px-2 ml-1 text-sm text-white md:hidden focus:outline-none transition duration-300 transform hover:translate-x-1"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -526,13 +526,13 @@ const Navbar = () => {
               <hr className="mt-10" />
               <div className="text-left mt-3">
                 <a
-                  className="text-black hover:text-[#e32426] ease-out duration-300 mr-3 text-[12.5px]"
+                  className="text-black hover:text-red ease-out duration-300 mr-3 text-[12.5px]"
                   href="/disclaimer"
                 >
                   Disclaimer
                 </a>
                 <a
-                  className="border-l border-[#000] pl-3 text-black hover:text-[#e32426] ease-out duration-300 text-[12.5px]"
+                  className="border-l border-black pl-3 text-black hover:text-red ease-out duration-300 text-[12.5px]"
                   href="/privacy-notice"
                 >
                   Privacy Policy

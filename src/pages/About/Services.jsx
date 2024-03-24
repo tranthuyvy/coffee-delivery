@@ -13,42 +13,42 @@ const Services = () => {
       </div>
       <div className="w-[90%] lg:w-[80%] left-[15%] mx-auto bg-white mt-[10px]">
         <div className="flex">
-          <div className="w-[50%] text-[#53382c] p-[60px] text-[14px]">
+          <div className="w-[50%] text-primary p-[60px] text-[14px]">
             <h1 className="uppercase font-RobotoSemibold text-5xl mb-3">
               Dịch Vụ
             </h1>
-            <p className="font-normal text-[#53382c]">
+            <p className="font-normal text-primary">
               DỊCH VỤ NÀY LÀ CỦA CHÚNG MÌNH
             </p>
             <br />
-            <p className=" text-[#53382c] font-RobotoMedium">
+            <p className=" text-primary font-RobotoMedium">
               Chúng mình có thể làm gì để hoàn thiện Highlands Coffee®?
             </p>
             <br />
-            <p className="font-normal text-[#53382c]">
+            <p className="font-normal text-primary">
               Highlands Coffee® là không gian của chúng mình nên mọi thứ ở đây đều vì sự thoải mái của chúng mình.
             </p>
             <br />
-            <p className="font-normal text-[#53382c]">
+            <p className="font-normal text-primary">
               Đừng giữ trong lòng, hãy chia sẻ với chúng mình điều bạn mong muốn để cùng nhau giúp Highlands Coffee® của chúng mình trở nên tuyệt vời hơn.
             </p>
             <br />
-            <p className="font-bold text-[#53382c]">
+            <p className="font-bold text-primary">
               Đừng ngại chia sẻ ý kiến của bạn tại:
             </p>
             <br />
-            <p className="font-normal text-[#53382c]">
-              Facebook: <span className="text-[#b22830]">https://www.facebook.com/highlandscoffeevietnam/</span>
+            <p className="font-normal text-primary">
+              Facebook: <span className="text-main">https://www.facebook.com/highlandscoffeevietnam/</span>
             </p>
             <br />
-            <p className="font-normal text-[#53382c]">
-              Hoặc bạn có thể gửi email cho chúng mình đến địa chỉ: <span className="text-[#b22830]">customerservice@highlandscoffee.com.vn</span>, chúng mình sẽ phản hồi trong thời gian sớm nhất có thể.
+            <p className="font-normal text-primary">
+              Hoặc bạn có thể gửi email cho chúng mình đến địa chỉ: <span className="text-main">customerservice@highlandscoffee.com.vn</span>, chúng mình sẽ phản hồi trong thời gian sớm nhất có thể.
             </p>
           </div>
           <div className="w-[50%] bg-white p-[60px]">
             <div className="flex">
               <div className="w-full">
-                <ul className="font-TitilliumRegular">
+                <ul className="font-RobotoMedium">
                   <li className="mb-5">
                     <a
                       href="/origin"

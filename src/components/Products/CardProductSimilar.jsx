@@ -7,7 +7,7 @@ const CardProductSimilar = ({ product }) => {
   return (
     <div className="bg-white rounded-xl shadow-lg mb-10 relative justify-between col-span-1 w-full md:w-[80%] xl:w-[90%] hover:scale-105 transition duration-500 ease-in-out">
       <div>
-        <div className='bg-[#53382c] rounded-bl-[35px] py-2 pl-8 pr-5 text-center absolute top-0 right-0 w-fit'>
+        <div className='bg-primary rounded-bl-[35px] py-2 pl-8 pr-5 text-center absolute top-0 right-0 w-fit'>
           <p className='text-white font-RobotoMedium text-sm 3xl:text-base'>{category}</p>
         </div>
         <div className='mb-0 md:h-[200px] lg:h-[250px] xl:h-[35vh]'>
@@ -22,10 +22,10 @@ const CardProductSimilar = ({ product }) => {
           <hr className='mt-5' />
           <div className='flex py-3 relative'>
             <div className='w-1/2 px-5'>
-              <p className='text-base font-RobotoMedium 3xl:text-lg text-[#53382c]'>Có Mặt Tại</p>
+              <p className='text-base font-RobotoMedium 3xl:text-lg text-primary'>Có Mặt Tại</p>
               <div className=''>
                 <span className='relative'>
-                  <p className='text-base font-RobotoSemibold 3xl:text-lg text-[#b22830]'>
+                  <p className='text-base font-RobotoSemibold 3xl:text-lg text-main'>
                     {location}
                   </p>
                 </span>
@@ -33,9 +33,9 @@ const CardProductSimilar = ({ product }) => {
             </div>
 
             <div className='w-1/2 px-5'>
-              <p className='text-base font-RobotoMedium 3xl:text-lg text-[#53382c]'>Giá</p>
-              <p className='text-base font-RobotoSemibold 3xl:text-lg text-[#b22830]'>{formattedPrice}VNĐ</p>
-              <div className='absolute h-full border-l border-[#E4E7EB] top-0 left-[50%]'></div>
+              <p className='text-base font-RobotoMedium 3xl:text-lg text-primary'>Giá</p>
+              <p className='text-base font-RobotoSemibold 3xl:text-lg text-main'>{formattedPrice}VNĐ</p>
+              <div className='absolute h-full border-l border-grayWhite top-0 left-[50%]'></div>
             </div>
           </div>
         </div>

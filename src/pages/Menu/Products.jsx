@@ -44,11 +44,11 @@ const Products = () => {
 
   return (
     <>
-      <section className="relative bg-gradient-to-b from-[#fff] to-[#F9F7F2] h-[310px] md:h-[350px]">
+      <section className="relative bg-gradient-to-b from-white to-grayWhite h-[310px] md:h-[350px]">
         <div className="flex flex-column items-start sm:items-center lg:items-start justify-center absolute top-0 right-0 left-0 bottom-0 w-full max-w-none xl:max-w-screen-2xl sm:max-w-7xl mx-auto">
           <div className="mt-[100px] lg:mt-[180px]">
             <div className="lg:max-w-7xl md:px-8 px-4 sm:mt-0 text-center">
-              <h1 className="leading-tight text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-[3rem] text-[#000] max-w-xl lg:max-w-4xl font-RobotoMedium drop-shadow-lg shadow-black">
+              <h1 className="leading-tight text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-[3rem] text-black max-w-xl lg:max-w-4xl font-RobotoMedium drop-shadow-lg shadow-black">
                 Find Products <br className="sm:hidden" />
                 Here
               </h1>
@@ -56,7 +56,7 @@ const Products = () => {
           </div>
         </div>
         <div className="absolute z-10 left-0 right-0 bg-white top-[70%] md:top-[85%] md:bottom-[-7%] w-[90%] xl:w-[75%] mx-auto shadow-lg flex items-center flex-col lg:flex-row h-fit lg:h-[75px]">
-          <div className="text-base px-2 w-full lg:w-[35%] relative border-b border-r border-solid border-[#dddddd] flex items-center h-[50px] lg:h-full">
+          <div className="text-base px-2 w-full lg:w-[35%] relative border-b border-r border-solid border-borderGray flex items-center h-[50px] lg:h-full">
             <div className="relative w-full">
               <select
                 className="outline-none pl-[20px] relative w-full text-left font-RobotoMedium lg:text-[17px] 2xl:text-xl"
@@ -110,7 +110,7 @@ const Products = () => {
                 alt="search-icon"
               />
             </div>
-            <div className="font-RobotoSemibold text-[#b22830]">{filteredAndSortedProjects.length} <span className="text-black font-RobotoMedium">project found</span></div>
+            <div className="font-RobotoSemibold text-main">{filteredAndSortedProjects.length} <span className="text-black font-RobotoMedium">project found</span></div>
           </div>
           <div className="relative inline-block w-full sm:w-64">
             <select

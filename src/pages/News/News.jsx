@@ -21,9 +21,9 @@ const News = () => {
 
   return (
     <>
-      <section className="relative bg-gradient-to-b from-white to-[#e8e1d3] pt-[50px] lg:pt-48 pb-[50px] md:pb-[100px] px-4 md:px-8 lg:-mt-44">
+      <section className="relative bg-gradient-to-b from-white to-whiteYellow pt-[50px] lg:pt-48 pb-[50px] md:pb-[100px] px-4 md:px-8 lg:-mt-44">
         <div className="text-center mb-8 pb-6">
-          <h3 className="font-RobotoSemibold text-5xl mt-[110px] uppercase text-[#53382c]">Tin Tức</h3>
+          <h3 className="font-RobotoSemibold text-5xl mt-[110px] uppercase text-primary">Tin Tức</h3>
         </div>
         <div className="w-full lg:w-[85%] mx-auto">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -37,7 +37,7 @@ const News = () => {
             <div className="mx-auto text-center">
               <button
                 onClick={handleMoreDisplay}
-                className="text-[#53382c] uppercase rounded-[10px] p-3 flex mx-auto border-b-[1px] border-[#000] font-RobotoMedium text-[14px] sm:text-[18px] py-[13px] hover:bg-[#bd2024] hover:text-white"
+                className="text-primary uppercase rounded-[10px] p-3 flex mx-auto border-b-[1px] border-black font-RobotoMedium text-[14px] sm:text-[18px] py-[13px] hover:bg-red hover:text-white"
               >
                 Load More
                 <span className="ml-3">

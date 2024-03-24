@@ -28,10 +28,10 @@ const Contact = () => {
         <div className="relative md:w-[35%]">
           <div className="py-[40px] px-7 lg:px-14 md:py-14 w-full">
             <div className="relative">
-              <div className="w-1/2 border-b-[0px] sm:border-b-[1px] sm:border border-[#53382c]"></div>
-              <div className="absolute top-[-1px] w-[15%] border-b-[0px] sm:border-b-[2px] sm:border-[#b22830]"></div>
+              <div className="w-1/2 border-b-[0px] sm:border-b-[1px] sm:border border-primary"></div>
+              <div className="absolute top-[-1px] w-[15%] border-b-[0px] sm:border-b-[2px] sm:border-main"></div>
             </div>
-            <h1 className="uppercase text-center sm:text-left font-RobotoMedium text-[#53382c] hover:text-[#f1bc7a] text-3xl md:text-3xl xl:text-[3rem] mb-5 mt-0 sm:mt-5 md:leading-tight cursor-pointer">
+            <h1 className="uppercase text-center sm:text-left font-RobotoMedium text-primary hover:text-lightYellow text-3xl md:text-3xl xl:text-[3rem] mb-5 mt-0 sm:mt-5 md:leading-tight cursor-pointer">
               Liên Hệ
             </h1>
             <p className="font-normal text-center sm:text-left text-black text-[16px] lg:text-[18px] lg:w-[100%]">
@@ -49,7 +49,7 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="relative bg-gradient-to-b from-white to-[#e8e1d3] py-[50px] md:py-[100px] px-4 md:px-8">
+      <section className="relative bg-gradient-to-b from-white to-whiteYellow py-[50px] md:py-[100px] px-4 md:px-8">
         <div className="w-full xl:w-10/12 mx-auto">
           <div className="grid grid-cols-12 gap-0 relative z-10">
             <div className="col-span-12 lg:col-span-7 relative z-10">
@@ -58,20 +58,20 @@ const Contact = () => {
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.5330909250315!2d106.7213798745749!3d10.770422059305398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317525f5f3c420d3%3A0xffe8026e14a677b8!2zMTIzLCAxMjUgTmd1eeG7hW4gQ8ahIFRo4bqhY2gsIEFuIEzhu6NpIMSQw7RuZywgUXXhuq1uIDIsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1711188504055!5m2!1svi!2s" width="710" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                 ` }} />
             </div>
-            <div className="col-span-12 lg:col-span-5 bg-[#53382c] p-5 sm:p-10 lg:p-12 relative z-10">
-              <h1 className="leading-tight text-[#FFF] text-3xl md:text-3xl xl:text-[3rem] font-RobotoMedium relative">
+            <div className="col-span-12 lg:col-span-5 bg-primary p-5 sm:p-10 lg:p-12 relative z-10">
+              <h1 className="leading-tight text-white text-3xl md:text-3xl xl:text-[3rem] font-RobotoMedium relative">
                 Trụ Sở Chính
               </h1>
-              <p className="text-[14px] text-md font-bold text-[#FFF] my-6">
+              <p className="text-[14px] text-md font-bold text-white my-6">
                 Địa Chỉ
               </p>
-              <p className="text-sm sm:text-base text-[#FFF] font-semibold">
+              <p className="text-sm sm:text-base text-white font-semibold">
                 123-125 Nguyễn Cơ Thạch, Phường An Lợi Đông, Quận 2, Thành phố Hồ Chí Minh, Việt Nam.
               </p>
               <div className="my-6">
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <p className="text-[14px] text-md font-bold text-[#FFF] mb-3">
+                    <p className="text-[14px] text-md font-bold text-white mb-3">
                       Số Điện Thoại
                     </p>
                     <div className="flex flex-row items-center mb-3">
@@ -81,7 +81,7 @@ const Contact = () => {
                         alt=""
                       />
                       <a
-                        className="text-[#FFF] font-normal text-sm sm:text-base"
+                        className="text-white font-normal text-sm sm:text-base"
                         href="#"
                       >
                         +028 6288 3966
@@ -95,14 +95,14 @@ const Contact = () => {
                       />
                       <a
                         href="#"
-                        className="text-[#FFF] font-normal text-sm sm:text-base"
+                        className="text-white font-normal text-sm sm:text-base"
                       >
                         +028 6288 3966
                       </a>
                     </div>
                   </div>
                   <div>
-                    <p className="text-[14px] text-md font-bold text-[#FFF] mb-3">
+                    <p className="text-[14px] text-md font-bold text-white mb-3">
                       Giờ Làm Việc
                     </p>
                     <div className="flex flex-row items-center mb-3">
@@ -111,7 +111,7 @@ const Contact = () => {
                         src="https://www.gamudaland.com.my/_next/image?url=%2Fimages%2Fcontact%2Fdatetime.png&w=32&q=75"
                         alt="#"
                       />
-                      <p className="text-sm sm:text-base text-[#FFF] font-normal">
+                      <p className="text-sm sm:text-base text-white font-normal">
                         Mon - Fri 10am - 7pm
                       </p>
                     </div>
@@ -121,7 +121,7 @@ const Contact = () => {
                         src="https://www.gamudaland.com.my/_next/image?url=%2Fimages%2Fcontact%2Fdatetime.png&w=32&q=75"
                         alt="#"
                       />
-                      <p className="text-sm sm:text-base text-[#FFF] font-normal">
+                      <p className="text-sm sm:text-base text-white font-normal">
                         Sat - Sun 10am - 5pm
                       </p>
                     </div>
@@ -133,10 +133,10 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="relative bg-[#FFF] pt-[50px] lg:pt-[15rem] pb-[50px] lg:pb-[12rem] px-4 md:px-8 lg:-mt-44">
+      <section className="relative bg-white pt-[50px] lg:pt-[15rem] pb-[50px] lg:pb-[12rem] px-4 md:px-8 lg:-mt-44">
         <div className="mb-5">
           <div className="w-full">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-[3rem] text-[#53382c] text-center font-RobotoMedium w-full mx-auto title relative pb-5">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-[3rem] text-primary text-center font-RobotoMedium w-full mx-auto title relative pb-5">
               Đóng Góp Ý Kiến
             </h1>
           </div>
@@ -160,7 +160,7 @@ const Contact = () => {
               <input
                 type="text"
                 name="Phone"
-                className="outline-none font-normal p-0 w-full text-black "
+                className="outline-none font-normal p-0 w-full text-black"
                 placeholder="Phone Number"
                 required
                 maxLength={100}
@@ -176,7 +176,7 @@ const Contact = () => {
             />
 
             <button className="flex justify-center mx-auto items-center">
-              <div className="rounded-lg p-5 py-3 w-full text-white bg-[#b22830] hover:bg-[#880E0E] flex justify-center items-center transition ease-in delay-75">
+              <div className="rounded-lg p-5 py-3 w-full text-white bg-main hover:bg-hoverRed flex justify-center items-center transition ease-in delay-75">
                 Xác Nhận
               </div>
             </button>

@@ -12,7 +12,7 @@ const Page404 = () => {
               className="w-[200px] h-[200px] mx-auto"
             />
           </a>
-          <h1 className="mx-auto leading-tight text-4xl md:text-4xl xl:text-[3rem] text-[#b22830] font-semibold mt-6">
+          <h1 className="mx-auto leading-tight text-4xl md:text-4xl xl:text-[3rem] text-main font-semibold mt-6">
             404 - Page Not Found
           </h1>
         </div>

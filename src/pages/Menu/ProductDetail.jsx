@@ -37,9 +37,9 @@ const ProductDetail = () => {
           <div className="py-[40px] px-7 lg:px-14 md:py-14 w-full">
             <div className="relative">
               <div className="w-1/2 border-b-[0px] sm:border-b-[1px] sm:border border-[#53382c]"></div>
-              <div className="absolute top-[-1px] w-[15%] border-b-[0px] sm:border-b-[2px] sm:border-[#b22830]"></div>
+              <div className="absolute top-[-1px] w-[15%] border-b-[0px] sm:border-b-[2px] sm:border-main"></div>
             </div>
-            <h1 className="uppercase text-center sm:text-left font-RobotoMedium text-[#faebd7] hover:text-[#b22830] text-3xl md:text-3xl xl:text-[3rem] mb-5 mt-0 sm:mt-5 md:leading-tight cursor-pointer">
+            <h1 className="uppercase text-center sm:text-left font-RobotoMedium text-[#faebd7] hover:text-main text-3xl md:text-3xl xl:text-[3rem] mb-5 mt-0 sm:mt-5 md:leading-tight cursor-pointer">
               Cà Phê
             </h1>
             <p className="font-normal text-center sm:text-left text-[#faebd7] text-[16px] lg:text-[18px] lg:w-[100%]">
@@ -77,18 +77,18 @@ const ProductDetail = () => {
               <hr className="mb-5 w-full" />
               <div className="grid grid-cols-12 items-center justify-between w-full mb-5">
                 <div className="col-span-12 sm:col-span-6 mb-2 sm:mb-0 pr-[10px] mr-[10px]">
-                  <p className="font-serif text-[#7B7F84] text-[18px] 3xl:text-[17px]">
+                  <p className="font-serif text-sub text-[18px] 3xl:text-[17px]">
                     Giá
                   </p>
-                  <p className="text-[#b22830] font-RobotoMedium text-[18px] lg:text-[17px] 3xl:text-[20px]">
+                  <p className="text-main font-RobotoMedium text-[18px] lg:text-[17px] 3xl:text-[20px]">
                     {selectedProduct.price.toLocaleString("en")} VNĐ
                   </p>
                 </div>
                 <div className="col-span-12 sm:col-span-6 mb-2 sm:mb-0 pr-[10px] mr-[10px]">
-                  <p className="font-serif text-[#7B7F84] text-[18px] 3xl:text-[17px]">
+                  <p className="font-serif text-sub text-[18px] 3xl:text-[17px]">
                     Loại
                   </p>
-                  <p className="text-[#b22830] font-RobotoMedium text-[18px] lg:text-[17px] 3xl:text-[20px]">
+                  <p className="text-main font-RobotoMedium text-[18px] lg:text-[17px] 3xl:text-[20px]">
                     {selectedProduct?.category}
                   </p>
                 </div>
@@ -97,7 +97,7 @@ const ProductDetail = () => {
               <div className="grid sm:grid-cols-2 gap-4 items-center sm:justify-between w-full">
                 <div className="w-full">
                   <a className="block" href="#addcart" target="_blank">
-                    <div className="flex justify-center items-center p-3 text-center border border-grey hover:text-[#b22830] rounded-lg">
+                    <div className="flex justify-center items-center p-3 text-center border border-grey hover:text-main rounded-lg">
                       <p className="font-serif text-[16px] lg:text-[17px] sm:text-lg text-inherit 3xl:text-[20px]">
                         Thêm Vào Giỏ
                       </p>
@@ -123,7 +123,7 @@ const ProductDetail = () => {
                     href="#buynow"
                     className="block"
                   >
-                    <div className="font-serif rounded-lg p-3 text-center border border-grey bg-[#53382c] text-white hover:bg-[#271A15] hover:text-white">
+                    <div className="font-serif rounded-lg p-3 text-center border border-grey bg-primary text-white hover:bg-[#271A15] hover:text-white">
                       <p className="text-[16px] lg:text-[17px] sm:text-lg text-inherit 3xl:text-[20px]">
                         Mua Ngay
                       </p>
@@ -139,7 +139,7 @@ const ProductDetail = () => {
       <section className="relative bg-white py-[50px] md:py-[80px]">
         <div className="container mx-auto">
           <div className="w-full mb-10">
-            <h1 className="leading-tight text-3xl md:text-4xl lg:text-5xl xl:text-[3rem] 3xl:text-[3.2rem] text-[#53382c] text-center font-RobotoMedium title relative pb-6 w-full md:w-2/3 mx-auto">
+            <h1 className="leading-tight text-3xl md:text-4xl lg:text-5xl xl:text-[3rem] 3xl:text-[3.2rem] text-primary text-center font-RobotoMedium title relative pb-6 w-full md:w-2/3 mx-auto">
               Sản Phẩm Tương Tự
             </h1>
           </div>

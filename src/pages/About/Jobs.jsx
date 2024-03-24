@@ -12,27 +12,27 @@ const Jobs = () => {
       </div>
       <div className="w-[90%] lg:w-[80%] left-[15%] mx-auto bg-white mt-[10px]">
         <div className="flex">
-          <div className="w-[50%] text-[#53382c] p-[60px] text-[14px]">
+          <div className="w-[50%] text-primary p-[60px] text-[14px]">
             <h1 className="uppercase font-RobotoSemibold text-5xl mb-3">
               Nghề Nghiệp
             </h1>
-            <p className="font-RobotoMedium text-[#53382c]">
+            <p className="font-RobotoMedium text-primary">
               CƠ HỘI NÀY LÀ CỦA CHÚNG MÌNH
             </p>
             <br />
-            <p className=" text-[#53382c] font-normal">
+            <p className=" text-primary font-normal">
               Chúng mình biết rằng để thành công, bạn muốn làm việc với những đồng nghiệp tuyệt vời, tận hưởng những khoảng thời gian đẹp nhất, hiệu quả nhất, thể hiện được tài năng, đam mê của mình và được là chính mình nhất. Tại cộng đồng Highlands của chúng mình, bạn sẽ được truyền cảm hứng từ các cơ hội việc làm chúng mình có và trở thành phiên bản tốt nhất của chính bản thân trong cộng đồng của chúng mình.
             </p>
             <br />
-            <p className="font-normal text-[#53382c]">
+            <p className="font-normal text-primary">
               Chúng mình hoàn toàn tin tưởng rằng nhiệm vụ của Highlands là trao quyền cho bạn, hỗ trợ bạn trong quá trình bạn tỏa sáng, tạo kiện tốt nhất để bạn nâng cấp kỹ năng vốn có của bạn cũng như khai phá những tố chất tiềm ẩn để bạn chạm đến PHIÊN BẢN TỐT NHẤT của bản thân. Cho dù bạn mới bắt đầu sự nghiệp hay đang là một chuyên gia có thật nhiều kinh nghiệm, tương lai của bạn đều có thể bắt đầu từ đây để hoàn thiện chính mình trong hành trình chinh phục những thử thách đầy hoài bão.
             </p>
             <br />
-            <p className="font-normal text-[#53382c]">
+            <p className="font-normal text-primary">
               Bạn đã sẵn sàng để nắm lấy cơ hội kiến tạo sự nghiệp cùng chúng mình để góp sức dựng xây một <span className="font-bold">Highlands Coffee® Là Của Chúng Mình?</span>
             </p>
             <br />
-            <p className="font-semibold text-[#53382c]">
+            <p className="font-semibold text-primary">
               HÃY CÙNG CHÚNG MÌNH KHÁM PHÁ NHÉ:
             </p>
             <br />
@@ -47,7 +47,7 @@ const Jobs = () => {
           <div className="w-[50%] bg-white p-[60px]">
             <div className="flex">
               <div className="w-full">
-                <ul className="font-TitilliumRegular">
+                <ul className="font-RobotoMedium">
                   <li className="mb-5">
                     <a
                       href="/origin"

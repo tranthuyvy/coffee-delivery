@@ -4,7 +4,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#53382c] text-white p-8">
+    <footer className="bg-primary text-white p-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="lg:mr-4">
           <a href="/" className="flex items-center">
@@ -18,19 +18,19 @@ const Footer = () => {
           <div className="flex px-8">
             <a
               href="https://www.facebook.com/highlandscoffeevietnam/"
-              className="rounded-full border mx-4 mb-8 p-1 hover:bg-[#e32426] ease-out duration-300"
+              className="rounded-full border mx-4 mb-8 p-1 hover:bg-red ease-out duration-300"
             >
               <FaFacebookF />
             </a>
             <a
               href="https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Fhighlandscoffeevietnam%2F"
-              className="rounded-full border mr-4 mb-8 p-1 hover:bg-[#e32426] ease-out duration-300"
+              className="rounded-full border mr-4 mb-8 p-1 hover:bg-red ease-out duration-300"
             >
               <FaInstagram />
             </a>
             <a
               href="https://www.youtube.com/channel/UCHEqa2uTf8uXrGWrnU3ThgA"
-              className="rounded-full border mr-4 mb-8 p-1 hover:bg-[#e32426] ease-out duration-300"
+              className="rounded-full border mr-4 mb-8 p-1 hover:bg-red ease-out duration-300"
             >
               <FaYoutube />
             </a>
@@ -55,25 +55,25 @@ const Footer = () => {
 
         <div className="lg:mr-4">
           <a href="/about">
-            <p className="uppercase text-xs text-white mb-2 font-bold hover:text-[#e32426] ease-out duration-300">
+            <p className="uppercase text-xs text-white mb-2 font-bold hover:text-red ease-out duration-300">
               Về Chúng Tôi
             </p>
           </a>
 
           <a href="/menu">
-            <p className="uppercase text-xs text-white mb-2 font-bold hover:text-[#e32426] ease-out duration-300">
+            <p className="uppercase text-xs text-white mb-2 font-bold hover:text-red ease-out duration-300">
               Thực Đơn
             </p>
           </a>
 
           <a href="/news">
-            <p className="uppercase text-xs text-white mb-2 font-bold hover:text-[#e32426] ease-out duration-300">
+            <p className="uppercase text-xs text-white mb-2 font-bold hover:text-red ease-out duration-300">
               Tin Tức
             </p>
           </a>
 
           <a href="/card">
-            <p className="uppercase text-xs text-white mb-2 font-bold hover:text-[#e32426] ease-out duration-300">
+            <p className="uppercase text-xs text-white mb-2 font-bold hover:text-red ease-out duration-300">
               Thẻ
             </p>
           </a>
@@ -85,7 +85,7 @@ const Footer = () => {
           </p>
 
           <a
-            className="text-white hover:text-[#e32426] ease-out duration-300 text-[14px] mb-3 font-semibold"
+            className="text-white hover:text-red ease-out duration-300 text-[14px] mb-3 font-semibold"
             href="mailto:customerservice@highlandscoffee.com.vn"
           >
             customerservice@highlandscoffee.com.vn
@@ -108,14 +108,14 @@ const Footer = () => {
 
         <div className="text-center md:text-right">
           <a
-            className="text-white hover:text-[#e32426] focus:text-[#e32426] ease-out duration-300 mr-3 text-xs"
+            className="text-white hover:text-red focus:text-red ease-out duration-300 mr-3 text-xs"
             href="/disclaimer"
           >
             Disclaimer
           </a>
 
           <a
-            className="border-l border-[#fff] pl-3 text-white hover:text-[#e32426] focus:text-[#e32426] ease-out duration-300 text-xs"
+            className="border-l border-white pl-3 text-white hover:text-red focus:text-red ease-out duration-300 text-xs"
             href="/privacy-notice"
           >
             Privacy Policy
