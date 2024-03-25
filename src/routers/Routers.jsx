@@ -13,6 +13,7 @@ import Page404 from "../pages/Page404";
 import Contact from "../pages/Contact";
 import ProductDetail from "../pages/Menu/ProductDetail";
 import NewDetail from "../pages/News/NewDetail";
+import Discover from "../pages/Discover";
 
 const Routers = () => {
   return (
@@ -31,6 +32,7 @@ const Routers = () => {
       <Route path="/products" element={<Products />} />
       <Route path="/products/:id" element={<ProductDetail />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/discover" element={<Discover />} />
 
     </Routes>
   )
