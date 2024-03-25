@@ -17,7 +17,7 @@ export const news = [
       "https://www.highlandscoffee.com.vn/vnt_upload/news/02_2024/thumbs/470_crop_428299745_792319336254411_4995378142312099918_n.jpg",
     date: "2024-03-27T12:27:00",
     description:
-      "[Tết Mà] Chủ nhân siêu xe bạc tỷ đã lộ diện",
+      "Loạt ảnh chủ nhân siêu xe bạc tỷ đã lộ diện.",
   },
   {
     id: 3,

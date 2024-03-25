@@ -11,8 +11,8 @@ import Menu from "../pages/Menu/Menu";
 import Products from "../pages/Menu/Products";
 import Page404 from "../pages/Page404";
 import Contact from "../pages/Contact";
-import NewDetail from "../pages/News/NewDetail";
 import ProductDetail from "../pages/Menu/ProductDetail";
+import NewDetail from "../pages/News/NewDetail";
 
 const Routers = () => {
   return (
