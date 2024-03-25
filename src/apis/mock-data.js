@@ -4,7 +4,7 @@ export const news = [
     title:
       "THANH TOÁN TIỆN, RƯỚC LIỀN DEAL XỊN ƯU ĐÃI 20.000 VNĐ CHO HÓA ĐƠN TỪ 45.000 VNĐ",
     image:
-      "https://www.highlandscoffee.com.vn/vnt_upload/news/03_2024/thumbs/470_crop_PNS_20K-OFF_FBPBLog-thumbnail.png",
+      "https://www.highlandscoffee.com.vn/vnt_upload/news/03_2024/PNS_20K-OFF_FBPWebsite-cover_1.png",
     date: "2024-03-13T09:17:00",
     description:
       "Thanh toán tiện, rước liền deal xịn Ưu đãi 20.000 VNĐ cho hóa đơn từ 45.000 VNĐ",
@@ -14,7 +14,7 @@ export const news = [
     title:
       "[TẾT MÀ] CHỦ NHÂN SIÊU XE BẠC TỶ ĐÃ LỘ DIỆN",
     image:
-      "https://www.highlandscoffee.com.vn/vnt_upload/news/02_2024/thumbs/470_crop_428299745_792319336254411_4995378142312099918_n.jpg",
+      "https://www.highlandscoffee.com.vn/vnt_upload/news/01_2024/HCO_7727_TET_2024-WEBSITE_1440x460.jpg",
     date: "2024-03-27T12:27:00",
     description:
       "Loạt ảnh chủ nhân siêu xe bạc tỷ đã lộ diện.",
@@ -34,7 +34,7 @@ export const news = [
     title:
       "24 NĂM CHÚNG MÌNH, HIGHLANDS CÓ PHIN SỮA ĐÁ 19K",
     image:
-      "https://www.highlandscoffee.com.vn/vnt_upload/news/11_2023/BIRTHDAYHIGHLANDS/thumbs/470_crop_HCO-7723-24TH-BIRTHDAY-DIGITAL-471X314.jpg",
+      "https://www.highlandscoffee.com.vn/vnt_upload/news/11_2023/BIRTHDAYHIGHLANDS/HCO-7723-24TH-BIRTHDAY-DIGITAL-820X360.jpg",
     date: "2024-04-04T05:00:00",
     description:
       "24 Năm chúng mình, Highlands có phin sữa đá 19K",
@@ -64,7 +64,7 @@ export const news = [
     title:
       "KEMDI, THẾ HỆ KEM MỚI CỦA HIGHLANDS COFFEE",
     image:
-      "https://www.highlandscoffee.com.vn/vnt_upload/news/10_2023/KEMDI/thumbs/470_crop_THUMNAIL_471x314.jpg",
+      "https://www.highlandscoffee.com.vn/vnt_upload/news/10_2023/KEMDI/cover_web_2000x878.jpg",
     date: "2024-04-01T09:09:00",
     description:
       "KemDi, thế hệ kem mới của Highlands Coffee",
@@ -102,6 +102,7 @@ export const coffee = [
       "https://www.highlandscoffee.com.vn/vnt_upload/product/06_2023/thumbs/270_crop_HLC_New_logo_5.1_Products__PHINDI_CHOCO.jpg",
       "https://www.highlandscoffee.com.vn/vnt_upload/product/06_2023/thumbs/270_crop_HLC_New_logo_5.1_Products__PHINDI_CHOCO.jpg",
     ],
+    size: ["M", "L"],
     category: "Coffee",
     description:
       "",
@@ -115,6 +116,7 @@ export const coffee = [
       "https://www.highlandscoffee.com.vn/vnt_upload/product/04_2023/thumbs/270_crop_HLC_New_logo_5.1_Products__PHIN_DEN_DA.jpg",
       "https://www.highlandscoffee.com.vn/vnt_upload/product/04_2023/thumbs/270_crop_HLC_New_logo_5.1_Products__PHIN_DEN_DA.jpg",
     ],
+    size: ["S", "M", "L"],
     category: "Coffee",
     description:
       "",
@@ -129,8 +131,9 @@ export const coffee = [
       "https://www.highlandscoffee.com.vn/vnt_upload/product/04_2023/New_product/thumbs/270_crop_HLC_New_logo_5.1_Products__PHIN_SUADA.jpg",
     ],
     category: "Tea",
+    size: ["S", "M", "L"],
     description:
-      "",
+      "Hương vị cà phê Việt Nam đích thực! Từng hạt cà phê hảo hạng được chọn bằng tay, phối trộn độc đáo giữa hạt Robusta từ cao nguyên Việt Nam, thêm Arabica thơm lừng. Cà phê được pha từ Phin truyền thống, hoà cùng sữa đặc sánh và thêm vào chút đá tạo nên ly Phin Sữa Đá - Đậm Đà Chất Phin.",
   },
   {
     id: 4,
@@ -141,6 +144,21 @@ export const coffee = [
       "https://www.highlandscoffee.com.vn/vnt_upload/product/06_2023/HLC_New_logo_5.1_Products__FREEZE_TRA_XANH.jpg",
       "https://www.highlandscoffee.com.vn/vnt_upload/product/04_2023/New_product/thumbs/270_crop_HLC_New_logo_5.1_Products__PHIN_SUADA.jpg",
     ],
+    size: ["M", "L"],
+    category: "Freeze",
+    description:
+      "",
+  },
+  {
+    id: 5,
+    name: "Freeze Chanh Xả",
+    price: 69000,
+    location: "Chi Nhánh Q9",
+    images: [
+      "https://www.highlandscoffee.com.vn/vnt_upload/product/06_2023/HLC_New_logo_5.1_Products__FREEZE_TRA_XANH.jpg",
+      "https://www.highlandscoffee.com.vn/vnt_upload/product/04_2023/New_product/thumbs/270_crop_HLC_New_logo_5.1_Products__PHIN_SUADA.jpg",
+    ],
+    size: ["M", "L"],
     category: "Freeze",
     description:
       "",
