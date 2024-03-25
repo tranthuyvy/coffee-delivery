@@ -1,3 +1,6 @@
+//sheet:https://docs.google.com/spreadsheets/d/1JrIbxOBa0SltCtWtL6i4vKDdtIjZSvdu_DoER06IqWA/edit#gid=0
+//app script: https://script.google.com/u/0/home/projects/1HVOlmLf04jqBuwMvLAi4arFDFVLI5eg8OtPlJiFTV3jiem2j0E7a5SX_/edit
+
 const sheetName = 'data-comments'
 const scriptProp = PropertiesService.getScriptProperties()
 
