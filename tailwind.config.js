@@ -16,6 +16,7 @@ export default {
         'hoverRed': '#880E0E',
         'borderRed': '#FF5256',
         'primary': '#53382c',
+        'hoverPrimary': '#3A241B',
         'grayWhite': '#E4E7EB',
         'borderGray': '#dddddd',
         'borderDarkGray': '#6A717C',

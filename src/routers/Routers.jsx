@@ -15,6 +15,9 @@ import ProductDetail from "../pages/Menu/ProductDetail";
 import NewDetail from "../pages/News/NewDetail";
 import Discover from "../pages/Discover";
 import Cart from "../pages/Cart";
+import Layout from "../Admin/components/Layout";
+import Dashboard from "../Admin/pages/Dashboard";
+import Product from "../Admin/pages/Product";
 
 const Routers = () => {
   return (
@@ -36,6 +39,10 @@ const Routers = () => {
       <Route path="/discover" element={<Discover />} />
       <Route path="/cart" element={<Cart />} />
 
+      <Route path="/admin" element={<Layout />} >
+        <Route index element={<Dashboard />} />
+        <Route path="/admin/products" element={<Product />} />
+      </Route>
     </Routes>
   )
 }
