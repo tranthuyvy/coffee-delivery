@@ -54,20 +54,27 @@ const ProductDetail = () => {
                 </div>
               </div>
               <hr className="mb-5 w-full" />
-              <div className="flex items-center justify-center gap-4">
+              <p className="font-serif text-sub text-[18px] 3xl:text-[17px]">
+                Size
+              </p>
+              <div className="flex items-center justify-center gap-4 mt-1">
                 {selectedProduct?.size?.map((item, index) => (
                   <CardSizeItem key={index} size={item} />
                 ))}
 
               </div>
-              <hr className="mb-5 w-full" />
-              <div className="w-full mb-5">
-                <div>
-                  <p className="font-normal text-[14px] text-justify">
-                    {selectedProduct?.description}
-                  </p>
-                </div>
-              </div>
+              {selectedProduct?.description && (
+                <>
+                  <hr className="mb-5 w-full" />
+                  <div className="w-full mb-5">
+                    <div>
+                      <p className="font-normal text-[14px] text-justify">
+                        {selectedProduct?.description}
+                      </p>
+                    </div>
+                  </div>
+                </>
+              )}
               <hr className="mb-5 w-full" />
               <div className="grid sm:grid-cols-2 gap-4 items-center sm:justify-between w-full">
                 <div className="w-full">

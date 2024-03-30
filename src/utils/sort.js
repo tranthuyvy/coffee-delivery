@@ -1,3 +1,9 @@
 export const sortNewsByDate = (news) => {
-  return news.slice().sort((a, b) => new Date(b.date) - new Date(a.date));
+  if (!Array.isArray(news)) {
+    return [];
+  }
+
+  const sortedNews = news.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  return sortedNews;
 };

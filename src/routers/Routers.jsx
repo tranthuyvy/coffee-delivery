@@ -14,6 +14,7 @@ import Contact from "../pages/Contact";
 import ProductDetail from "../pages/Menu/ProductDetail";
 import NewDetail from "../pages/News/NewDetail";
 import Discover from "../pages/Discover";
+import Cart from "../pages/Cart";
 
 const Routers = () => {
   return (
@@ -33,6 +34,7 @@ const Routers = () => {
       <Route path="/products/:id" element={<ProductDetail />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/discover" element={<Discover />} />
+      <Route path="/cart" element={<Cart />} />
 
     </Routes>
   )

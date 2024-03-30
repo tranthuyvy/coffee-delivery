@@ -1,15 +1,10 @@
-import { put, takeLatest } from 'redux-saga/effects';
-import { FETCH_NEWS, setNews } from '../actions/newsActions';
-import { news } from '../../apis/mock-data';
+import { all } from 'redux-saga/effects';
+// import { watchAddToCart } from './cartSaga';
+import newSaga from './newSaga';
 
-function* fetchNewsSaga() {
-  try {
-    yield put(setNews(news));
-  } catch (error) {
-    console.error('fetchNewsSaga error:', error);
-  }
-}
-
-export function* watchFetchNews() {
-  yield takeLatest(FETCH_NEWS, fetchNewsSaga);
+export default function* rootSaga() {
+  yield all([
+    newSaga(),
+    // watchAddToCart(),
+  ]);
 }

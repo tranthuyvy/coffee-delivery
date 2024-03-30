@@ -6,7 +6,7 @@ import { fetchNews } from '../../redux/actions/newsActions';
 
 const News = () => {
   const dispatch = useDispatch();
-  const news = useSelector(state => state.news);
+  const news = useSelector(state => state.news.news);
   const sortedNews = sortNewsByDate(news);
   const [displayedNews, setDisplayedNews] = useState(3);
 
