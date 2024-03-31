@@ -1,8 +1,9 @@
+import DashboardStatisGrid from "../components/DashboardStatisGrid"
 
 const Dashboard = () => {
   return (
-    <div>
-      Dashboard nè má
+    <div className="flex">
+      <DashboardStatisGrid />
     </div>
   )
 }
