@@ -233,3 +233,81 @@ export const dataChart = [
   {name: "Female",  value: 620},
   {name: "Other",  value: 210},
 ]
+
+export const orders = [
+  {
+    id:'1',
+    product_id: '1',
+    customer_id: '1',
+    customer_name: 'Nguyễn Văn A',
+    order_date: '2024-03-13T09:17:00',
+    order_total: 51000,
+    status: 'SHIPPED',
+    address: 'Đỗ Xuân Hợp, Phường Phước Long B, Quận 9, TP.HCM',
+  },
+  {
+    id:'2',
+    product_id: '2',
+    customer_id: '2',
+    customer_name: 'Nguyễn Văn B',
+    order_date: '2024-03-13T09:17:00',
+    order_total: 68000,
+    status: 'CONFIRMED',
+    address: 'Đỗ Xuân Hợp, Phường Phước Long B, Quận 9, TP.HCM',
+  },
+  {
+    id:'3',
+    product_id: '3',
+    customer_id: '3',
+    customer_name: 'Nguyễn Văn C',
+    order_date: '2024-03-13T09:17:00',
+    order_total: 88000,
+    status: 'PLACED',
+    address: 'Đỗ Xuân Hợp, Phường Phước Long B, Quận 9, TP.HCM',
+  },
+]
+
+export const popularProducts = [
+	{
+		id: '3432',
+		product_name: 'Macbook M1 Pro 14"',
+		product_thumbnail: 'https://source.unsplash.com/100x100?macbook',
+		product_price: '$1499.00',
+		product_stock: 341
+	},
+	{
+		id: '7633',
+		product_name: 'Samsung Galaxy Buds 2',
+		product_thumbnail: 'https://source.unsplash.com/100x100?earbuds',
+		product_price: '$399.00',
+		product_stock: 24
+	},
+	{
+		id: '6534',
+		product_name: 'Asus Zenbook Pro',
+		product_thumbnail: 'https://source.unsplash.com/100x100?laptop',
+		product_price: '$899.00',
+		product_stock: 56
+	},
+	{
+		id: '9234',
+		product_name: 'LG Flex Canvas',
+		product_thumbnail: 'https://source.unsplash.com/100x100?smartphone',
+		product_price: '$499.00',
+		product_stock: 98
+	},
+	{
+		id: '4314',
+		product_name: 'Apple Magic Touchpad',
+		product_thumbnail: 'https://source.unsplash.com/100x100?touchpad',
+		product_price: '$699.00',
+		product_stock: 0
+	},
+	{
+		id: '4342',
+		product_name: 'Nothing Earbuds One',
+		product_thumbnail: 'https://source.unsplash.com/100x100?earphone',
+		product_price: '$399.00',
+		product_stock: 453
+	}
+]

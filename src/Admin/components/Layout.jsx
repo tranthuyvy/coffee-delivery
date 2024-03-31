@@ -4,9 +4,10 @@ import Header from "./Header"
 
 const Layout = () => {
   return (
-    <div className="flex flex-row h-screen w-screen overflow-hidden bg-bgPrimary">
+
+    <div className="flex flex-row h-screen w-screen bg-bgPrimary">
       <Sidebar />
-      <div className="flex-1">
+      <div className="flex-1 w-[80%] overflow-x-hidden">
         <Header />
         <div className="p-4">
 
@@ -14,6 +15,7 @@ const Layout = () => {
         </div>
       </div>
     </div>
+
   )
 }
 

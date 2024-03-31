@@ -6,7 +6,7 @@ const Sidebar = () => {
   const location = useLocation();
 
   return (
-    <div className="bg-primary w-60 p-3 flex flex-col text-white font-RobotoMedium">
+    <div className="fixed bg-primary w-60 h-full p-3 flex flex-col text-white font-RobotoMedium">
       <div className="flex items-center justify-center gap-3">
         <img
           src="https://www.highlandscoffee.com.vn/vnt_upload/weblink/White_logo800.png"
