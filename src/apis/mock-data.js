@@ -164,3 +164,66 @@ export const coffee = [
       "",
   },
 ];
+
+export const data = [
+  {
+    name: 'Jan',
+    Expense: 4000,
+    Income: 2400,
+  },
+  {
+    name: 'Feb',
+    Expense: 3000,
+    Income: 1398,
+  },
+  {
+    name: 'Mar',
+    Expense: 2000,
+    Income: 9800,
+  },
+  {
+    name: 'Apr',
+    Expense: 2708,
+    Income: 3908,
+  },
+  {
+    name: 'May',
+    Expense: 1890,
+    Income: 4000,
+  },
+  {
+    name: 'Jun',
+    Expense: 2390,
+    Income: 3800,
+  },
+  {
+    name: 'July',
+    Expense: 3490,
+    Income: 3806,
+  },
+  {
+    name: 'Aug',
+    Expense: 3390,
+    Income: 1800,
+  },
+  {
+    name: 'Sep',
+    Expense: 3390,
+    Income: 1800,
+  },
+  {
+    name: 'Oct',
+    Expense: 3390,
+    Income: 1800,
+  },
+  {
+    name: 'Nov',
+    Expense: 3390,
+    Income: 1800,
+  },
+  {
+    name: 'Dec',
+    Expense: 3390,
+    Income: 1800,
+  },
+]
