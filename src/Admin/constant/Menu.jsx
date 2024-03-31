@@ -5,7 +5,6 @@ import {
   HiOutlineUserGroup,
   HiOutlineServer,
   HiOutlineReceiptTax,
-  HiOutlineLogin,
   HiOutlineCog,
 }
   from "react-icons/hi";
@@ -56,10 +55,10 @@ export const DASHBOARD_SIDEBAR_BOTTOM_LINKS = [
     path: '/admin/settings',
     icon: <HiOutlineCog />
   },
-  {
-    key: 'logout',
-    label: 'Logout',
-    path: '/admin/logout',
-    icon: <HiOutlineLogin />
-  },
+  // {
+  //   key: 'logout',
+  //   label: 'Logout',
+  //   path: '/admin/logout',
+  //   icon: <HiOutlineLogin />
+  // },
 ]

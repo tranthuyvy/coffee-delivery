@@ -1,7 +1,10 @@
-import { Link } from "react-router-dom/dist"
+import { Link, useLocation } from "react-router-dom/dist"
 import { DASHBOARD_SIDEBAR_BOTTOM_LINKS, DASHBOARD_SIDEBAR_TOP_LINKS } from "../constant/Menu"
+import { HiOutlineLogout } from "react-icons/hi";
 
 const Sidebar = () => {
+  const location = useLocation();
+
   return (
     <div className="bg-primary w-60 p-3 flex flex-col text-white font-RobotoMedium">
       <div className="flex items-center justify-center gap-3">
@@ -18,7 +21,10 @@ const Sidebar = () => {
       <div className="flex-1 mt-6">
         {DASHBOARD_SIDEBAR_TOP_LINKS.map((link) => (
           <Link key={link.key} to={link.path}>
-            <div key={link.key} className="flex items-center gap-3 p-3 cursor-pointer">
+            <div
+              key={link.key}
+              className={`flex items-center gap-3 p-3 cursor-pointer hover:no-underline hover:bg-hoverPrimary ${location.pathname === link.path ? "bg-hoverPrimary" : "text-textNoneActive"}`}
+            >
               <div>{link.icon}</div>
               <div>{link.label}</div>
             </div>
@@ -29,12 +35,16 @@ const Sidebar = () => {
       <div className="">
         {DASHBOARD_SIDEBAR_BOTTOM_LINKS.map((link) => (
           <Link key={link.key} to={link.path}>
-            <div className="flex items-center gap-3 p-3 cursor-pointer">
+            <div className={`flex items-center gap-3 p-3 cursor-pointer ${location.pathname === link.path ? "bg-hoverPrimary" : "text-textNoneActive"}`}>
               <div>{link.icon}</div>
               <div>{link.label}</div>
             </div>
           </Link>
         ))}
+        <div className="flex items-center gap-3 p-3 cursor-pointer text-main">
+          <HiOutlineLogout />
+          <div>Logout</div>
+        </div>
       </div>
     </div>
   )

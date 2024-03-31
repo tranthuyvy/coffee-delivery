@@ -21,6 +21,7 @@ export default {
         'borderGray': '#dddddd',
         'borderDarkGray': '#6A717C',
         'sub': '#7B7F84',
+        'textNoneActive': '#cccc',
         'whiteYellow': '#faebd7',
         'lightYellow': '#f1bc7a',
         'darkYellow': '#bd945d',
