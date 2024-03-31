@@ -1,5 +1,6 @@
 import TransactionChart from "../components/TransactionChart"
 import DashboardStatisGrid from "../components/DashboardStatisGrid"
+import BuyerProfileChart from "../components/BuyerProfileChart"
 
 const Dashboard = () => {
   return (
@@ -7,6 +8,7 @@ const Dashboard = () => {
       <DashboardStatisGrid />
       <div className="flex flex-row gap-4 w-full">
         <TransactionChart />
+        <BuyerProfileChart />
       </div>
     </div>
   )

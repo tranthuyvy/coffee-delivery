@@ -198,32 +198,38 @@ export const data = [
   },
   {
     name: 'July',
-    Expense: 3490,
-    Income: 3806,
+    Expense: 2490,
+    Income: 1806,
   },
   {
     name: 'Aug',
-    Expense: 3390,
-    Income: 1800,
+    Expense: 1390,
+    Income: 1880,
   },
   {
     name: 'Sep',
     Expense: 3390,
-    Income: 1800,
+    Income: 1888,
   },
   {
     name: 'Oct',
-    Expense: 3390,
-    Income: 1800,
+    Expense: 688,
+    Income: 1688,
   },
   {
     name: 'Nov',
-    Expense: 3390,
-    Income: 1800,
+    Expense: 1688,
+    Income: 2850,
   },
   {
     name: 'Dec',
-    Expense: 3390,
-    Income: 1800,
+    Expense: 3080,
+    Income: 6800,
   },
+]
+
+export const dataChart = [
+  {name: "Male",  value: 400},
+  {name: "Female",  value: 620},
+  {name: "Other",  value: 210},
 ]
