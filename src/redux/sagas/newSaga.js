@@ -1,6 +1,6 @@
 import { takeLatest, put, all } from 'redux-saga/effects';
 import { FETCH_NEWS } from '../actions/types';
-import { setNews } from '../actions/newsActions';
+import { setNews } from '../actions/actions';
 import { news } from '../../apis/mock-data'
 
 function* fetchNewsSaga() {

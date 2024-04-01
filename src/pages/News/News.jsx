@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import CardItemNews from "../../components/News/CardItemNews";
 import { sortNewsByDate } from "../../utils/sort";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchNews } from '../../redux/actions/newsActions';
+import { fetchNews } from '../../redux/actions/actions';
 
 const News = () => {
   const dispatch = useDispatch();
