@@ -4,7 +4,24 @@ import {
   GET_ALL_PRODUCTS_FAILURE,
   FETCH_NEWS, 
   SET_NEWS,
+  GET_ALL_ORDERS_REQUEST,
+  GET_ALL_ORDERS_SUCCESS,
+  GET_ALL_ORDERS_FAILURE,
 } from './types';
+
+export const getAllOrdersRequest = () => ({
+  type: GET_ALL_ORDERS_REQUEST
+});
+
+export const getAllOrdersSuccess = (orders) => ({
+  type: GET_ALL_ORDERS_SUCCESS,
+  payload: orders
+});
+
+export const getAllOrdersFailure = (error) => ({
+  type: GET_ALL_ORDERS_FAILURE,
+  payload: error
+});
 
 export const getAllProductsRequest = () => ({
   type: GET_ALL_PRODUCTS_REQUEST

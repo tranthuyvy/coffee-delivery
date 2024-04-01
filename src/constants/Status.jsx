@@ -1,39 +1,39 @@
 export function getOrderStatus(status) {
   switch (status) {
-    case 'PLACED':
+    case 0:
+      return (
+        <span className="capitalize py-1 px-2 rounded-md text-xs text-white bg-primary">
+          {/* {status.split('_').join(' ').toLowerCase()} */} Cho Xac Nhan
+        </span>
+      )
+    case 1:
       return (
         <span className="capitalize py-1 px-2 rounded-md text-xs text-sky-600 bg-sky-100">
-          {status.split('_').join(' ').toLowerCase()}
+          {/* {status.split('_').join(' ').toLowerCase()} */} Da Xac Nhan
         </span>
       )
-    case 'CONFIRMED':
+    case 2:
       return (
         <span className="capitalize py-1 px-2 rounded-md text-xs text-orange-600 bg-orange-100">
-          {status.split('_').join(' ').toLowerCase()}
+          {/* {status.split('_').join(' ').toLowerCase()} */} Dang Thuc Hien
         </span>
       )
-    case 'SHIPPED':
+    case 3:
       return (
         <span className="capitalize py-1 px-2 rounded-md text-xs text-teal-600 bg-teal-100">
-          {status.split('_').join(' ').toLowerCase()}
+          {/* {status.split('_').join(' ').toLowerCase()} */} Dang Giao
         </span>
       )
-    case 'OUT_FOR_DELIVERY':
+    case 4:
       return (
-        <span className="capitalize py-1 px-2 rounded-md text-xs text-yellow-600 bg-yellow-100">
-          {status.split('_').join(' ').toLowerCase()}
-        </span>
-      )
-    case 'DELIVERED':
-      return (
-        <span className="capitalize py-1 px-2 rounded-md text-xs text-green-600 bg-green-100">
-          {status.split('_').join(' ').toLowerCase()}
+        <span className="capitalize py-1 px-2 rounded-md text-xs text-white bg-green">
+          {/* {status.split('_').join(' ').toLowerCase()} */} Da Giao
         </span>
       )
     default:
       return (
         <span className="capitalize py-1 px-2 rounded-md text-xs text-gray-600 bg-gray-100">
-          {status.split('_').join(' ').toLowerCase()}
+          {/* {status.split('_').join(' ').toLowerCase()} */} Da Huy
         </span>
       )
   }
