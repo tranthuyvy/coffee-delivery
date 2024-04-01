@@ -37,19 +37,19 @@ const AllOrder = () => {
             <tr key={index} className="cursor-pointer" onClick={() => navigate(`/order/${order.order_id}`)}>
               <td>{index + 1}</td>
               <td className="flex items-center">
-                {order.order_detail.map((item, index) => (
+                {[...new Map(order.order_detail.map(item => [item.product.image, item])).values()].map((uniqueItem, index) => (
                   <img
                     key={index}
                     className="w-[60px] mt-[2px] rounded-full shadow-md mr-2"
-                    src={item.product && item.product.image}
-                    alt={item.product && item.product.product_name}
+                    src={uniqueItem.product && uniqueItem.product.image}
+                    alt={uniqueItem.product && uniqueItem.product.product_name}
                   />
                 ))}
               </td>
               <td>
                 {order.order_detail.map((item, index) => (
                   <div key={index}>
-                    {item.product && item.product.product_name},
+                    {item.quantity} {item.product && item.product.product_name} ({item.product && item.size}),
                   </div>
                 ))}
               </td>
