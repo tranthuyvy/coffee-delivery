@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { orders } from "../../apis/mock-data"
-import { getOrderStatus } from "../../constants/OrderStatus"
+import { getOrderStatus } from "../../constants/Status"
 
 const AllOrder = () => {
   return (

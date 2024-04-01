@@ -1,8 +1,21 @@
 import { Link } from "react-router-dom";
-import { products } from "../../apis/mock-data";
-import { getProductStatus } from "../../constants/OrderStatus";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllProductsRequest } from "../../redux/actions/actions";
+import { getProductStatus } from "../../constants/Status";
 
 const AllProducts = () => {
+  const dispatch = useDispatch();
+  const products = useSelector(state => state.products.products.data);
+
+  useEffect(() => {
+    try {
+      dispatch(getAllProductsRequest());
+    } catch (error) {
+      console.error("Error dispatch", error);
+    }
+  }, [dispatch]);
+
   return (
     <div className="flex flex-col gap-4 w-[80%] ml-[18%] rounded-md shadow-md bg-white mt-5">
       <table className="w-full text-gray-700">
@@ -18,7 +31,7 @@ const AllProducts = () => {
           </tr>
         </thead>
         <tbody>
-          {products[0]?.data.map((product) => (
+          {products.map((product) => (
             <tr key={product.product_id}>
               <td>
                 <Link to={`/products/${product.product_id}`}>
