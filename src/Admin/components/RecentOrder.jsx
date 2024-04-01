@@ -5,13 +5,12 @@ import { getOrderStatus } from "../../constants/OrderStatus"
 const RecentOrder = () => {
   return (
     <div className="bg-white px-4 pt-3 pb-4 rounded-md border border-gray-200 flex-1">
-      <strong className="text-sub font-semibold">RecentOrder</strong>
+      <strong className="text-sub font-semibold">Recent Order</strong>
       <div className="mt-3">
         <table className="w-full text-gray-700">
-          <thead>
+          <thead className="text-white font-medium bg-primary">
             <tr>
               <td>ID</td>
-              <td>Product ID</td>
               <td>Name</td>
               <td>Address</td>
               <td>Total</td>
@@ -27,21 +26,15 @@ const RecentOrder = () => {
                     {order.id}
                   </Link>
                 </td>
-                <td>
-                  <Link to={`/products/${order.product_id}`}>
-                    {order.product_id}
-                  </Link>
-                </td>
                 <td>{order.customer_name}</td>
                 <td>{order.address}</td>
-                <td>{order.order_total}</td>
+                <td>{(order.order_total).toLocaleString('en')}</td>
                 <td>{new Date(order.order_date).toLocaleDateString()}</td>
                 <td>{getOrderStatus(order.status)}</td>
               </tr>
             ))}
           </tbody>
         </table>
-
       </div>
     </div>
   )

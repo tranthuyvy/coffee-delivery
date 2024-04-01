@@ -38,3 +38,26 @@ export function getOrderStatus(status) {
       )
   }
 }
+
+export function getProductStatus(status) {
+  if (typeof status === 'string') {
+    switch (status) {
+      case 'UNACTIVE':
+        return (
+          <span className="capitalize py-1 px-2 rounded-md text-xs text-white bg-main">
+            {status.split('_').join(' ').toLowerCase()}
+          </span>
+        );
+      default:
+        return (
+          <span className="capitalize py-1 px-2 rounded-md text-xs text-white bg-green">
+            {status.split('_').join(' ').toLowerCase()}
+          </span>
+        );
+    }
+  } else {
+
+    return null;
+  }
+}
+

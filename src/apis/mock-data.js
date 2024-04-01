@@ -304,3 +304,89 @@ export const popularProducts = [
 		product_stock: 0
 	},
 ]
+
+export const products = [
+  {
+  "data": [
+    {
+        "product_id": "6YHHCR",
+        "product_name": "TRÀ THẠCH ĐÀO",
+        "image": "https://firebasestorage.googleapis.com/v0/b/image-highland-6ae35.appspot.com/o/32336e8f-9b91-45a0-9e4d-891eb59aabe9jpg?alt=media",
+        "description": "Vị trà đậm đà kết hợp cùng những miếng đào thơm ngon mọng nước cùng thạch đào giòn dai. Thêm vào ít sữa để gia tăng vị béo.",
+        "created_at": "2024-03-21",
+        "updated_at": "2024-03-21",
+        "status": 'UNACTIVE',
+        "category": {
+            "category_name": "Trà",
+            "slug": "tra"
+        },
+        "staff_created": {
+            "firstname": null,
+            "lastname": null
+        },
+        "staff_updated": {
+            "firstname": null,
+            "lastname": null
+        },
+        "price_update_detail": [
+            {
+                "price_new": 45000
+            }
+        ]
+    },
+    {
+        "product_id": "B6R2RG",
+        "product_name": "HỒNG TRÀ SỮA",
+        "image": "https://firebasestorage.googleapis.com/v0/b/image-highland-6ae35.appspot.com/o/bf07f314-21ca-4cef-8ac1-f4f53cd19e73jpeg?alt=media",
+        "description": "Hồng trà sữa là sự kết hợp giữa hồng trà (trà đen) với sữa tươi, thêm các loại topping như trân châu, thạch, pudding, tạo nên một đồ uống luôn có mặt trong menu các quán. Đây được coi là loại trà sữa truyền thống và phổ biến nhất. Bạn có thể thay thế nước cốt hồng trà bằng các loại hồng trà khác nhau, mang đến hương vị đặc sắc",
+        "created_at": "2024-03-21",
+        "status": 'ACTIVE',
+        "updated_at": "2024-03-21",
+        "category": {
+            "category_name": "Trà sữa",
+            "slug": "tra-sua"
+        },
+        "staff_created": {
+            "firstname": null,
+            "lastname": null
+        },
+        "staff_updated": {
+            "firstname": null,
+            "lastname": null
+        },
+        "price_update_detail": [
+            {
+                "price_new": 45000
+            }
+        ]
+    },
+    {
+        "product_id": "D4O7YF",
+        "product_name": "PHIN SỮA NÓNG",
+        "image": "https://firebasestorage.googleapis.com/v0/b/image-highland-6ae35.appspot.com/o/9566e5fa-71ad-4f82-84b5-a3691c55eae9jpg?alt=media",
+        "description": "Hương vị cà phê Việt Nam đích thực! Từng hạt cà phê hảo hạng được chọn bằng tay, phối trộn độc đáo giữa hạt Robusta từ cao nguyên Việt Nam, thêm Arabica thơm lừng. Kết hợp với nước sôi từng giọt cà phê được chiết xuất từ Phin truyền thống, hoà cùng sữa đặc sánh tạo nên ly Phin Sữa Nóng – Đậm đà chất Phin.!",
+        "created_at": "2024-03-21",
+        "status": 'ACTIVE',
+        "updated_at": "2024-03-21",
+        "category": {
+            "category_name": "Cà phê",
+            "slug": "ca-phe"
+        },
+        "staff_created": {
+            "firstname": null,
+            "lastname": null
+        },
+        "staff_updated": {
+            "firstname": null,
+            "lastname": null
+        },
+        "price_update_detail": [
+            {
+                "price_new": 29000
+            }
+        ]
+    },
+  ],
+  "status": 200,
+  "message": "success"
+}]
