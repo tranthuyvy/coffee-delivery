@@ -7,7 +7,24 @@ import {
   GET_ALL_ORDERS_REQUEST,
   GET_ALL_ORDERS_SUCCESS,
   GET_ALL_ORDERS_FAILURE,
+  GET_ALL_CUSTOMERS_REQUEST,
+  GET_ALL_CUSTOMERS_SUCCESS,
+  GET_ALL_CUSTOMERS_FAILURE,
 } from './types';
+
+export const getAllCustomersRequest = () => ({
+  type: GET_ALL_CUSTOMERS_REQUEST
+});
+
+export const getAllCustomersSuccess = (customers) => ({
+  type: GET_ALL_CUSTOMERS_SUCCESS,
+  payload: customers
+});
+
+export const getAllCustomersFailure = (error) => ({
+  type: GET_ALL_CUSTOMERS_FAILURE,
+  payload: error
+});
 
 export const getAllOrdersRequest = () => ({
   type: GET_ALL_ORDERS_REQUEST

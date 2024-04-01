@@ -39,7 +39,7 @@ export function getOrderStatus(status) {
   }
 }
 
-export function getProductStatus(status) {
+export function getStatus(status) {
   if (typeof status === 'string') {
     switch (status) {
       case 'Unactive':

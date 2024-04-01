@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProductsRequest } from "../../redux/actions/actions";
-import { getProductStatus } from "../../constants/Status";
+import { getStatus } from "../../constants/Status";
 
 const AllProducts = () => {
   const dispatch = useDispatch();
@@ -49,7 +49,7 @@ const AllProducts = () => {
               <td>{product?.category?.category_name}</td>
               <td>{product?.price_update_detail[0]?.price_new.toLocaleString('en')}</td>
               <td>{product?.description && product.description.length > 50 ? `${product?.description.substring(0, 50)}...` : product.description}</td>
-              <td>{getProductStatus(product?.status)}</td>
+              <td>{getStatus(product?.status)}</td>
             </tr>
           ))}
         </tbody>

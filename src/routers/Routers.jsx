@@ -19,6 +19,7 @@ import Layout from "../Admin/components/Layout";
 import Dashboard from "../Admin/pages/Dashboard";
 import AllProducts from "../Admin/pages/AllProducts";
 import AllOrder from "../Admin/pages/AllOrder";
+import AllCustomers from "../Admin/pages/AllCustomer";
 
 const Routers = () => {
   return (
@@ -44,6 +45,7 @@ const Routers = () => {
         <Route index element={<Dashboard />} />
         <Route path="/admin/products" element={<AllProducts />} />
         <Route path="/admin/orders" element={<AllOrder />} />
+        <Route path="/admin/customers" element={<AllCustomers />} />
       </Route>
     </Routes>
   )
