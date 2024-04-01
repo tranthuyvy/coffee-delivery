@@ -6,7 +6,7 @@ import { getProductStatus } from "../../constants/Status";
 
 const AllProducts = () => {
   const dispatch = useDispatch();
-  const products = useSelector(state => state.products.products.data);
+  const products = useSelector(state => state.products.products);
 
   useEffect(() => {
     try {
@@ -22,16 +22,16 @@ const AllProducts = () => {
         <thead className="text-white font-RobotoSemibold text-[18px] ">
           <tr className="bg-primary">
             <td className="rounded-s-md">ID</td>
-            <td>Image</td>
-            <td>Name</td>
-            <td>Category</td>
-            <td>Price</td>
-            <td>Description</td>
-            <td className="rounded-e-md">Status</td>
+            <td>Ảnh</td>
+            <td>Tên</td>
+            <td>Loai San Pham</td>
+            <td>Giá San Pham</td>
+            <td>Mô Tả</td>
+            <td className="rounded-e-md">Trạng Thái</td>
           </tr>
         </thead>
         <tbody>
-          {products.map((product) => (
+          {products?.data && products.data.map((product) => (
             <tr key={product.product_id}>
               <td>
                 <Link to={`/products/${product.product_id}`}>
