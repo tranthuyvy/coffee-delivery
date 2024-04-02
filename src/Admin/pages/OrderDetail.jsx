@@ -17,7 +17,7 @@ const OrderDetail = () => {
     }
   }, [dispatch, id]);
 
-  console.table("orderDetail", orderDetail)
+  console.log("orderDetail", orderDetail)
 
   return (
     <>
@@ -27,19 +27,19 @@ const OrderDetail = () => {
             <h5 className="text-left text-lg font-RobotoSemibold text-primary py-3">Thông Tin Nhận Hàng</h5>
             <p className="p-5">
               <span className="text-primary font-RobotoMedium mr-2">Họ Và Tên:</span>
-              <span className="text-primary font-RobotoSemibold">{orderDetail.customer.firstname} {orderDetail.customer.lastname}</span>
+              <span className="text-primary font-RobotoSemibold">{orderDetail?.customer?.firstname} {orderDetail?.customer?.lastname}</span>
             </p>
             <p className="p-5">
               <span className="text-primary font-RobotoMedium mr-2">Địa Chỉ Nhận Hàng:</span>
-              <span className="text-primary font-RobotoSemibold">{orderDetail.customer.address}</span>
+              <span className="text-primary font-RobotoSemibold">{orderDetail?.customer.address}</span>
             </p>
             <p className="p-5">
               <span className="text-primary font-RobotoMedium mr-2">Email:</span>
-              <span className="text-primary font-RobotoSemibold">{orderDetail.customer.email}</span>
+              <span className="text-primary font-RobotoSemibold">{orderDetail?.customer.email}</span>
             </p>
             <p className="p-5">
               <span className="text-primary font-RobotoMedium mr-2">Số Điện Thoại:</span>
-              <span className="text-primary font-RobotoSemibold">{orderDetail.customer.user.username}</span>
+              <span className="text-primary font-RobotoSemibold">{orderDetail?.customer.user.username}</span>
             </p>
           </div>
 
@@ -49,11 +49,11 @@ const OrderDetail = () => {
             <h5 className="text-left text-lg font-RobotoSemibold text-primary py-3">Chi Tiết Hóa Đơn</h5>
             <p className="p-5">
               <span className="text-primary font-RobotoMedium mr-2">Tổng số lượng:</span>
-              <span className="text-primary font-RobotoSemibold">{orderDetail.total_quantity}</span>
+              <span className="text-primary font-RobotoSemibold">{orderDetail?.total_quantity}</span>
             </p>
             <p className="p-5">
               <span className="text-primary font-RobotoMedium mr-2">Tổng tiền:</span>
-              <span className="text-primary font-RobotoSemibold">{(orderDetail.total_price).toLocaleString('en')} VNĐ</span>
+              {orderDetail?.total_price && <span className="text-primary font-RobotoSemibold">{(orderDetail.total_price).toLocaleString('en')} VNĐ</span>}
             </p>
             <p className="p-5">
               <span className="text-primary font-RobotoMedium mr-2">Phí vận chuyển:</span>
@@ -61,7 +61,7 @@ const OrderDetail = () => {
             </p>
             <p className="p-5">
               <span className="text-primary font-RobotoMedium mr-2">Thanh toán:</span>
-              <span className="text-primary font-RobotoSemibold">{(orderDetail.total_price + 20000).toLocaleString('en')} VNĐ</span>
+              {orderDetail?.total_price && <span className="text-primary font-RobotoSemibold">{(orderDetail.total_price + 20000).toLocaleString('en')} VNĐ</span>}
             </p>
           </div>
         </div>
@@ -88,18 +88,18 @@ const OrderDetail = () => {
                 <td className="flex items-center">
                   <img
                     className="w-[60px] mt-[2px] rounded-full shadow-md mr-2"
-                    src={orderItem.product.image}
-                    alt={orderItem.product.product_name}
+                    src={orderItem?.product.image}
+                    alt={orderItem?.product.product_name}
                   />
                 </td>
 
                 <td>
-                  <p>{orderItem.product.product_name}</p>
-                  <span className="text-[12px]">{orderItem.product.category.category_name}</span>
+                  <p>{orderItem?.product.product_name}</p>
+                  <span className="text-[12px]">{orderItem?.product.category.category_name}</span>
                 </td>
-                <td>{orderItem.size}</td>
+                <td>{orderItem?.size}</td>
 
-                <td>{orderItem.quantity}</td>
+                <td>{orderItem?.quantity}</td>
                 <td>{(orderItem.product.price_update_detail[0].price_new).toLocaleString('en')} VNĐ</td>
                 <td>{new Date(orderDetail.create_at).toLocaleDateString()}</td>
                 <td>{getOrderStatus(orderDetail.status)}</td>

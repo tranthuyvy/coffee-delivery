@@ -13,7 +13,7 @@ function* getOrderDetailSaga(action) {
   try {
     const id = action.payload;
 
-    const token = 'eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MTE5NDk5MjMsImV4cCI6MTcxMjU1NDcyMywidXNlcm5hbWUiOiIrODQzNzMxNjI1ODYifQ.YQ5OhYHOmIUvgO9-6vwQopE29YCrCxh8EMmZGz8Sl98HP8F3kr3BGoEkCLXNiX52'
+    const token = 'eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MTE5NTE5NDUsImV4cCI6MTcxMjU1Njc0NSwidXNlcm5hbWUiOiIwMzYzMDAwNDUxIn0.NtNaErWxfCIAuv-MAtNMz5eG8UNRSmoZeEvE53SPtGqig9PrFDRAycqdsLNkwp8l'
 
     const response = yield call(axios.get, `http://localhost:9999/api/admin/order/${id}/find`, {
       headers: {
