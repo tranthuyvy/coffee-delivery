@@ -228,12 +228,6 @@ export const data = [
   },
 ]
 
-export const dataChart = [
-  {name: "Male",  value: 400},
-  {name: "Female",  value: 620},
-  {name: "Other",  value: 210},
-]
-
 export const orders = [
   {
     id:'1',

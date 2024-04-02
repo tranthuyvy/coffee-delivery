@@ -1,7 +1,7 @@
 import { ResponsiveContainer, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar } from "recharts"
 import { data } from "../../apis/mock-data"
 
-const TransactionChart = () => {
+const ColumnChartStatistics = () => {
   return (
     <div className="h-[24rem] bg-white p-4 rounded-md border border-gray-200 flex flex-col flex-1">
       <strong className="text-sub font-semibold">Transactions</strong>
@@ -22,4 +22,4 @@ const TransactionChart = () => {
   )
 }
 
-export default TransactionChart
+export default ColumnChartStatistics

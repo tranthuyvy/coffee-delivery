@@ -1,6 +1,6 @@
-import TransactionChart from "../components/TransactionChart"
+import ColumnChartStatistics from "../components/ColumnChartStatistics"
 import DashboardStatisGrid from "../components/DashboardStatisGrid"
-import BuyerProfileChart from "../components/BuyerProfileChart"
+import PieChartStatistics from "../components/PieChartStatistics"
 import RecentOrder from "../components/RecentOrder"
 import PopularProduct from "../components/PopularProduct"
 
@@ -9,8 +9,8 @@ const Dashboard = () => {
     <div className="flex flex-col gap-4 w-[80%] ml-[18%]">
       <DashboardStatisGrid />
       <div className="flex flex-row gap-4 w-full">
-        <TransactionChart />
-        <BuyerProfileChart />
+        <ColumnChartStatistics />
+        <PieChartStatistics />
       </div>
       <div className="flex flex-row gap-4 w-full">
         <RecentOrder />

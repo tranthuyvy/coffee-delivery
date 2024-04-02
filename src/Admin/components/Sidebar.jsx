@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom/dist"
-import { DASHBOARD_SIDEBAR_BOTTOM_LINKS, DASHBOARD_SIDEBAR_TOP_LINKS } from "../constant/Menu"
+import { DASHBOARD_SIDEBAR_BOTTOM_LINKS, DASHBOARD_SIDEBAR_TOP_LINKS } from "../../constants/MenuLink"
 import { HiOutlineLogout } from "react-icons/hi";
 
 const Sidebar = () => {
