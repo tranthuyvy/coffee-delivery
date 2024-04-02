@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { getOrderDetailRequest } from "../../redux/actions/actions";
 import { getOrderStatus } from "../../constants/Status";
 
-const OrderDetail = () => {
+const AdminOrderDetail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const orderDetail = useSelector(state => state.orderDetail.orderDetail);
@@ -16,8 +16,6 @@ const OrderDetail = () => {
       console.error("Error dispatch", error);
     }
   }, [dispatch, id]);
-
-  console.log("orderDetail", orderDetail)
 
   return (
     <>
@@ -112,4 +110,4 @@ const OrderDetail = () => {
   )
 }
 
-export default OrderDetail
+export default AdminOrderDetail

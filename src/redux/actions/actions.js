@@ -13,6 +13,9 @@ import {
   GET_ORDER_DETAIL_REQUEST,
   GET_ORDER_DETAIL_SUCCESS,
   GET_ORDER_DETAIL_FAILURE,
+  GET_PRODUCT_DETAIL_REQUEST,
+  GET_PRODUCT_DETAIL_SUCCESS,
+  GET_PRODUCT_DETAIL_FAILURE,
 } from './types';
 
 export const getAllCustomersRequest = () => ({
@@ -69,6 +72,21 @@ export const getAllProductsSuccess = (products) => ({
 
 export const getAllProductsFailure = (error) => ({
   type: GET_ALL_PRODUCTS_FAILURE,
+  payload: error
+});
+
+export const getProductDetailRequest = (id) => ({
+  type: GET_PRODUCT_DETAIL_REQUEST,
+  payload: id
+});
+
+export const getProductDetailSuccess = (productDetail) => ({
+  type: GET_PRODUCT_DETAIL_SUCCESS,
+  payload: productDetail
+});
+
+export const getProductDetailFailure = (error) => ({
+  type: GET_PRODUCT_DETAIL_FAILURE,
   payload: error
 });
 

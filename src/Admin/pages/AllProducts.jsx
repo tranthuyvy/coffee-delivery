@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProductsRequest } from "../../redux/actions/actions";
@@ -6,6 +6,7 @@ import { getStatus } from "../../constants/Status";
 
 const AllProducts = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const products = useSelector(state => state.products.products);
 
   useEffect(() => {
@@ -32,7 +33,7 @@ const AllProducts = () => {
         </thead>
         <tbody>
           {products?.data && products.data.map((product) => (
-            <tr key={product.product_id}>
+            <tr key={product.product_id} className="cursor-pointer" onClick={() => navigate(`/admin/product/${product?.product_id}`)}>
               <td>
                 <Link to={`/products/${product.product_id}`}>
                   {product?.product_id}

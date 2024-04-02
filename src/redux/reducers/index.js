@@ -4,6 +4,7 @@ import productsReducer from './productsReducer';
 import ordersReducer from './ordersReducer';
 import customersReducer from './customersReducer';
 import orderDetailReducer from './orderDetailReducer';
+import productDetailReducer from './productDetailReducer';
 
 const rootReducer = combineReducers({
   news: newsReducer,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   orders: ordersReducer,
   customers: customersReducer,
   orderDetail: orderDetailReducer,
+  productDetail: productDetailReducer,
 });
 
 export default rootReducer;
