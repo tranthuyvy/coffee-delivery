@@ -20,6 +20,8 @@ import Dashboard from "../Admin/pages/Dashboard";
 import AllProducts from "../Admin/pages/AllProducts";
 import AllOrder from "../Admin/pages/AllOrder";
 import AllCustomers from "../Admin/pages/AllCustomer";
+import AllCategory from "../Admin/pages/AllCategory";
+import OrderDetail from "../Admin/pages/OrderDetail";
 
 const Routers = () => {
   return (
@@ -45,7 +47,9 @@ const Routers = () => {
         <Route index element={<Dashboard />} />
         <Route path="/admin/products" element={<AllProducts />} />
         <Route path="/admin/orders" element={<AllOrder />} />
+        <Route path="/admin/order/:id" element={<OrderDetail />} />
         <Route path="/admin/customers" element={<AllCustomers />} />
+        <Route path="/admin/category" element={<AllCategory />} />
       </Route>
     </Routes>
   )

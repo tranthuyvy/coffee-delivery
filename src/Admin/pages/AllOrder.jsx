@@ -34,7 +34,7 @@ const AllOrder = () => {
         </thead>
         <tbody>
           {orders?.data && orders.data.map((order, index) => (
-            <tr key={index} className="cursor-pointer" onClick={() => navigate(`/order/${order.order_id}`)}>
+            <tr key={index} className="cursor-pointer" onClick={() => navigate(`/admin/order/${order.order_id}`)}>
               <td>{index + 1}</td>
               <td className="flex items-center">
                 {[...new Map(order.order_detail.map(item => [item.product.image, item])).values()].map((uniqueItem, index) => (
