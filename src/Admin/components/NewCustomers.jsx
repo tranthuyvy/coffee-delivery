@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getAllCustomersRequest } from "../../redux/actions/actions";
-import { sortCustomersByDate } from "../../utils/sort";
+import { sortByDate } from "../../utils/sort";
 
 const NewCustomers = () => {
   const dispatch = useDispatch();
@@ -30,7 +30,7 @@ const NewCustomers = () => {
 
       </div>
       <div className="mt-4 flex flex-col gap-3">
-        {customers?.data && sortCustomersByDate(customers?.data.filter(customer => customer.username !== "admin")).slice(0, 5).map((customer) => (
+        {customers?.data && sortByDate(customers?.data.filter(customer => customer.username !== "admin"), 'created_at').slice(0, 5).map((customer) => (
           <div
             key={customer?.user_id}
             className="flex items-start"

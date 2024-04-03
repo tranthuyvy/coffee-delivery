@@ -2,7 +2,7 @@ import { getOrderStatus } from "../../constants/Status"
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getAllOrdersRequest } from "../../redux/actions/actions";
-import { sortOrdersByDate } from "../../utils/sort";
+import { sortByDate } from "../../utils/sort";
 import { useNavigate } from "react-router-dom";
 
 const RecentOrder = () => {
@@ -17,8 +17,6 @@ const RecentOrder = () => {
       console.error("Error dispatch", error)
     }
   }, [dispatch])
-
-  const sortedOrders = sortOrdersByDate(orders?.data);
 
   return (
     <div className="bg-white px-4 pt-3 pb-4 rounded-md border border-gray-200 flex-1">
@@ -46,7 +44,7 @@ const RecentOrder = () => {
             </tr>
           </thead>
           <tbody>
-            {orders?.data && sortedOrders.slice(0, 3).map((order, index) => (
+            {orders?.data && sortByDate(orders?.data, 'create_at').slice(0, 3).map((order, index) => (
               <tr key={index} className="cursor-pointer" onClick={() => navigate(`/admin/order/${order.order_id}`)}>
                 <td>{index + 1}</td>
                 <td className="flex items-center">

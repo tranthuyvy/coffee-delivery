@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import CardItemNews from "../../components/News/CardItemNews";
-import { sortNewsByDate } from "../../utils/sort";
+import { sortByDate } from "../../utils/sort";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchNews } from '../../redux/actions/actions';
 
 const News = () => {
   const dispatch = useDispatch();
   const news = useSelector(state => state.news.news);
-  const sortedNews = sortNewsByDate(news);
+  const sortedNews = sortByDate(news, 'date');
   const [displayedNews, setDisplayedNews] = useState(3);
 
   useEffect(() => {
