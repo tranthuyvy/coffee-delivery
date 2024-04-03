@@ -7,3 +7,13 @@ export const sortNewsByDate = (news) => {
 
   return sortedNews;
 };
+
+export const sortOrdersByDate = (orders) => {
+  if (!Array.isArray(orders)) {
+    return [];
+  }
+
+  const sortedOrders = orders.slice().sort((a, b) => new Date(b.create_at) - new Date(a.create_at));
+
+  return sortedOrders;
+};

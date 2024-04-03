@@ -1,35 +1,64 @@
-import { Link } from "react-router-dom"
-import { orders } from "../../apis/mock-data"
 import { getOrderStatus } from "../../constants/Status"
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getAllOrdersRequest } from "../../redux/actions/actions";
+import { sortOrdersByDate } from "../../utils/sort";
 
 const RecentOrder = () => {
+  const dispatch = useDispatch();
+  const orders = useSelector(state => state.orders.orders);
+
+  useEffect(() => {
+    try {
+      dispatch(getAllOrdersRequest())
+    } catch (error) {
+      console.error("Error dispatch", error)
+    }
+  }, [dispatch])
+
+  const sortedOrders = sortOrdersByDate(orders?.data);
+
+  console.log("order", orders)
+  console.log("order", sortedOrders)
+
   return (
     <div className="bg-white px-4 pt-3 pb-4 rounded-md border border-gray-200 flex-1">
       <strong className="text-sub font-semibold">Recent Order</strong>
       <div className="mt-3">
         <table className="w-full text-gray-700">
           <thead className="text-white font-medium bg-primary">
-            <tr>
-              <td>ID</td>
-              <td>Name</td>
-              <td>Address</td>
-              <td>Total</td>
+            <tr className="bg-primary">
+              <td className="rounded-s-md">STT</td>
+              <td>Hinh Anh</td>
+              <td>Ten San Pham</td>
+              <td>Total Price</td>
               <td>Date</td>
-              <td>Status</td>
+              <td className="rounded-e-md">Status</td>
             </tr>
           </thead>
           <tbody>
-            {orders.map((order) => (
-              <tr key={order.id}>
-                <td>
-                  <Link to={`/orders/${order.id}`}>
-                    {order.id}
-                  </Link>
+            {orders?.data && sortedOrders.slice(0, 3).map((order, index) => (
+              <tr key={index} className="cursor-pointer">
+                <td>{index + 1}</td>
+                <td className="flex items-center">
+                  {[...new Map(order.order_detail.map(item => [item.product.image, item])).values()].map((uniqueItem, index) => (
+                    <img
+                      key={index}
+                      className="w-[60px] mt-[2px] rounded-full shadow-md mr-2"
+                      src={uniqueItem.product && uniqueItem.product.image}
+                      alt={uniqueItem.product && uniqueItem.product.product_name}
+                    />
+                  ))}
                 </td>
-                <td>{order.customer_name}</td>
-                <td>{order.address}</td>
-                <td>{(order.order_total).toLocaleString('en')}</td>
-                <td>{new Date(order.order_date).toLocaleDateString()}</td>
+                <td>
+                  {order.order_detail.map((item, index) => (
+                    <div key={index}>
+                      {item.quantity} {item.product && item.product.product_name} ({item.product && item.size}),
+                    </div>
+                  ))}
+                </td>
+                <td>{(order.total_price).toLocaleString('en')} VND</td>
+                <td>{new Date(order.create_at).toLocaleDateString()}</td>
                 <td>{getOrderStatus(order.status)}</td>
               </tr>
             ))}
