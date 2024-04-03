@@ -3,9 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getAllOrdersRequest } from "../../redux/actions/actions";
 import { sortOrdersByDate } from "../../utils/sort";
+import { useNavigate } from "react-router-dom";
 
 const RecentOrder = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const orders = useSelector(state => state.orders.orders);
 
   useEffect(() => {
@@ -18,12 +20,19 @@ const RecentOrder = () => {
 
   const sortedOrders = sortOrdersByDate(orders?.data);
 
-  console.log("order", orders)
-  console.log("order", sortedOrders)
-
   return (
     <div className="bg-white px-4 pt-3 pb-4 rounded-md border border-gray-200 flex-1">
-      <strong className="text-sub font-semibold">Recent Order</strong>
+      <div className="flex justify-between">
+        <strong className="text-sub font-semibold">Recent Order</strong>
+
+        <p
+          onClick={() => navigate('/admin/orders')}
+          className="cursor-pointer text-sky-600 underline text-[14px] font-semibold"
+        >
+          More
+        </p>
+
+      </div>
       <div className="mt-3">
         <table className="w-full text-gray-700">
           <thead className="text-white font-medium bg-primary">
@@ -38,7 +47,7 @@ const RecentOrder = () => {
           </thead>
           <tbody>
             {orders?.data && sortedOrders.slice(0, 3).map((order, index) => (
-              <tr key={index} className="cursor-pointer">
+              <tr key={index} className="cursor-pointer" onClick={() => navigate(`/admin/order/${order.order_id}`)}>
                 <td>{index + 1}</td>
                 <td className="flex items-center">
                   {[...new Map(order.order_detail.map(item => [item.product.image, item])).values()].map((uniqueItem, index) => (
