@@ -16,6 +16,9 @@ import {
   GET_PRODUCT_DETAIL_REQUEST,
   GET_PRODUCT_DETAIL_SUCCESS,
   GET_PRODUCT_DETAIL_FAILURE,
+  ADD_PRODUCT_REQUEST,
+  ADD_PRODUCT_SUCCESS,
+  ADD_PRODUCT_FAILURE,
 } from './types';
 
 export const getAllCustomersRequest = () => ({
@@ -73,6 +76,21 @@ export const getAllProductsSuccess = (products) => ({
 export const getAllProductsFailure = (error) => ({
   type: GET_ALL_PRODUCTS_FAILURE,
   payload: error
+});
+
+export const addProductRequest = (formData) => ({
+  type: ADD_PRODUCT_REQUEST,
+  payload: formData,
+});
+
+export const addProductSuccess = (data) => ({
+  type: ADD_PRODUCT_SUCCESS,
+  payload: data,
+});
+
+export const addProductFailure = (error) => ({
+  type: ADD_PRODUCT_FAILURE,
+  error,
 });
 
 export const getProductDetailRequest = (id) => ({

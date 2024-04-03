@@ -23,6 +23,7 @@ import AllCustomers from "../Admin/pages/AllCustomer";
 import AllCategory from "../Admin/pages/AllCategory";
 import AdminOrderDetail from "../Admin/pages/AdminOrderDetail";
 import AdminProductDetail from "../Admin/pages/AdminProductDetail";
+import CreateProduct from "../Admin/pages/CreateProduct";
 
 const Routers = () => {
   return (
@@ -47,6 +48,7 @@ const Routers = () => {
       <Route path="/admin" element={<Layout />} >
         <Route index element={<Dashboard />} />
         <Route path="/admin/products" element={<AllProducts />} />
+        <Route path="/admin/create-product" element={<CreateProduct />} />
         <Route path="/admin/product/:id" element={<AdminProductDetail />} />
         <Route path="/admin/orders" element={<AllOrder />} />
         <Route path="/admin/order/:id" element={<AdminOrderDetail />} />
