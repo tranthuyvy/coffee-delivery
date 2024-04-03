@@ -19,7 +19,24 @@ import {
   ADD_PRODUCT_REQUEST,
   ADD_PRODUCT_SUCCESS,
   ADD_PRODUCT_FAILURE,
+  GET_ALL_CATEGORIES_REQUEST,
+  GET_ALL_CATEGORIES_SUCCESS,
+  GET_ALL_CATEGORIES_FAILURE,
 } from './types';
+
+export const getAllCategoriesRequest = () => ({
+  type: GET_ALL_CATEGORIES_REQUEST
+});
+
+export const getAllCategoriesSuccess = (categories) => ({
+  type: GET_ALL_CATEGORIES_SUCCESS,
+  payload: categories
+});
+
+export const getAllCategoriesFailure = (error) => ({
+  type: GET_ALL_CATEGORIES_FAILURE,
+  payload: error
+});
 
 export const getAllCustomersRequest = () => ({
   type: GET_ALL_CUSTOMERS_REQUEST
