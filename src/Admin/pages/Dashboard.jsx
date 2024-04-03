@@ -2,7 +2,7 @@ import ColumnChartStatistics from "../components/ColumnChartStatistics"
 import DashboardStatisGrid from "../components/DashboardStatisGrid"
 import PieChartStatistics from "../components/PieChartStatistics"
 import RecentOrder from "../components/RecentOrder"
-import PopularProduct from "../components/PopularProduct"
+import NewCustomers from "../components/NewCustomers"
 
 const Dashboard = () => {
   return (
@@ -14,7 +14,7 @@ const Dashboard = () => {
       </div>
       <div className="flex flex-row gap-4 w-full">
         <RecentOrder />
-        <PopularProduct />
+        <NewCustomers />
       </div>
     </div>
   )

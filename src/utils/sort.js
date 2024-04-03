@@ -17,3 +17,13 @@ export const sortOrdersByDate = (orders) => {
 
   return sortedOrders;
 };
+
+export const sortCustomersByDate = (customers) => {
+  if (!Array.isArray(customers)) {
+    return [];
+  }
+
+  const sortedCustomers = customers.slice().sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+
+  return sortedCustomers;
+};

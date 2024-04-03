@@ -23,11 +23,11 @@ const RecentOrder = () => {
   return (
     <div className="bg-white px-4 pt-3 pb-4 rounded-md border border-gray-200 flex-1">
       <div className="flex justify-between">
-        <strong className="text-sub font-semibold">Recent Order</strong>
+        <strong className="text-sub font-semibold">Đơn hàng gần đây</strong>
 
         <p
           onClick={() => navigate('/admin/orders')}
-          className="cursor-pointer text-sky-600 underline text-[14px] font-semibold"
+          className="cursor-pointer text-sky-600 hover:underline text-[14px] font-semibold"
         >
           More
         </p>

@@ -16,8 +16,6 @@ const AllCustomers = () => {
     }
   }, [dispatch]);
 
-  console.log("customers", customers)
-
   return (
     <div className="flex flex-col gap-4 w-[80%] ml-[18%] rounded-md shadow-md bg-white mt-5">
       <table className="w-full text-gray-700">
@@ -33,25 +31,17 @@ const AllCustomers = () => {
           </tr>
         </thead>
         <tbody>
-          {customers?.data && customers.data.map((customer) => (
+          {customers?.data && customers?.data.filter(customer => customer.username !== "admin").map((customer) => (
             <tr key={customer.user_id}>
               <td>
                 {customer?.user_id}
               </td>
               <td>
-                {customer?.avatar ? (
-                  <img
-                    src={customer?.avatar}
-                    alt={customer?.username}
-                    className="w-[68px] object-cover rounded-md"
-                  />
-                ) : (
-                  <img
-                    src="https://png.pngtree.com/png-clipart/20230914/original/pngtree-christmas-corgi-vector-png-image_12160999.png"
-                    alt={customer?.username}
-                    className="w-[88px] object-cover rounded-md"
-                  />
-                )}
+                <img
+                  src={customer?.avatar || "https://www.highlandscoffee.com.vn/vnt_upload/weblink/White_logo800.png"}
+                  alt={customer?.username}
+                  className="w-[68px] h-[50px] object-contain rounded-md bg-primary"
+                />
               </td>
               <td>{customer?.username}</td>
               <td>{new Date(customer.created_at).toLocaleDateString()}</td>
