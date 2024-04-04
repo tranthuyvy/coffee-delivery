@@ -4,11 +4,14 @@ import { getAllCategoriesRequest } from "../../redux/actions/actions";
 import { getStatus } from "../../constants/Status";
 import { IoIosAddCircle } from "react-icons/io";
 import axios from "axios";
+import { MdModeEditOutline, MdDelete } from "react-icons/md";
 
 const AllCategory = () => {
   const dispatch = useDispatch();
   const categories = useSelector(state => state.categories.categories);
   const [showDialog, setShowDialog] = useState(false);
+  const [showUpdateDialog, setShowUpdateDialog] = useState(false);
+  const [selectedCategoryId, setSelectedCategoryId] = useState(null);
   const [newCategoryName, setNewCategoryName] = useState("");
 
   useEffect(() => {
@@ -19,7 +22,7 @@ const AllCategory = () => {
     }
   }, [dispatch])
 
-  const handleCreateCategory = async () => {
+  const handleShowDialog = () => {
     setShowDialog(true);
   }
 
@@ -39,11 +42,60 @@ const AllCategory = () => {
         }
       });
       console.log(response.data);
+
       handleCloseDialog();
       dispatch(getAllCategoriesRequest());
     } catch (error) {
       console.error("Error adding category", error);
     }
+  }
+
+  const getCategoryNameById = (categoryId) => {
+    const category = categories?.data.find(cat => cat.category_id === categoryId);
+    return category?.category_name || '';
+  }
+
+  const handleShowUpdateDialog = (categoryId) => {
+    setSelectedCategoryId(categoryId);
+    setNewCategoryName(getCategoryNameById(categoryId));
+    setShowUpdateDialog(true);
+  }
+
+  const handleCloseUpdateDialog = () => {
+    setShowUpdateDialog(false);
+    setSelectedCategoryId(null);
+    setNewCategoryName("");
+  }
+
+  const handleUpdateCategory = async (categoryId) => {
+    console.log("update category", categoryId)
+    try {
+      const token = 'eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MTIxMjg3MjQsImV4cCI6MTcxMjczMzUyNCwidXNlcm5hbWUiOiIrODQzNzMxNjI1ODYifQ.jGvvA93oLouIjAa4wzpe6Tr1yrIU50fTE-90Na0UONhq0uwm5cNs4jkZJTNwvJbk';
+
+      const response = await axios.put(`http://localhost:9999/api/admin/category/${categoryId}/update`, {
+        category_name: newCategoryName
+      }, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+
+      console.log(response.data);
+
+      setShowUpdateDialog(false);
+      setNewCategoryName("");
+
+      dispatch(getAllCategoriesRequest());
+    } catch (error) {
+      console.error("Error updating category", error);
+    }
+  }
+
+  const handleDeleteProduct = async (categoryId) => {
+    console.log("delete category", categoryId)
+    // const confirmDelete = window.confirm(
+    //   "Bạn có chắc chắn muốn xóa sản phẩm này không?"
+    // );
   }
 
   return (
@@ -54,10 +106,11 @@ const AllCategory = () => {
             <tr className="bg-primary">
               <td className="rounded-s-md">ID</td>
               <td>Hình Ảnh</td>
-              <td>Category Name</td>
+              <td>Tên Loại</td>
               <td>Ngày Tạo</td>
               <td>Người Tạo</td>
-              <td className="rounded-e-md">Trạng Thái</td>
+              <td>Trạng Thái</td>
+              <td className="rounded-e-md">Hành Động</td>
             </tr>
           </thead>
           <tbody>
@@ -77,14 +130,23 @@ const AllCategory = () => {
                 <td>{new Date(category?.created_at).toLocaleDateString()}</td>
                 <td>Tui Nè</td>
                 <td>{getStatus(category?.status)}</td>
+                <td>
+                  <span>
+                    <MdModeEditOutline className="cursor-pointer text-primary" fontSize={25} onClick={() => handleShowUpdateDialog(category?.category_id)} />
+                  </span>
+                  <span>
+                    <MdDelete className="cursor-pointer text-primary" fontSize={25} onClick={() => handleDeleteProduct(category?.category_id)} />
+                  </span>
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
       <div className="fixed right-6 bottom-3">
-        <IoIosAddCircle fontSize={50} className="cursor-pointer text-primary" onClick={() => handleCreateCategory()} />
+        <IoIosAddCircle fontSize={50} className="cursor-pointer text-primary" onClick={() => handleShowDialog()} />
       </div>
+
       {showDialog && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
           <div className="bg-white p-6 rounded-md shadow-md">
@@ -93,6 +155,19 @@ const AllCategory = () => {
             <div className="flex justify-end">
               <button onClick={handleCloseDialog} className="bg-gray-300 px-4 py-2 rounded-md mr-2">Hủy</button>
               <button onClick={handleAddCategory} className="bg-primary text-white px-4 py-2 rounded-md">Thêm</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showUpdateDialog && (
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white p-6 rounded-md shadow-md">
+            <h2 className="text-xl font-bold mb-4">Cập Nhật Loại</h2>
+            <input type="text" value={newCategoryName} onChange={(e) => setNewCategoryName(e.target.value)} className="border border-gray-300 rounded-md px-3 py-2 mb-4 w-full" placeholder="Nhập tên loại" />
+            <div className="flex justify-end">
+              <button onClick={handleCloseUpdateDialog} className="bg-gray-300 px-4 py-2 rounded-md mr-2">Hủy</button>
+              <button onClick={() => handleUpdateCategory(selectedCategoryId)} className="bg-primary text-white px-4 py-2 rounded-md">Cập Nhật</button>
             </div>
           </div>
         </div>
