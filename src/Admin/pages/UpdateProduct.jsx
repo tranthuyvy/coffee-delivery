@@ -50,14 +50,6 @@ const UpdateProduct = () => {
     }
   }, [productDetail]);
 
-  // const handleChange = (e) => {
-  //   if (e.target.name === 'file') {
-  //     setFormData({ ...formData, file: e.target.files[0] });
-  //   } else {
-  //     setFormData({ ...formData, data: { ...formData.data, [e.target.name]: e.target.value } });
-  //   }
-  // };
-
   const handleChange = (e) => {
     if (e.target.name === 'file') {
       setFormData({ ...formData, file: e.target.files[0] });
@@ -143,13 +135,6 @@ const UpdateProduct = () => {
               onChange={handleChange}
               value={formData.data.category_name}
             />
-            {/* <input
-              className="border-b-2"
-              type="text"
-              name="status"
-              onChange={handleChange}
-              value={formData.data.status}
-            /> */}
 
             <div className="flex gap-2">
               <label htmlFor="active">Active</label>
