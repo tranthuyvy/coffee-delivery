@@ -22,6 +22,11 @@ import {
   GET_ALL_CATEGORIES_REQUEST,
   GET_ALL_CATEGORIES_SUCCESS,
   GET_ALL_CATEGORIES_FAILURE,
+  UPDATE_PRODUCT_REQUEST,
+  UPDATE_PRODUCT_SUCCESS,
+  UPDATE_PRODUCT_FAILURE,
+  RESET_UPDATE_PRODUCT_STATE,
+  RESET_ADD_PRODUCT_STATE,
 } from './types';
 
 export const getAllCategoriesRequest = () => ({
@@ -107,6 +112,29 @@ export const addProductSuccess = (data) => ({
 
 export const addProductFailure = (error) => ({
   type: ADD_PRODUCT_FAILURE,
+  error,
+});
+
+export const resetAddProductState = () => ({
+  type: RESET_ADD_PRODUCT_STATE
+});
+
+export const resetUpdateProductState = () => ({
+  type: RESET_UPDATE_PRODUCT_STATE
+});
+
+export const updateProductRequest = (id, formData) => ({
+  type: UPDATE_PRODUCT_REQUEST,
+  payload: { id, formData }
+});
+
+export const updateProductSuccess = (data) => ({
+  type: UPDATE_PRODUCT_SUCCESS,
+  payload: data
+});
+
+export const updateProductFailure = (error) => ({
+  type: UPDATE_PRODUCT_FAILURE,
   error,
 });
 

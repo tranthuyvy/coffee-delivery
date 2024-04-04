@@ -1,11 +1,10 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { addProductRequest } from "../../redux/actions/actions"
 
 const CreateProduct = () => {
   const dispatch = useDispatch()
-  const navigate = useNavigate()
   const message = useSelector((state) => state.addProduct);
   const [formData, setFormData] = useState({
     file: '',
@@ -17,6 +16,7 @@ const CreateProduct = () => {
       category_name: '',
     },
   });
+  const navigate = useNavigate()
 
   const handleChange = (e) => {
     if (e.target.name === 'file') {
@@ -35,20 +35,21 @@ const CreateProduct = () => {
 
   };
 
-  if (message.code === 201) {
-    setFormData({
-      file: '',
-      data: {
-        product_name: '',
-        price: 0,
-        description: '',
-        status: 'Active',
-        category_name: '',
-      },
-    });
-
-    navigate("/admin/products")
-  }
+  useEffect(() => {
+    if (message.code === 201) {
+      setFormData({
+        file: '',
+        data: {
+          product_name: '',
+          price: 0,
+          description: '',
+          status: 'Active',
+          category_name: '',
+        },
+      });
+      navigate("/admin/products")
+    }
+  }, [message, navigate])
 
   console.log("message", message)
 

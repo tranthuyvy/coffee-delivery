@@ -6,7 +6,9 @@ import {
 
 import {
   getAllProductsSuccess,
-  getAllProductsFailure
+  getAllProductsFailure,
+  resetUpdateProductState,
+  resetAddProductState
 } from '../actions/actions';
 
 function* getAllProductsSaga() {
@@ -20,6 +22,8 @@ function* getAllProductsSaga() {
     });
 
     yield put(getAllProductsSuccess(response.data));
+    yield put(resetUpdateProductState());
+    yield put(resetAddProductState());
   } catch (error) {
     yield put(getAllProductsFailure(error));
   }
