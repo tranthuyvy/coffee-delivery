@@ -1,14 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCategoriesRequest } from "../../redux/actions/actions";
 import { getStatus } from "../../constants/Status";
 import { IoIosAddCircle } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const AllCategory = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const categories = useSelector(state => state.categories.categories);
+  const [showDialog, setShowDialog] = useState(false);
+  const [newCategoryName, setNewCategoryName] = useState("");
 
   useEffect(() => {
     try {
@@ -16,10 +17,34 @@ const AllCategory = () => {
     } catch (error) {
       console.error("Error dispatch", error);
     }
-
   }, [dispatch])
 
-  console.log("categories", categories.data)
+  const handleCreateCategory = async () => {
+    setShowDialog(true);
+  }
+
+  const handleCloseDialog = () => {
+    setShowDialog(false);
+    setNewCategoryName("");
+  }
+
+  const handleAddCategory = async () => {
+    try {
+      const token = 'eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MTIxMjg3MjQsImV4cCI6MTcxMjczMzUyNCwidXNlcm5hbWUiOiIrODQzNzMxNjI1ODYifQ.jGvvA93oLouIjAa4wzpe6Tr1yrIU50fTE-90Na0UONhq0uwm5cNs4jkZJTNwvJbk'
+      const response = await axios.post('http://localhost:9999/api/admin/category/add', {
+        category_name: newCategoryName
+      }, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      console.log(response.data);
+      handleCloseDialog();
+      dispatch(getAllCategoriesRequest());
+    } catch (error) {
+      console.error("Error adding category", error);
+    }
+  }
 
   return (
     <>
@@ -58,8 +83,20 @@ const AllCategory = () => {
         </table>
       </div>
       <div className="fixed right-6 bottom-3">
-        <IoIosAddCircle fontSize={50} className="cursor-pointer text-primary" onClick={() => navigate("/admin/create-category")} />
+        <IoIosAddCircle fontSize={50} className="cursor-pointer text-primary" onClick={() => handleCreateCategory()} />
       </div>
+      {showDialog && (
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white p-6 rounded-md shadow-md">
+            <h2 className="text-xl font-bold mb-4">Thêm Loại</h2>
+            <input type="text" value={newCategoryName} onChange={(e) => setNewCategoryName(e.target.value)} className="border border-gray-300 rounded-md px-3 py-2 mb-4 w-full" placeholder="Nhập tên loại" />
+            <div className="flex justify-end">
+              <button onClick={handleCloseDialog} className="bg-gray-300 px-4 py-2 rounded-md mr-2">Hủy</button>
+              <button onClick={handleAddCategory} className="bg-primary text-white px-4 py-2 rounded-md">Thêm</button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   )
 }

@@ -24,7 +24,6 @@ import AllCategory from "../Admin/pages/AllCategory";
 import AdminOrderDetail from "../Admin/pages/AdminOrderDetail";
 import AdminProductDetail from "../Admin/pages/AdminProductDetail";
 import CreateProduct from "../Admin/pages/CreateProduct";
-import CreateCategory from "../Admin/pages/CreateCategory";
 import UpdateProduct from "../Admin/pages/UpdateProduct";
 
 const Routers = () => {
@@ -57,7 +56,6 @@ const Routers = () => {
         <Route path="/admin/order/:id" element={<AdminOrderDetail />} />
         <Route path="/admin/customers" element={<AllCustomers />} />
         <Route path="/admin/category" element={<AllCategory />} />
-        <Route path="/admin/create-category" element={<CreateCategory />} />
       </Route>
     </Routes>
   )
