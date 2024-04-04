@@ -13,6 +13,7 @@ const AllCategory = () => {
   const [showUpdateDialog, setShowUpdateDialog] = useState(false);
   const [selectedCategoryId, setSelectedCategoryId] = useState(null);
   const [newCategoryName, setNewCategoryName] = useState("");
+  const [deletedCategoryId, setDeletedCategoryId] = useState(null);
 
   useEffect(() => {
     try {
@@ -20,7 +21,7 @@ const AllCategory = () => {
     } catch (error) {
       console.error("Error dispatch", error);
     }
-  }, [dispatch])
+  }, [dispatch, deletedCategoryId])
 
   const handleShowDialog = () => {
     setShowDialog(true);
@@ -91,12 +92,28 @@ const AllCategory = () => {
     }
   }
 
-  const handleDeleteProduct = async (categoryId) => {
-    console.log("delete category", categoryId)
-    // const confirmDelete = window.confirm(
-    //   "Bạn có chắc chắn muốn xóa sản phẩm này không?"
-    // );
-  }
+  const handleDeleteCategory = async (categoryId) => {
+    const confirmDelete = window.confirm(
+      "Bạn có chắc chắn muốn xóa sản phẩm này không?"
+    );
+
+    const token = 'eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MTIxMjg3MjQsImV4cCI6MTcxMjczMzUyNCwidXNlcm5hbWUiOiIrODQzNzMxNjI1ODYifQ.jGvvA93oLouIjAa4wzpe6Tr1yrIU50fTE-90Na0UONhq0uwm5cNs4jkZJTNwvJbk'
+
+    if (confirmDelete) {
+      try {
+
+        await axios.put(`http://localhost:9999/api/admin/category/${categoryId}/delete`, null, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        setDeletedCategoryId(categoryId);
+      } catch (error) {
+        console.error("Error deleting category:", error);
+      }
+    }
+  };
 
   return (
     <>
@@ -135,7 +152,7 @@ const AllCategory = () => {
                     <MdModeEditOutline className="cursor-pointer text-primary" fontSize={25} onClick={() => handleShowUpdateDialog(category?.category_id)} />
                   </span>
                   <span>
-                    <MdDelete className="cursor-pointer text-primary" fontSize={25} onClick={() => handleDeleteProduct(category?.category_id)} />
+                    <MdDelete className="cursor-pointer text-primary" fontSize={25} onClick={() => handleDeleteCategory(category?.category_id)} />
                   </span>
                 </td>
               </tr>
