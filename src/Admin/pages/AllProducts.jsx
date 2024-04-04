@@ -1,15 +1,17 @@
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProductsRequest } from "../../redux/actions/actions";
 import { getStatus } from "../../constants/Status";
 import { IoIosAddCircle } from "react-icons/io";
-import { MdModeEditOutline } from "react-icons/md";
+import { MdModeEditOutline, MdDelete } from "react-icons/md";
+import axios from "axios";
 
 const AllProducts = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const products = useSelector(state => state.products.products);
+  const [deletedProductId, setDeletedProductId] = useState(null);
 
   useEffect(() => {
     try {
@@ -17,7 +19,30 @@ const AllProducts = () => {
     } catch (error) {
       console.error("Error dispatch", error);
     }
-  }, [dispatch]);
+  }, [dispatch, deletedProductId]);
+
+  const handleDeleteProduct = async (productId) => {
+    const confirmDelete = window.confirm(
+      "Bạn có chắc chắn muốn xóa sản phẩm này không?"
+    );
+
+    const token = 'eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MTIxMjg3MjQsImV4cCI6MTcxMjczMzUyNCwidXNlcm5hbWUiOiIrODQzNzMxNjI1ODYifQ.jGvvA93oLouIjAa4wzpe6Tr1yrIU50fTE-90Na0UONhq0uwm5cNs4jkZJTNwvJbk'
+
+    if (confirmDelete) {
+      try {
+
+        await axios.delete(`http://localhost:9999/api/admin/product/${productId}/delete`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        setDeletedProductId(productId);
+      } catch (error) {
+        console.error("Error deleting product:", error);
+      }
+    }
+  };
 
   return (
     <>
@@ -55,7 +80,12 @@ const AllProducts = () => {
                 <td onClick={() => navigate(`/admin/product/${product?.product_id}`)}>{product?.description && product.description.length > 50 ? `${product?.description.substring(0, 50)}...` : product.description}</td>
                 <td>{getStatus(product?.status)}</td>
                 <td>
-                  <MdModeEditOutline className="cursor-pointer text-primary" fontSize={25} onClick={() => navigate(`/admin/update-product/${product?.product_id}`)} />
+                  <span>
+                    <MdModeEditOutline className="cursor-pointer text-primary" fontSize={25} onClick={() => navigate(`/admin/update-product/${product?.product_id}`)} />
+                  </span>
+                  <span>
+                    <MdDelete className="cursor-pointer text-primary" fontSize={25} onClick={() => handleDeleteProduct(product?.product_id)} />
+                  </span>
                 </td>
               </tr>
             ))}

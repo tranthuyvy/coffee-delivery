@@ -14,7 +14,7 @@ const UpdateProduct = () => {
       product_name: '',
       price: 0,
       description: '',
-      status: 'Active',
+      status: '',
       category_name: '',
     },
   });
@@ -50,9 +50,19 @@ const UpdateProduct = () => {
     }
   }, [productDetail]);
 
+  // const handleChange = (e) => {
+  //   if (e.target.name === 'file') {
+  //     setFormData({ ...formData, file: e.target.files[0] });
+  //   } else {
+  //     setFormData({ ...formData, data: { ...formData.data, [e.target.name]: e.target.value } });
+  //   }
+  // };
+
   const handleChange = (e) => {
     if (e.target.name === 'file') {
       setFormData({ ...formData, file: e.target.files[0] });
+    } else if (e.target.name === 'status') {
+      setFormData({ ...formData, data: { ...formData.data, status: e.target.value } });
     } else {
       setFormData({ ...formData, data: { ...formData.data, [e.target.name]: e.target.value } });
     }
@@ -133,6 +143,36 @@ const UpdateProduct = () => {
               onChange={handleChange}
               value={formData.data.category_name}
             />
+            {/* <input
+              className="border-b-2"
+              type="text"
+              name="status"
+              onChange={handleChange}
+              value={formData.data.status}
+            /> */}
+
+            <div className="flex gap-2">
+              <label htmlFor="active">Active</label>
+              <input
+                type="radio"
+                name="status"
+                value="Active"
+                onChange={handleChange}
+                checked={formData.data.status === "Active"}
+              />
+            </div>
+            <div className="flex gap-2">
+              <label htmlFor="unactive">Unactive</label>
+              <input
+                type="radio"
+                name="status"
+                value="Unactive"
+                onChange={handleChange}
+                checked={formData.data.status === "Unactive"}
+                className="mt-[2px]"
+              />
+            </div>
+
             <div className="flex justify-center">
               <button
                 className="w-[40%] bg-primary text-white rounded-md shadow-md py-3 uppercase font-RobotoMedium"
