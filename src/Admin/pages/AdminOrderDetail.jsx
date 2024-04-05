@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getOrderDetailRequest } from "../../redux/actions/actions";
-import { getOrderStatus } from "../../constants/Status";
 
 const AdminOrderDetail = () => {
   const { id } = useParams();
@@ -75,8 +74,7 @@ const AdminOrderDetail = () => {
               <td>Size</td>
               <td>Số Lượng</td>
               <td>Đơn Giá</td>
-              <td>Ngày Đặt</td>
-              <td className="rounded-e-md">Trạng Thái</td>
+              <td className="rounded-e-md">Ngày Đặt</td>
             </tr>
           </thead>
           <tbody>
@@ -100,7 +98,6 @@ const AdminOrderDetail = () => {
                 <td>{orderItem?.quantity}</td>
                 <td>{(orderItem.product.price_update_detail[0].price_new).toLocaleString('en')} VNĐ</td>
                 <td>{new Date(orderDetail.create_at).toLocaleDateString()}</td>
-                <td>{getOrderStatus(orderDetail.status)}</td>
               </tr>
             ))}
           </tbody>

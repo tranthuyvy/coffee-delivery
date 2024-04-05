@@ -94,7 +94,7 @@ const AllCategory = () => {
 
   const handleDeleteCategory = async (categoryId) => {
     const confirmDelete = window.confirm(
-      "Bạn có chắc chắn muốn xóa sản phẩm này không?"
+      "Bạn có chắc chắn muốn xóa loại này không?"
     );
 
     const token = 'eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MTIxMjg3MjQsImV4cCI6MTcxMjczMzUyNCwidXNlcm5hbWUiOiIrODQzNzMxNjI1ODYifQ.jGvvA93oLouIjAa4wzpe6Tr1yrIU50fTE-90Na0UONhq0uwm5cNs4jkZJTNwvJbk'
