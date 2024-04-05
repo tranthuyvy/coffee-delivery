@@ -25,7 +25,7 @@ const AllOrder = () => {
   }, [dispatch])
 
   useEffect(() => {
-    const filtered = orders?.data.filter((order) => {
+    const filtered = orders?.data?.filter((order) => {
       const orderDate = new Date(order.create_at).getTime();
       const startDateTimestamp = startDate ? startDate.getTime() : null;
       const endDateTimestamp = endDate ? endDate.getTime() : null;
@@ -40,8 +40,7 @@ const AllOrder = () => {
       }
 
       if (status && order.status !== parseInt(status)) {
-        console.log(status)
-        console.log(order.status)
+
         return false;
       }
       return true;
@@ -77,7 +76,7 @@ const AllOrder = () => {
             <label>Trạng thái</label>
             <select
               className="p-[3px] rounded-md border-primary border-[1px] text-center"
-              value={status}
+              value={status || ''}
               onChange={(e) => setStatus(e.target.value)}
             >
               <option value="">Tất cả</option>

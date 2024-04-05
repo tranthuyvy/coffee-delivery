@@ -80,8 +80,6 @@ const UpdateProduct = () => {
     }
   }, [message, navigate]);
 
-  console.log("message", message)
-
   return (
     <>
       <div className="flex flex-col justify-center items-center ml-[18%]">
