@@ -2,6 +2,14 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getOrderDetailRequest } from "../../redux/actions/actions";
+import axios from "axios";
+
+const ORDER_STATUS_NEXT = {
+  0: "Xác Nhận",
+  1: "Thực Hiện Món",
+  2: "Đang Giao",
+  3: "Giao Thành Công",
+};
 
 const AdminOrderDetail = () => {
   const { id } = useParams();
@@ -15,6 +23,35 @@ const AdminOrderDetail = () => {
       console.error("Error dispatch", error);
     }
   }, [dispatch, id]);
+
+  const handleCancelOrder = async () => {
+    try {
+      const token = 'eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MTIxMjg3MjQsImV4cCI6MTcxMjczMzUyNCwidXNlcm5hbWUiOiIrODQzNzMxNjI1ODYifQ.jGvvA93oLouIjAa4wzpe6Tr1yrIU50fTE-90Na0UONhq0uwm5cNs4jkZJTNwvJbk'
+      axios.put(`http://localhost:9999/api/admin/order/${id}/status`, { status: 5 }, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
+        .then(() => { dispatch(getOrderDetailRequest(id)); })
+    } catch (error) {
+      console.error('Error change order status', error);
+    }
+  }
+
+  const handleConfirmOrder = async () => {
+    try {
+      const token = 'eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MTIxMjg3MjQsImV4cCI6MTcxMjczMzUyNCwidXNlcm5hbWUiOiIrODQzNzMxNjI1ODYifQ.jGvvA93oLouIjAa4wzpe6Tr1yrIU50fTE-90Na0UONhq0uwm5cNs4jkZJTNwvJbk'
+      const currentStatus = orderDetail?.status;
+      const newStatus = currentStatus + 1;
+      axios.put(`http://localhost:9999/api/admin/order/${id}/status`, { status: newStatus }, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      }).then(() => { dispatch(getOrderDetailRequest(id)); })
+    } catch (error) {
+      console.error('Error change order status', error);
+    }
+  };
 
   return (
     <>
@@ -103,6 +140,33 @@ const AdminOrderDetail = () => {
           </tbody>
         </table>
       </div>
+
+      <div className="ml-[18%] w-[80%] flex justify-between">
+        <div>
+
+        </div>
+        <div className="flex gap-3">
+          {orderDetail?.status === 0 &&
+            <button
+              onClick={() => handleCancelOrder()}
+              className="mt-5 bg-main text-white font-RobotoMedium text-[16px] rounded-md p-2 shadow-md hover:bg-hoverRed ease-out duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-r border-none"
+            >
+              Hủy Đơn Hàng
+            </button>
+          }
+          {!orderDetail?.status === 5 &&
+            <button
+              className="mt-5 bg-primary text-white font-RobotoMedium text-[16px] rounded-md p-2 shadow-md hover:bg-hoverPrimary ease-out duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-r border-none"
+              onClick={() => handleConfirmOrder()}
+            >
+              {ORDER_STATUS_NEXT[orderDetail?.status]}
+            </button>
+          }
+        </div>
+      </div >
+
+
+
     </>
   )
 }
