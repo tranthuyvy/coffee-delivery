@@ -63,7 +63,12 @@ const UpdateProduct = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formDataToSend = new FormData();
-    formDataToSend.append('file', formDataRef.current.file);
+    if (!formDataRef.current.file) {
+      const emptyFile = new File([], '');
+      formDataToSend.append('file', emptyFile);
+    } else {
+      formDataToSend.append('file', formDataRef.current.file);
+    }
     formDataToSend.append('data', JSON.stringify(formDataRef.current.data));
     dispatch(updateProductRequest(id, formDataToSend));
   };
