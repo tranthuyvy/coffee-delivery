@@ -2,9 +2,8 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 
 const CardProductItem = ({ product }) => {
-  const { product_id, product_name, price_update_detail, image, category } = product;
+  const { product_id, product_name, price_update_detail, image, category, status } = product;
   const formattedPrice = price_update_detail.length > 0 ? (price_update_detail[0].price_new).toLocaleString('en') : '';
-
   const [isHovered, setIsHovered] = useState(false);
 
   const handleAddToCart = () => {
@@ -32,16 +31,29 @@ const CardProductItem = ({ product }) => {
           </h3>
           <hr className='mt-5' />
           <div className='flex py-3 relative'>
-            <div className='w-1/2 px-5'>
-              <p className='text-base font-RobotoMedium 3xl:text-lg text-primary'>Có Mặt Tại</p>
-              <div className=''>
-                <span className='relative'>
-                  <p className='text-base font-RobotoSemibold 3xl:text-lg text-main'>
-                    Tất cả chi nhánh
-                  </p>
-                </span>
+            {status === 'Active' ? (
+              <div className='w-1/2 px-5'>
+                <p className='text-base font-RobotoMedium 3xl:text-lg text-primary'>Có Mặt Tại</p>
+                <div className=''>
+                  <span className='relative'>
+                    <p className='text-base font-RobotoSemibold 3xl:text-lg text-main'>
+                      Tất cả chi nhánh
+                    </p>
+                  </span>
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className='w-1/2 px-5'>
+                <p className='text-base font-RobotoMedium 3xl:text-lg text-primary'></p>
+                <div className=''>
+                  <span className='relative'>
+                    <p className='text-center text-base font-RobotoSemibold 3xl:text-lg text-main'>
+                      Tạm Hết Hàng
+                    </p>
+                  </span>
+                </div>
+              </div>
+            )}
 
             <div className='w-1/2 px-5'>
               <p className='text-base font-RobotoMedium 3xl:text-lg text-primary'>Giá</p>
