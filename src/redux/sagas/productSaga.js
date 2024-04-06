@@ -13,7 +13,7 @@ import {
 
 function* getAllProductsSaga() {
   try {
-    const token = 'eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MTIxMjg3MjQsImV4cCI6MTcxMjczMzUyNCwidXNlcm5hbWUiOiIrODQzNzMxNjI1ODYifQ.jGvvA93oLouIjAa4wzpe6Tr1yrIU50fTE-90Na0UONhq0uwm5cNs4jkZJTNwvJbk'
+    const token = localStorage.getItem('token');
 
     const response = yield call(axios.get, 'http://localhost:9999/api/admin/product/all', {
       headers: {

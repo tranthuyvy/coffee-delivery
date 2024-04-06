@@ -11,7 +11,7 @@ import {
 
 function* getAllOrdersSaga() {
   try {
-    const token = 'eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MTE5NDk5MjMsImV4cCI6MTcxMjU1NDcyMywidXNlcm5hbWUiOiIrODQzNzMxNjI1ODYifQ.YQ5OhYHOmIUvgO9-6vwQopE29YCrCxh8EMmZGz8Sl98HP8F3kr3BGoEkCLXNiX52'
+    const token = localStorage.getItem('token');
 
     const response = yield call(axios.get, 'http://localhost:9999/api/admin/order/all', {
       headers: {
