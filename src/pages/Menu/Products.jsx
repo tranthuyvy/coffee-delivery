@@ -1,41 +1,43 @@
-import { useState } from "react";
-import { coffee } from "../../apis/mock-data";
+import { useEffect, useState } from "react";
 import CardProductItem from "../../components/Products/CardProductItem";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllProductsRequest } from "../../redux/actions/actions";
 
 const Products = () => {
   const [categoryFilter, setCategoryFilter] = useState("");
   const [priceRangeFilter, setPriceRangeFilter] = useState("");
   const [sortOrder, setSortOrder] = useState("desc");
 
-  const filterProjects = (project) => {
-    if (categoryFilter && project.category !== categoryFilter) {
+  const dispatch = useDispatch();
+  const products = useSelector(state => state.products.products.data);
+
+  useEffect(() => {
+    dispatch(getAllProductsRequest());
+  }, [dispatch]);
+
+  const filterProducts = product => {
+    if (categoryFilter && product?.category?.category_name !== categoryFilter) {
       return false;
     }
     if (priceRangeFilter) {
       const [min, max] = priceRangeFilter.split("-");
-      if (min && parseInt(project.price) < parseInt(min)) {
-        return false;
-      }
-      if (max && parseInt(project.price) > parseInt(max)) {
+      const productPrice = parseInt(product?.price_update_detail[0]?.price_new);
+      if ((min && productPrice < parseInt(min)) || (max && productPrice > parseInt(max))) {
         return false;
       }
     }
     return true;
   };
 
-  const sortProjects = (projects) => {
-    return projects.sort((a, b) => {
-      if (sortOrder === "asc") {
-        return parseInt(a.price) - parseInt(b.price);
-      } else {
-        return parseInt(b.price) - parseInt(a.price);
-      }
+  const sortProducts = product => {
+    return product.sort((a, b) => {
+      const priceA = parseInt(a.price_update_detail[0]?.price_new);
+      const priceB = parseInt(b.price_update_detail[0]?.price_new);
+      return sortOrder === "asc" ? priceA - priceB : priceB - priceA;
     });
   };
 
-  const filteredAndSortedProjects = sortProjects(
-    coffee.filter(filterProjects)
-  );
+  const filteredAndSortedProducts = sortProducts(products?.filter(filterProducts) || []);
 
   const handleReset = () => {
     setCategoryFilter("");
@@ -64,8 +66,8 @@ const Products = () => {
                 onChange={(e) => setCategoryFilter(e.target.value)}
               >
                 <option value="">All Category</option>
-                <option value="Coffee">Coffee</option>
-                <option value="Tea">Tea</option>
+                <option value="Cà Phê">Cà phê</option>
+                <option value="Trà">Trà</option>
                 <option value="Freeze">Freeze</option>
               </select>
             </div>
@@ -110,7 +112,7 @@ const Products = () => {
                 alt="search-icon"
               />
             </div>
-            <div className="font-RobotoSemibold text-main">{filteredAndSortedProjects.length} <span className="text-black font-RobotoMedium">project found</span></div>
+            <div className="font-RobotoSemibold text-main">{filteredAndSortedProducts?.length} <span className="text-black font-RobotoMedium">project found</span></div>
           </div>
           <div className="relative inline-block w-full sm:w-64">
             <select
@@ -125,8 +127,9 @@ const Products = () => {
         </div>
 
         <div className="w-full lg:w-10/12 md:gap-6 flex flex-wrap justify-center m-auto">
-          {filteredAndSortedProjects.map((product) => (
-            <CardProductItem key={product.id} product={product} />
+
+          {filteredAndSortedProducts.map((product) => (
+            <CardProductItem key={product.product_id} product={product} />
           ))}
         </div>
       </section>
