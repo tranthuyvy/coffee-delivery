@@ -24,12 +24,15 @@ import AdminOrderDetail from "../Admin/pages/AdminOrderDetail";
 import AdminProductDetail from "../Admin/pages/AdminProductDetail";
 import CreateProduct from "../Admin/pages/CreateProduct";
 import UpdateProduct from "../Admin/pages/UpdateProduct";
+import Login from "../pages/Auth/Login";
 
 const Routers = () => {
   return (
     <Routes>
       <Route path="*" element={<Page404 />} />
-      <Route path="/" element={<Home />} />
+      <Route index element={<Login />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/home" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/origin" element={<Origin />} />
       <Route path="/services" element={<Services />} />
