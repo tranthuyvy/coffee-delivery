@@ -25,6 +25,7 @@ import AdminProductDetail from "../Admin/pages/AdminProductDetail";
 import CreateProduct from "../Admin/pages/CreateProduct";
 import UpdateProduct from "../Admin/pages/UpdateProduct";
 import Login from "../pages/Auth/Login";
+import Signup from "../pages/Auth/Signup";
 
 const Routers = () => {
   return (
@@ -32,6 +33,7 @@ const Routers = () => {
       <Route path="*" element={<Page404 />} />
       <Route index element={<Login />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
       <Route path="/home" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/origin" element={<Origin />} />

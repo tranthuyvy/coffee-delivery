@@ -10,8 +10,9 @@ const Layout = () => {
   const isLoginPage = location.pathname === "/login";
   const isSignupPage = location.pathname === "/signup";
   const isForgotPasswordPage = location.pathname === "/forgotPassword";
+  const isIndexPage = location.pathname === "/";
 
-  if (isLoginPage || isSignupPage || isForgotPasswordPage || isAdminPage) {
+  if (isIndexPage || isLoginPage || isSignupPage || isForgotPasswordPage || isAdminPage) {
     return (
       <div>
         <Routers />
