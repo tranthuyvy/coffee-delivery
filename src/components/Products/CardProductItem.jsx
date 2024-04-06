@@ -48,7 +48,7 @@ const CardProductItem = ({ product }) => {
                 <div className=''>
                   <span className='relative'>
                     <p className='text-center text-base font-RobotoSemibold 3xl:text-lg text-main'>
-                      Tạm Hết Hàng
+                      Ngừng Kinh Doanh
                     </p>
                   </span>
                 </div>

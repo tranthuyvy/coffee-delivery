@@ -1,12 +1,20 @@
 import { useParams } from "react-router-dom";
-import { coffee } from "../../apis/mock-data";
 import CardProductSimilar from "../../components/Products/CardProductSimilar";
 import CardSizeItem from "../../components/Products/CardSizeItem";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getAllProductsRequest } from "../../redux/actions/actions";
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const selectedProduct = coffee.find((item) => item.id === parseInt(id));
-  const currentProduct = coffee.filter((item) => item.id !== parseInt(id));
+  const dispatch = useDispatch();
+  const products = useSelector(state => state.products.products.data);
+  const selectedProduct = products ? products.find((item) => item.product_id === id) : null;
+  const currentProduct = products ? products.filter((item) => item.product_id !== id) : [];
+
+  useEffect(() => {
+    dispatch(getAllProductsRequest());
+  }, [dispatch]);
 
   return (
     <div className="pt-[120px]">
@@ -16,7 +24,7 @@ const ProductDetail = () => {
             <div className="w-[350px] h-[350px] md:pt-[20px] md:ml-12">
               <img
                 className="w-full object-cover object-center h-[270px] sm:h-[350px] lg:h-full p-0 sm:ml-[80px]"
-                src={selectedProduct?.images[0]}
+                src={selectedProduct?.image}
                 alt="image-product"
               />
             </div>
@@ -24,7 +32,7 @@ const ProductDetail = () => {
           <div className="w-full lg:w-[60%] xl:w-[50%] h-full flex">
             <div className="flex flex-col justify-between 3xl:justify-center items-start p-5 lg:p-10 w-full">
               <h1 className="leading-tight font-RobotoMedium text-primary text-3xl md:text-4xl lg:text-[26px] 3xl:text-[35px] mb-[10px] 3xl:mb-3">
-                {selectedProduct?.name}
+                {selectedProduct?.product_name}
               </h1>
               <p className="font-medium text-[16px] lg:text-[16px] 3xl:text-[20px] mb-5 flex text-borderDarkGray">
                 <img
@@ -32,7 +40,7 @@ const ProductDetail = () => {
                   src="https://www.gamudaland.com.my/_next/image?url=%2Fimages%2Flanding%2Flocation.png&w=48&q=75"
                   alt="locate-icon"
                 />
-                {selectedProduct?.location}
+                không biết
               </p>
               <hr className="mb-5 w-full" />
               <div className="grid grid-cols-12 items-center justify-between w-full mb-5">
@@ -41,7 +49,7 @@ const ProductDetail = () => {
                     Giá
                   </p>
                   <p className="text-main font-RobotoMedium text-[18px] lg:text-[17px] 3xl:text-[20px]">
-                    {selectedProduct.price.toLocaleString("en")} VNĐ
+                    {selectedProduct?.price_update_detail[0]?.price_new.toLocaleString("en")} VNĐ
                   </p>
                 </div>
                 <div className="col-span-12 sm:col-span-6 mb-2 sm:mb-0 pr-[10px] mr-[10px]">
@@ -49,7 +57,7 @@ const ProductDetail = () => {
                     Loại
                   </p>
                   <p className="text-main font-RobotoMedium text-[18px] lg:text-[17px] 3xl:text-[20px]">
-                    {selectedProduct?.category}
+                    {selectedProduct?.category?.category_name}
                   </p>
                 </div>
               </div>
@@ -68,7 +76,7 @@ const ProductDetail = () => {
                   <hr className="mb-5 w-full" />
                   <div className="w-full mb-5">
                     <div>
-                      <p className="font-normal text-[14px] text-justify">
+                      <p className="font-medium text-[14px] text-justify text-primary">
                         {selectedProduct?.description}
                       </p>
                     </div>
@@ -127,7 +135,7 @@ const ProductDetail = () => {
           </div>
           <div className="w-full md:w-[80%] lg:w-[90%] 3xl:w-[85%] max-w-[90%] mx-auto md:grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4">
             {currentProduct.slice(0, 10).map((item) => (
-              <CardProductSimilar key={item.id} product={item} />
+              <CardProductSimilar key={item.product_id} product={item} />
             ))}
           </div>
         </div>
