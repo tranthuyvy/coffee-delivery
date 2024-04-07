@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
-import { addProductRequest } from "../../redux/actions/actions"
+import { addProductRequest, getAllCategoriesRequest } from "../../redux/actions/actions"
 
 const CreateProduct = () => {
   const dispatch = useDispatch()
   const message = useSelector((state) => state.addProduct);
+  const categories = useSelector((state) => state.categories.categories);
   const [formData, setFormData] = useState({
     file: '',
     data: {
@@ -17,6 +18,10 @@ const CreateProduct = () => {
     },
   });
   const navigate = useNavigate()
+
+  useEffect(() => {
+    dispatch(getAllCategoriesRequest());
+  }, [dispatch])
 
   const handleChange = (e) => {
     if (e.target.name === 'file') {
@@ -32,7 +37,6 @@ const CreateProduct = () => {
     formDataToSend.append('file', formData.file);
     formDataToSend.append('data', JSON.stringify(formData.data));
     dispatch(addProductRequest(formDataToSend));
-
   };
 
   useEffect(() => {
@@ -51,8 +55,6 @@ const CreateProduct = () => {
     }
   }, [message, navigate])
 
-  console.log("message", message)
-
   return (
     <>
       <div className="flex flex-col justify-center items-center ml-[18%]">
@@ -64,23 +66,89 @@ const CreateProduct = () => {
             className="flex flex-col p-5 text-primary gap-5"
             onSubmit={handleSubmit}
           >
-            <input
-              className="p-2 cursor-pointer"
-              type="file"
-              name="file"
-              onChange={handleChange}
-            />
+            <div className="relative">
+              <input
+                type="file"
+                name="file"
+                accept=".jpg, .jpeg, .png"
+                className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                onChange={handleChange}
+              />
+              <div className="bg-gray-200 rounded-md py-2 px-4 flex items-center justify-center gap-2 cursor-pointer">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 text-primary"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                  />
+                </svg>
+                {formData.file ? (
+                  <span className="text-primary font-RobotoMedium">{formData.file.name}</span>
+                ) : (
+                  <span className="text-primary font-RobotoMedium">Choose File</span>
+                )}
+              </div>
+            </div>
             {formData.file && (
               <img
                 src={URL.createObjectURL(formData.file)}
-                alt="Selected file"
+                alt="Please select an image"
                 style={{ maxWidth: "200px", maxHeight: "200px" }}
               />
             )}
-            <input className="border-b-2" type="text" name="product_name" onChange={handleChange} />
-            <input className="border-b-2" type="number" name="price" onChange={handleChange} />
-            <textarea className="border-b-2" name="description" onChange={handleChange} />
-            <input className="border-b-2" type="text" name="category_name" onChange={handleChange} />
+            <div className="flex justify-between">
+              <div className="flex-1">
+                <label className="text-[14px]">Product Name:</label>
+                <input
+                  className="border-b-2"
+                  type="text"
+                  name="product_name"
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="flex-1">
+                <label className="text-[14px] block">Price:</label>
+                <input
+                  className="border-b-2"
+                  type="number"
+                  name="price"
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            <div className="flex justify-between">
+              <div className="flex-1">
+                <label className="text-[14px] block">Description:</label>
+                <textarea
+                  className="border-b-2"
+                  name="description"
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="flex-1">
+                <label className="text-[14px] block mb-5">Category:</label>
+                <select
+                  className=""
+                  name="category_name"
+                  onChange={handleChange}
+                >
+                  <option value="">Select Category</option>
+                  {categories?.data && categories?.data.map((category) => (
+                    <option key={category.slug} value={category.category_name}>
+                      {category.category_name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
             <div className="flex justify-center">
               <button
                 className="w-[40%] bg-primary text-white rounded-md shadow-md py-3 uppercase font-RobotoMedium"
