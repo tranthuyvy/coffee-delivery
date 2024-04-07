@@ -8,6 +8,7 @@ import productDetailSaga from './productDetailSaga';
 import postAddProduct from './addProductSaga';
 import categoriesSaga from './categoriesSaga';
 import putUpdateProduct from './updateProductSaga';
+import userProfileSaga from './userProfileSaga';
 
 export default function* rootSaga() {
   yield all([
@@ -20,5 +21,6 @@ export default function* rootSaga() {
     postAddProduct(),
     categoriesSaga(),
     putUpdateProduct(),
+    userProfileSaga(),
   ]);
 }

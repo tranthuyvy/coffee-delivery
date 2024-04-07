@@ -2,7 +2,7 @@ import {
   GET_ALL_PRODUCTS_REQUEST,
   GET_ALL_PRODUCTS_SUCCESS,
   GET_ALL_PRODUCTS_FAILURE,
-  FETCH_NEWS, 
+  FETCH_NEWS,
   SET_NEWS,
   GET_ALL_ORDERS_REQUEST,
   GET_ALL_ORDERS_SUCCESS,
@@ -27,7 +27,24 @@ import {
   UPDATE_PRODUCT_FAILURE,
   RESET_UPDATE_PRODUCT_STATE,
   RESET_ADD_PRODUCT_STATE,
+  GET_USER_PROFILE_REQUEST,
+  GET_USER_PROFILE_SUCCESS,
+  GET_USER_PROFILE_FAILURE,
 } from './types';
+
+export const getUserProfileRequest = () => ({
+  type: GET_USER_PROFILE_REQUEST
+});
+
+export const getUserProfileSuccess = (user) => ({
+  type: GET_USER_PROFILE_SUCCESS,
+  payload: user
+});
+
+export const getUserProfileFailure = (error) => ({
+  type: GET_USER_PROFILE_FAILURE,
+  payload: error
+});
 
 export const getAllCategoriesRequest = () => ({
   type: GET_ALL_CATEGORIES_REQUEST

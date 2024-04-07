@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './authStyle.css';
 import Helmet from "../../components/Helmet/Helmet";
+import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import { getUserProfileRequest } from "../../redux/actions/actions";
 
 const Login = () => {
+  const dispatch = useDispatch();
+  const user = useSelector(state => state.user.user.data);
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -30,7 +34,7 @@ const Login = () => {
       const { token, status } = response.data;
       if (status && token) {
         localStorage.setItem('token', token);
-        navigate("/home");
+        dispatch(getUserProfileRequest());
         console.log("Đăng nhập thành công");
 
       } else {
@@ -40,6 +44,16 @@ const Login = () => {
       console.error('Error:', error);
     }
   };
+
+  useEffect(() => {
+    if (user) {
+      if (user.user.role && (user.user.role.role_name === "ADMIN" || user.user.role.role_name === "STAFF")) {
+        navigate("/admin");
+      } else {
+        navigate("/home");
+      }
+    }
+  }, [user, navigate]);
 
   return (
     <Helmet title="Login">

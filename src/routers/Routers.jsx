@@ -26,6 +26,7 @@ import CreateProduct from "../Admin/pages/CreateProduct";
 import UpdateProduct from "../Admin/pages/UpdateProduct";
 import Login from "../pages/Auth/Login";
 import Signup from "../pages/Auth/Signup";
+import CustomerProfile from "../pages/Auth/CustomerProfile";
 
 const Routers = () => {
   return (
@@ -34,6 +35,7 @@ const Routers = () => {
       <Route index element={<Login />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/profile" element={<CustomerProfile />} />
       <Route path="/home" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/origin" element={<Origin />} />
