@@ -26,7 +26,7 @@ const AdminOrderDetail = () => {
 
   const handleCancelOrder = async () => {
     try {
-      const token = 'eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MTIxMjg3MjQsImV4cCI6MTcxMjczMzUyNCwidXNlcm5hbWUiOiIrODQzNzMxNjI1ODYifQ.jGvvA93oLouIjAa4wzpe6Tr1yrIU50fTE-90Na0UONhq0uwm5cNs4jkZJTNwvJbk'
+      const token = localStorage.getItem("token");
       axios.put(`http://localhost:9999/api/admin/order/${id}/status`, { status: 5 }, {
         headers: {
           'Authorization': `Bearer ${token}`
@@ -40,7 +40,7 @@ const AdminOrderDetail = () => {
 
   const handleConfirmOrder = async () => {
     try {
-      const token = 'eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MTIxMjg3MjQsImV4cCI6MTcxMjczMzUyNCwidXNlcm5hbWUiOiIrODQzNzMxNjI1ODYifQ.jGvvA93oLouIjAa4wzpe6Tr1yrIU50fTE-90Na0UONhq0uwm5cNs4jkZJTNwvJbk'
+      const token = localStorage.getItem("token");
       const currentStatus = orderDetail?.status;
       const newStatus = currentStatus + 1;
       axios.put(`http://localhost:9999/api/admin/order/${id}/status`, { status: newStatus }, {

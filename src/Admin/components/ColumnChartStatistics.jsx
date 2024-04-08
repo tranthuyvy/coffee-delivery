@@ -8,7 +8,7 @@ const ColumnChartStatistics = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const token = 'eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MTE5NDk5MjMsImV4cCI6MTcxMjU1NDcyMywidXNlcm5hbWUiOiIrODQzNzMxNjI1ODYifQ.YQ5OhYHOmIUvgO9-6vwQopE29YCrCxh8EMmZGz8Sl98HP8F3kr3BGoEkCLXNiX52'
+        const token = localStorage.getItem("token");
         const response = await fetch(`http://localhost:9999/api/statistic/year?year=${selectedYear}`, {
           headers: {
             Authorization: `Bearer ${token}`

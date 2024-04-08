@@ -34,7 +34,7 @@ const AllCategory = () => {
 
   const handleAddCategory = async () => {
     try {
-      const token = 'eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MTIxMjg3MjQsImV4cCI6MTcxMjczMzUyNCwidXNlcm5hbWUiOiIrODQzNzMxNjI1ODYifQ.jGvvA93oLouIjAa4wzpe6Tr1yrIU50fTE-90Na0UONhq0uwm5cNs4jkZJTNwvJbk'
+      const token = localStorage.getItem("token");
       const response = await axios.post('http://localhost:9999/api/admin/category/add', {
         category_name: newCategoryName
       }, {
@@ -71,7 +71,7 @@ const AllCategory = () => {
   const handleUpdateCategory = async (categoryId) => {
     console.log("update category", categoryId)
     try {
-      const token = 'eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MTIxMjg3MjQsImV4cCI6MTcxMjczMzUyNCwidXNlcm5hbWUiOiIrODQzNzMxNjI1ODYifQ.jGvvA93oLouIjAa4wzpe6Tr1yrIU50fTE-90Na0UONhq0uwm5cNs4jkZJTNwvJbk';
+      const token = localStorage.getItem("token");
 
       const response = await axios.put(`http://localhost:9999/api/admin/category/${categoryId}/update`, {
         category_name: newCategoryName
@@ -97,7 +97,7 @@ const AllCategory = () => {
       "Bạn có chắc chắn muốn xóa loại này không?"
     );
 
-    const token = 'eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MTIxMjg3MjQsImV4cCI6MTcxMjczMzUyNCwidXNlcm5hbWUiOiIrODQzNzMxNjI1ODYifQ.jGvvA93oLouIjAa4wzpe6Tr1yrIU50fTE-90Na0UONhq0uwm5cNs4jkZJTNwvJbk'
+    const token = localStorage.getItem("token");
 
     if (confirmDelete) {
       try {
