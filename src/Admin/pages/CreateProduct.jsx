@@ -100,14 +100,14 @@ const CreateProduct = () => {
               <img
                 src={URL.createObjectURL(formData.file)}
                 alt="Please select an image"
-                style={{ maxWidth: "200px", maxHeight: "200px" }}
+                className="w-full h-[280px] object-contain"
               />
             )}
             <div className="flex justify-between">
               <div className="flex-1">
                 <label className="text-[14px]">Product Name:</label>
                 <input
-                  className="border-b-2"
+                  className="border-b-2 p-2"
                   type="text"
                   name="product_name"
                   onChange={handleChange}
@@ -116,7 +116,7 @@ const CreateProduct = () => {
               <div className="flex-1">
                 <label className="text-[14px] block">Price:</label>
                 <input
-                  className="border-b-2"
+                  className="border-b-2 p-2"
                   type="number"
                   name="price"
                   onChange={handleChange}
@@ -127,7 +127,7 @@ const CreateProduct = () => {
               <div className="flex-1">
                 <label className="text-[14px] block">Description:</label>
                 <textarea
-                  className="border-b-2"
+                  className="border-b-2 p-2"
                   name="description"
                   onChange={handleChange}
                 />
@@ -135,7 +135,7 @@ const CreateProduct = () => {
               <div className="flex-1">
                 <label className="text-[14px] block mb-5">Category:</label>
                 <select
-                  className=""
+                  className="p-2 rounded-md border-none"
                   name="category_name"
                   onChange={handleChange}
                 >

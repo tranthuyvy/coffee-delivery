@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom"
-import { updateProductRequest, getProductDetailRequest } from "../../redux/actions/actions";
+import { updateProductRequest, getProductDetailRequest, getAllCategoriesRequest } from "../../redux/actions/actions";
 
 const UpdateProduct = () => {
   const { id } = useParams();
   const dispatch = useDispatch()
   const message = useSelector((state) => state.updateProduct);
   const productDetail = useSelector((state) => state.productDetail.productDetail);
+  const categories = useSelector((state) => state.categories.categories)
   const [formData, setFormData] = useState({
     file: '',
     data: {
@@ -25,6 +26,7 @@ const UpdateProduct = () => {
   useEffect(() => {
     try {
       dispatch(getProductDetailRequest(id));
+      dispatch(getAllCategoriesRequest());
     } catch (error) {
       console.error("Error dispatch", error);
     }
@@ -54,7 +56,8 @@ const UpdateProduct = () => {
     if (e.target.name === 'file') {
       setFormData({ ...formData, file: e.target.files[0] });
     } else if (e.target.name === 'status') {
-      setFormData({ ...formData, data: { ...formData.data, status: e.target.value } });
+      const newStatus = e.target.checked ? "Active" : "Unactive";
+      setFormData({ ...formData, data: { ...formData.data, status: newStatus } });
     } else {
       setFormData({ ...formData, data: { ...formData.data, [e.target.name]: e.target.value } });
     }
@@ -91,76 +94,110 @@ const UpdateProduct = () => {
             className="flex flex-col p-5 text-primary gap-5"
             onSubmit={handleSubmit}
           >
-            <input
-              className="p-2 cursor-pointer"
-              type="file"
-              name="file"
-              onChange={handleChange}
-            />
+            <div className="relative">
+
+              <input
+                type="file"
+                name="file"
+                className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                onChange={handleChange}
+              />
+              <div className="bg-gray-200 rounded-md py-2 px-4 flex items-center justify-center gap-2 cursor-pointer">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 text-primary"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                  />
+                </svg>
+                {formData.file ? (
+                  <span className="text-primary font-RobotoMedium">{formData.file.name}</span>
+                ) : (
+                  <span className="text-primary font-RobotoMedium">Choose File</span>
+                )}
+              </div>
+            </div>
             {formData.file && (
               <img
                 src={URL.createObjectURL(formData.file)}
-                alt="Selected file"
-                style={{ maxWidth: "200px", maxHeight: "200px" }}
+                alt="Please choose file again"
+                className="w-full h-[280px] object-contain"
               />
             )}
             {imageSrc && !formData.file && (
               <img
                 src={imageSrc}
                 alt="Selected file"
-                style={{ maxWidth: "200px", maxHeight: "200px" }}
+                className="w-full h-[280px] object-contain"
               />
             )}
-            <input
-              className="border-b-2"
-              type="text"
-              name="product_name"
-              onChange={handleChange}
-              value={formData.data.product_name}
-            />
-            <input
-              className="border-b-2"
-              type="number"
-              name="price"
-              onChange={handleChange}
-              value={formData.data.price}
-            />
-            <textarea
-              className="border-b-2"
-              name="description"
-              onChange={handleChange}
-              value={formData.data.description}
-            />
-            <input
-              className="border-b-2"
-              type="text"
-              name="category_name"
-              onChange={handleChange}
-              value={formData.data.category_name}
-            />
+            <div className="flex justify-between">
+              <div className="flex-1">
+                <label className="text-[14px]">Product Name:</label>
+                <input
+                  className="border-b-2 p-2"
+                  type="text"
+                  name="product_name"
+                  onChange={handleChange}
+                  value={formData.data.product_name}
+                />
+              </div>
+              <div className="flex-1">
+                <label className="text-[14px] block">Price:</label>
+                <input
+                  className="border-b-2 p-2"
+                  type="number"
+                  name="price"
+                  onChange={handleChange}
+                  value={formData.data.price}
+                />
+              </div>
+            </div>
 
-            <div className="flex gap-2">
-              <label htmlFor="active">Active</label>
+            <div className="flex justify-between">
+              <div className="flex-1">
+                <label className="text-[14px] block">Description:</label>
+                <textarea
+                  className="border-b-2"
+                  name="description"
+                  onChange={handleChange}
+                  value={formData.data.description}
+                />
+              </div>
+
+              <div className="flex-1">
+                <label className="text-[14px] block mb-5">Category:</label>
+                <select
+                  className="p-2 rounded-md border-none"
+                  name="category_name"
+                  onChange={handleChange}
+                  value={formData.data.category_name}
+                >
+                  {categories?.data && categories?.data.map((category) => (
+                    <option key={category.slug} value={category.category_name}>
+                      {category.category_name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            <label className="switch">
               <input
-                type="radio"
+                type="checkbox"
                 name="status"
-                value="Active"
                 onChange={handleChange}
                 checked={formData.data.status === "Active"}
               />
-            </div>
-            <div className="flex gap-2">
-              <label htmlFor="unactive">Unactive</label>
-              <input
-                type="radio"
-                name="status"
-                value="Unactive"
-                onChange={handleChange}
-                checked={formData.data.status === "Unactive"}
-                className="mt-[2px]"
-              />
-            </div>
-
+              <span className="slider round"></span>
+            </label>
             <div className="flex justify-center">
               <button
                 className="w-[40%] bg-primary text-white rounded-md shadow-md py-3 uppercase font-RobotoMedium"
