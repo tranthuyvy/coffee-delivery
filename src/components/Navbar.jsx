@@ -332,9 +332,9 @@ const Navbar = () => {
                         {({ active }) => (
                           <div
                             className={`${active && "text-white bg-primary font-normal"} block text-primary focus:bg-hoverPrimary cursor-pointer px-4 py-2 rounded-md`}
-
+                            onClick={() => navigate("/orders-history")}
                           >
-                            Order History
+                            Orders History
                           </div>
                         )}
                       </Menu.Item>
