@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Home = () => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -12,11 +12,11 @@ const Home = () => {
     autoplaySpeed: 5000,
   };
   return (
-    <div>
+    <div className="overflow-x-hidden">
 
       <Slider {...settings}>
         <img
-          src="https://www.highlandscoffee.com.vn/vnt_upload/weblink/KEMDI/HCO_7720_KEMDI-Banner_2000x8782x.png"
+          src="https://www.highlandscoffee.com.vn/vnt_upload/about/ABOUT-CAREER3.jpg"
           alt="img-01"
         />
         <img

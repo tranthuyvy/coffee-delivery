@@ -1,9 +1,13 @@
 import { useState } from "react";
+import { Menu, Transition } from "@headlessui/react";
+import { Fragment } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [showAboutMenu, setShowAboutMenu] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleAboutMenu = () => {
     setShowAboutMenu(!showAboutMenu);
@@ -26,7 +30,7 @@ const Navbar = () => {
             href="/"
           >
             <img
-              className="object-contain w-[50px] sm:w-[70px] lg:w-[90px] object-center"
+              className="object-cover w-[50px] sm:w-[70px] lg:w-[90px]"
               src="https://www.highlandscoffee.com.vn/vnt_upload/weblink/White_logo800.png"
               alt="logo"
             />
@@ -289,9 +293,71 @@ const Navbar = () => {
                   Liên Hệ
                 </a>
               </li>
+
+              <li className="hidden sm:block w-full pr-5 text-left md:w-fit">
+                <Menu as="div" className="relative">
+                  <div>
+                    <Menu.Button className="inline-flex rounded-full focus:ring-2 focus:outline-none focus:ring-neutral-300">
+                      <span className="sr-only">Open</span>
+                      <div
+                        className="w-12 h-12 rounded-full bg-gray-200 bg-cover bg-center bg-no-repeat"
+                        style={{ backgroundImage: 'url("https://png.pngtree.com/png-clipart/20230914/original/pngtree-christmas-corgi-vector-png-image_12160999.png")' }}
+                      >
+                        <span className="sr-only">ttv</span>
+                      </div>
+                    </Menu.Button>
+                  </div>
+
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <Menu.Items className="origin-top-left z-10 absolute right-3 mt-2 w-40 rounded-md bg-white shadow-md p-1 ring-black ring-opacity-5 focus:outline-none">
+                      <Menu.Item>
+                        {({ active }) => (
+                          <div
+                            className={`${active && "text-white bg-primary font-normal"} block text-primary focus:bg-hoverPrimary cursor-pointer px-4 py-2 rounded-md`}
+                            onClick={() => navigate("/profile")}
+                          >
+                            Your Profile
+                          </div>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <div
+                            className={`${active && "text-white bg-primary font-normal"} block text-primary focus:bg-hoverPrimary cursor-pointer px-4 py-2 rounded-md`}
+
+                          >
+                            Order History
+                          </div>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <div
+                            onClick={() => navigate("/logout")}
+                            className={`${active && "text-white bg-primary font-normal"} block text-primary focus:bg-hoverPrimary cursor-pointer px-4 py-2 rounded-md`}
+                          >
+                            Logout
+                          </div>
+                        )}
+                      </Menu.Item>
+
+                    </Menu.Items>
+                  </Transition>
+                </Menu>
+              </li>
+
             </ul>
           </div>
         </div>
+
       </nav>
 
       {/* for media < md */}
