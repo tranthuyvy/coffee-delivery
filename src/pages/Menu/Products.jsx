@@ -44,6 +44,8 @@ const Products = () => {
     setPriceRangeFilter("");
   };
 
+  console.log("products", products);
+
   return (
     <>
       <section className="relative bg-gradient-to-b from-white to-grayWhite h-[310px] md:h-[350px]">

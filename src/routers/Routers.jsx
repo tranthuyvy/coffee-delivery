@@ -27,6 +27,7 @@ import UpdateProduct from "../Admin/pages/UpdateProduct";
 import Login from "../pages/Auth/Login";
 import Signup from "../pages/Auth/Signup";
 import CustomerProfile from "../pages/Auth/CustomerProfile";
+import StaffProfile from "../Admin/pages/StaffProfile";
 
 const Routers = () => {
   return (
@@ -61,6 +62,7 @@ const Routers = () => {
         <Route path="/admin/order/:id" element={<AdminOrderDetail />} />
         <Route path="/admin/customers" element={<AllCustomers />} />
         <Route path="/admin/category" element={<AllCategory />} />
+        <Route path="/admin/profile" element={<StaffProfile />} />
       </Route>
     </Routes>
   )
