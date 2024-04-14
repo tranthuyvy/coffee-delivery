@@ -1,18 +1,29 @@
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import CartItem from "../components/Cart/CartItem"
-
+import { useDispatch, useSelector } from "react-redux";
+import { getAllCartRequest } from "../redux/actions/actions";
 
 const Cart = () => {
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart.cart);
   const cartDetailRef = useRef(null);
 
-  useEffect(() => {
-    const footerHeight = document.querySelector('footer').offsetHeight;
-    const cartDetailHeight = cartDetailRef.current.offsetHeight;
-    const paddingTop = footerHeight > cartDetailHeight ? footerHeight - cartDetailHeight + 20 : 20;
+  // useEffect(() => {
+  //   dispatch(getAllCartRequest());
+  // }, [dispatch])
 
-    cartDetailRef.current.style.paddingBottom = `${footerHeight}px`;
-    cartDetailRef.current.style.paddingTop = `${paddingTop}px`;
-  }, []);
+  const getAllCart = useCallback(() => {
+    dispatch(getAllCartRequest());
+  }, [dispatch]);
+
+  useEffect(() => {
+    getAllCart();
+  }, [getAllCart]);
+
+  const handleQuantityChange = (product_id, newQuantity) => {
+    getAllCart();
+  };
+
   return (
     <>
       <section className="relative flex flex-col-reverse md:flex-row items-center bg-[url('https://www.highlandscoffee.com.vn/vnt_upload/cake/SPECIALTYCOFFEE/Untitled-1-01.png')]">
@@ -28,29 +39,22 @@ const Cart = () => {
       <div className="lg:grid grid-cols-3 lg:px-16 relative my-10">
         <div className="lg:col-span-2 lg:px-5 ">
           <div className="space-y-3">
-            <CartItem />
-            <CartItem />
-            <CartItem />
-            <CartItem />
-            <CartItem />
-            {/* {cart.length > 0 && listCart.length > 0 ? (
-            listCart.map((item, index) =>
-              findQuantity(item.id) > 0 ? (
-                <CartItem key={index} detail={item} showButton={true} />
-              ) : null
-            )
-          ) : (
-            <p
-              style={{
-                color: "red",
-                fontWeight: "bold",
-                textAlign: "center",
-                marginTop: "50px",
-              }}
-            >
-              YOUR CART EMPTY.
-            </p>
-          )} */}
+            {cart.data && cart?.data?.cart_detail.length > 0 ? (
+              cart?.data?.cart_detail.map((item, index) =>
+                <CartItem key={index} cart={item} onQuantityChange={handleQuantityChange} />
+              )
+            ) : (
+              <p
+                style={{
+                  color: "red",
+                  fontWeight: "bold",
+                  textAlign: "center",
+                  marginTop: "50px",
+                }}
+              >
+                YOUR CART EMPTY.
+              </p>
+            )}
           </div>
         </div>
         <div className="fixed px-4 lg:col-span-1 right-[60px] w-[30%] top-[330px]" ref={cartDetailRef}>
@@ -61,7 +65,7 @@ const Cart = () => {
             <div className="space-y-3 font-semibold">
               <div className="flex justify-between pt-3 text-black ">
                 <span>Tổng</span>
-                <span style={{ justifyContent: "flex-end" }}>68.888VNĐ</span>
+                <span style={{ justifyContent: "flex-end" }}>{cart?.data?.total_price.toLocaleString('en')} VNĐ</span>
               </div>
 
               <div className="flex justify-between">
@@ -70,12 +74,12 @@ const Cart = () => {
               </div>
               <div className="flex justify-between">
                 <span>Phí Vận Chuyển</span>
-                <span className="text-green-700">20.000 VNĐ</span>
+                <span className="text-green-700">{(20000).toLocaleString('en')} VNĐ</span>
               </div>
               <hr />
               <div className="flex justify-between font-bold text-lg">
                 <span>Thanh Toán</span>
-                <span className="text-green-700">88.888 VNĐ</span>
+                <span className="text-green-700">{(cart?.data?.total_price + 20000).toLocaleString('en')} VNĐ</span>
               </div>
             </div>
 

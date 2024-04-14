@@ -5,7 +5,6 @@ import Origin from "../pages/About/Origin";
 import Services from "../pages/About/Services";
 import Jobs from "../pages/About/Jobs";
 import News from "../pages/News/News";
-import Card from "../pages/Card";
 import Menu from "../pages/Menu/Menu";
 import Products from "../pages/Menu/Products";
 import Page404 from "../pages/Page404";
@@ -46,7 +45,6 @@ const Routers = () => {
       <Route path="/jobs" element={<Jobs />} />
       <Route path="/news" element={<News />} />
       <Route path="/news/:id" element={<NewDetail />} />
-      <Route path="/card" element={<Card />} />
       <Route path="/menu" element={<Menu />} />
       <Route path="/products" element={<Products />} />
       <Route path="/products/:id" element={<ProductDetail />} />

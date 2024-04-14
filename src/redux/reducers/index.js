@@ -10,6 +10,7 @@ import categoriesReducer from './categoriesReducer';
 import updateProductReducer from './updateProductReducer';
 import userProfileReducer from './userProfileReducer';
 import customerOrdersReducer from './customerOrderReducer';
+import cartReducer from './cartReducer';
 
 const rootReducer = combineReducers({
   news: newsReducer,
@@ -23,6 +24,7 @@ const rootReducer = combineReducers({
   updateProduct: updateProductReducer,
   user: userProfileReducer,
   customerOrders: customerOrdersReducer,
+  cart: cartReducer,
 });
 
 export default rootReducer;

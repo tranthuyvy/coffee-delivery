@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Navbar = () => {
   const [showAboutMenu, setShowAboutMenu] = useState(false);
@@ -278,20 +279,22 @@ const Navbar = () => {
 
               <li className="hidden sm:block w-full text-left md:w-fit border-white hover:border-b-2 hover:border-white">
                 <a
-                  className="font-RobotoMedium uppercase block text-white text-[20px] md:text-[17px] xl:text-[18px] py-[15px] px-0 sm:py-2 sm:pl-3 sm:pr-10 border-none sm:border-b border-b border-gray-100 hover:bg-transparent lg:hover:bg-transparent lg:border-0 lg:hover:text-[#fff] md:py-4 lg:py-6"
-                  href="/card"
-                >
-                  Thẻ
-                </a>
-              </li>
-
-              <li className="hidden sm:block w-full text-left md:w-fit border-white hover:border-b-2 hover:border-white">
-                <a
                   className="font-RobotoMedium uppercase block text-white text-[20px] md:text-[17px] xl:text-[18px] py-[15px] px-0 sm:py-2 sm:pl-3 sm:pr-10 border-none sm:border-b border-b border-gray-100 hover:bg-transparent lg:hover:bg-transparent lg:border-0 lg:hover:text-white md:py-4 lg:py-6"
                   href="/contact"
                 >
                   Liên Hệ
                 </a>
+              </li>
+
+              <li className="hidden sm:block w-full text-left md:w-fit">
+                <div className="text-white">
+                  <a href="/cart">
+                    <FaShoppingCart fontSize={25} />
+                    <span className="bg-white text-main w-5 h-5 flex items-center justify-center rounded-full absolute top-[18px] right-[88px]">
+                      5
+                    </span>
+                  </a>
+                </div>
               </li>
 
               <li className="hidden sm:block w-full pr-5 text-left md:w-fit">
@@ -456,14 +459,6 @@ const Navbar = () => {
                         className="flex text-left items-center font-RobotoMedium uppercase text-[18px] py-[15px] px-0 sm:py-2 sm:pl-3 sm:pr-4 text-black w-full hover:text-red-600"
                       >
                         Tin Tức
-                      </a>
-                    </li>
-                    <li className="w-full text-left md:w-fit">
-                      <a
-                        href="/card"
-                        className="flex text-left items-center font-RobotoMedium uppercase text-[18px] py-[15px] px-0 sm:py-2 sm:pl-3 sm:pr-4 text-black w-full hover:text-red-600"
-                      >
-                        Thẻ
                       </a>
                     </li>
                     <li className="w-full text-left md:w-fit">

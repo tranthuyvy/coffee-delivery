@@ -33,7 +33,24 @@ import {
   GET_CUSTOMER_ORDERS_REQUEST,
   GET_CUSTOMER_ORDERS_SUCCESS,
   GET_CUSTOMER_ORDERS_FAILURE,
+  GET_ALL_CART_REQUEST,
+  GET_ALL_CART_SUCCESS,
+  GET_ALL_CART_FAILURE,
 } from './types';
+
+export const getAllCartRequest = () => ({
+  type: GET_ALL_CART_REQUEST
+});
+
+export const getAllCartSuccess = (cart) => ({
+  type: GET_ALL_CART_SUCCESS,
+  payload: cart
+});
+
+export const getAllCartFailure = (error) => ({
+  type: GET_ALL_CART_FAILURE,
+  payload: error
+});
 
 export const getUserProfileRequest = () => ({
   type: GET_USER_PROFILE_REQUEST
