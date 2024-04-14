@@ -1,14 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllCartRequest } from "../redux/actions/actions";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart.cart.data);
+  console.log("cart", cart)
+  const cartQuantity = cart?.total_quantity
   const [showAboutMenu, setShowAboutMenu] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    dispatch(getAllCartRequest());
+  }, [dispatch])
 
   const toggleAboutMenu = () => {
     setShowAboutMenu(!showAboutMenu);
@@ -291,7 +301,7 @@ const Navbar = () => {
                   <a href="/cart">
                     <FaShoppingCart fontSize={25} />
                     <span className="bg-white text-main w-5 h-5 flex items-center justify-center rounded-full absolute top-[18px] right-[88px]">
-                      5
+                      {cartQuantity}
                     </span>
                   </a>
                 </div>
