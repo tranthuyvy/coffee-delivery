@@ -29,6 +29,7 @@ import Signup from "../pages/Auth/Signup";
 import CustomerProfile from "../pages/Auth/CustomerProfile";
 import StaffProfile from "../Admin/pages/StaffProfile";
 import OrdersHistory from "../pages/Order/OrdersHistory";
+import OrderDetail from "../pages/Order/OrderDetail";
 
 const Routers = () => {
   return (
@@ -53,6 +54,7 @@ const Routers = () => {
       <Route path="/discover" element={<Discover />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/orders-history" element={<OrdersHistory />} />
+      <Route path="/order/:id" element={<OrderDetail />} />
 
       <Route path="/admin" element={<Layout />} >
         <Route index element={<Dashboard />} />

@@ -25,7 +25,7 @@ const OrderItem = ({ order }) => {
           </div>
 
         </div>
-        <div className="w-full flex items-center mt-2 justify-between">
+        <div className="w-full flex items-center justify-between">
 
           <div className="py-8 ml-1.5 flex justify-center items-center">
             {order_detail.map((orderDetail, index) => (
@@ -59,7 +59,7 @@ const OrderItem = ({ order }) => {
             </div>
 
             <div className="flex text-sm lg:text-base">
-              <p className="">Trạng thái: {getOrderStatus(status)}</p>
+              <p className="">{getOrderStatus(status)}</p>
             </div>
           </div>
         </div>
