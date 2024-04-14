@@ -1,6 +1,16 @@
+import { useEffect } from "react"
 import OrderItem from "../../components/Order/OrderItem"
+import { getCustomerOrdersRequest } from "../../redux/actions/actions"
+import { useDispatch, useSelector } from "react-redux"
 
 const OrdersHistory = () => {
+  const dispatch = useDispatch()
+  const customerOrders = useSelector(state => state.customerOrders.customerOrders)
+
+  useEffect(() => {
+    dispatch(getCustomerOrdersRequest())
+  }, [dispatch])
+
   return (
     <>
       <section className="relative flex flex-col-reverse md:flex-row items-center bg-[url('https://www.highlandscoffee.com.vn/vnt_upload/cake/SPECIALTYCOFFEE/Untitled-1-01.png')]">
@@ -16,18 +26,10 @@ const OrdersHistory = () => {
       <div className="w-full lg:px-32 relative my-10">
 
         <div className="space-y-3">
-          <OrderItem />
-          <OrderItem />
-          <OrderItem />
-          <OrderItem />
-          <OrderItem />
-
-          {/* {order.length > 0 && listOrder.length > 0 ? (
-            listOrder.map((item, index) =>
-              findQuantity(item.id) > 0 ? (
-                <CartItem key={index} detail={item} showButton={true} />
-              ) : null
-            )
+          {customerOrders?.data && customerOrders?.data.length > 0 ? (
+            customerOrders.data.map((order, index) => (
+              <OrderItem key={index} order={order} />
+            ))
           ) : (
             <p
               style={{
@@ -37,12 +39,11 @@ const OrdersHistory = () => {
                 marginTop: "50px",
               }}
             >
-              LỊCH SỬ ĐƠN HÀNG TRỐNG.
+              BẠN CHƯA ĐẶT ĐƠN HÀNG NÀO.
             </p>
-          )} */}
+          )}
+
         </div>
-
-
       </div>
     </>
   )

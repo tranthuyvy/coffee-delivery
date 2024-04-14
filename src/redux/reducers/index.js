@@ -9,6 +9,7 @@ import addProductReducer from './addProductReducer';
 import categoriesReducer from './categoriesReducer';
 import updateProductReducer from './updateProductReducer';
 import userProfileReducer from './userProfileReducer';
+import customerOrdersReducer from './customerOrderReducer';
 
 const rootReducer = combineReducers({
   news: newsReducer,
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   categories: categoriesReducer,
   updateProduct: updateProductReducer,
   user: userProfileReducer,
+  customerOrders: customerOrdersReducer,
 });
 
 export default rootReducer;
