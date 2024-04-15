@@ -3,18 +3,22 @@ import CardProductSimilar from "../../components/Products/CardProductSimilar";
 import CardSizeItem from "../../components/Products/CardSizeItem";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getAllProductsRequest } from "../../redux/actions/actions";
+import { addCartRequest, getAllProductsCustomerRequest } from "../../redux/actions/actions";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const products = useSelector(state => state.products.products.data);
-  const selectedProduct = products ? products.find((item) => item.product_id === id) : null;
-  const currentProduct = products ? products.filter((item) => item.product_id !== id) : [];
+  const productsCustomer = useSelector(state => state.productsCustomer.productsCustomer.data);
+  const selectedProduct = productsCustomer ? productsCustomer.find((item) => item.product_id === id) : null;
+  const currentProduct = productsCustomer ? productsCustomer.filter((item) => item.product_id !== id) : [];
 
   useEffect(() => {
-    dispatch(getAllProductsRequest());
+    dispatch(getAllProductsCustomerRequest());
   }, [dispatch]);
+
+  const handleAddToCart = () => {
+    dispatch(addCartRequest({ product_name: `${selectedProduct?.product_name}`, size: 'M' }));
+  };
 
   return (
     <div className="pt-[120px]">
@@ -86,28 +90,32 @@ const ProductDetail = () => {
               <hr className="mb-5 w-full" />
               <div className="grid sm:grid-cols-2 gap-4 items-center sm:justify-between w-full">
                 <div className="w-full">
-                  <a className="block" href="#addcart" target="_blank">
-                    <div className="flex justify-center items-center p-3 text-center border border-grey text-primary hover:text-white hover:bg-primary hover:border-none rounded-lg">
-                      <p className="font-serif text-[16px] lg:text-[17px] sm:text-lg text-inherit 3xl:text-[20px]">
-                        Thêm Vào Giỏ
-                      </p>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth="1.5"
-                        stroke="currentColor"
-                        className={`ml-1 w-4 h-4 sm:ml-2 sm:w-5 sm:h-5`}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
-                        />
-                      </svg>
-                    </div>
-                  </a>
+                  <div
+                    className="flex justify-center items-center p-3 text-center border border-grey text-primary hover:text-white hover:bg-primary hover:border-none rounded-lg"
+                  >
+                    <button
+                      onClick={handleAddToCart}
+                      className="font-serif text-[16px] lg:text-[17px] sm:text-lg text-inherit 3xl:text-[20px]"
+                    >
+                      Thêm Vào Giỏ
+                    </button>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="1.5"
+                      stroke="currentColor"
+                      className={`ml-1 w-4 h-4 sm:ml-2 sm:w-5 sm:h-5`}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                      />
+                    </svg>
+                  </div>
                 </div>
+
                 <div className="w-full">
                   <a
                     href="#buynow"
