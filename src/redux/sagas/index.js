@@ -1,6 +1,7 @@
 import { all } from 'redux-saga/effects';
 import newSaga from './newSaga';
 import productSaga from './productSaga';
+import productsCustomerSaga from './productsCustomerSaga';
 import orderSaga from './orderSaga';
 import customerSaga from './customerSaga';
 import orderDetailSaga from './orderDetailSaga';
@@ -12,11 +13,13 @@ import userProfileSaga from './userProfileSaga';
 import customerOrdersSaga from './customerOrdersSaga';
 import cartSaga from './cartSaga';
 import addOrderSaga from './addOrderSaga';
+import couponsSaga from './couponSaga';
 
 export default function* rootSaga() {
   yield all([
     newSaga(),
     productSaga(),
+    productsCustomerSaga(),
     orderSaga(),
     customerSaga(),
     orderDetailSaga(),
@@ -28,5 +31,6 @@ export default function* rootSaga() {
     customerOrdersSaga(),
     cartSaga(),
     addOrderSaga(),
+    couponsSaga(),
   ]);
 }

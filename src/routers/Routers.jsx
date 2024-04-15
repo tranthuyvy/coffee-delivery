@@ -29,6 +29,7 @@ import CustomerProfile from "../pages/Auth/CustomerProfile";
 import StaffProfile from "../Admin/pages/StaffProfile";
 import OrdersHistory from "../pages/Order/OrdersHistory";
 import OrderDetail from "../pages/Order/OrderDetail";
+import AllDiscounts from "../Admin/pages/AllDiscounts";
 
 const Routers = () => {
   return (
@@ -65,6 +66,7 @@ const Routers = () => {
         <Route path="/admin/customers" element={<AllCustomers />} />
         <Route path="/admin/category" element={<AllCategory />} />
         <Route path="/admin/profile" element={<StaffProfile />} />
+        <Route path="/admin/discounts" element={<AllDiscounts />} />
       </Route>
     </Routes>
   )

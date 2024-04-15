@@ -2,6 +2,9 @@ import {
   GET_ALL_PRODUCTS_REQUEST,
   GET_ALL_PRODUCTS_SUCCESS,
   GET_ALL_PRODUCTS_FAILURE,
+  GET_ALL_PRODUCTS_CUSTOMER_REQUEST,
+  GET_ALL_PRODUCTS_CUSTOMER_SUCCESS,
+  GET_ALL_PRODUCTS_CUSTOMER_FAILURE,
   FETCH_NEWS,
   SET_NEWS,
   GET_ALL_ORDERS_REQUEST,
@@ -40,7 +43,24 @@ import {
   ADD_ORDER_REQUEST,
   ADD_ORDER_SUCCESS,
   ADD_ORDER_FAILURE,
+  GET_ALL_COUPON_REQUEST,
+  GET_ALL_COUPON_SUCCESS,
+  GET_ALL_COUPON_FAILURE,
 } from './types';
+
+export const getAllCouponRequest = () => ({
+  type: GET_ALL_COUPON_REQUEST
+});
+
+export const getAllCouponSuccess = (coupon) => ({
+  type: GET_ALL_COUPON_SUCCESS,
+  payload: coupon
+});
+
+export const getAllCouponFailure = (error) => ({
+  type: GET_ALL_COUPON_FAILURE,
+  payload: error
+});
 
 export const getAllCartRequest = () => ({
   type: GET_ALL_CART_REQUEST
@@ -171,6 +191,20 @@ export const getAllProductsSuccess = (products) => ({
 
 export const getAllProductsFailure = (error) => ({
   type: GET_ALL_PRODUCTS_FAILURE,
+  payload: error
+});
+
+export const getAllProductsCustomerRequest = () => ({
+  type: GET_ALL_PRODUCTS_CUSTOMER_REQUEST
+});
+
+export const getAllProductsCustomerSuccess = (productsCustomer) => ({
+  type: GET_ALL_PRODUCTS_CUSTOMER_SUCCESS,
+  payload: productsCustomer
+});
+
+export const getAllProductsCustomerFailure = (error) => ({
+  type: GET_ALL_PRODUCTS_CUSTOMER_FAILURE,
   payload: error
 });
 

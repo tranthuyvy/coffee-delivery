@@ -43,7 +43,7 @@ export const DASHBOARD_SIDEBAR_TOP_LINKS = [
   {
     key: 'discount',
     label: 'Discount',
-    path: '/admin/discount',
+    path: '/admin/discounts',
     icon: <HiOutlineReceiptTax />
   },
 ]

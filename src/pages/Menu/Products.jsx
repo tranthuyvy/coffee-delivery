@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import CardProductItem from "../../components/Products/CardProductItem";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllProductsRequest } from "../../redux/actions/actions";
+import { getAllProductsCustomerRequest } from "../../redux/actions/actions";
 
 const Products = () => {
   const [categoryFilter, setCategoryFilter] = useState("");
@@ -9,19 +9,19 @@ const Products = () => {
   const [sortOrder, setSortOrder] = useState("desc");
 
   const dispatch = useDispatch();
-  const products = useSelector(state => state.products.products.data);
+  const productsCustomer = useSelector(state => state.productsCustomer.productsCustomer.data);
 
   useEffect(() => {
-    dispatch(getAllProductsRequest());
+    dispatch(getAllProductsCustomerRequest());
   }, [dispatch]);
 
-  const filterProducts = product => {
-    if (categoryFilter && product?.category?.category_name !== categoryFilter) {
+  const filterProducts = productsCustomer => {
+    if (categoryFilter && productsCustomer?.category?.category_name !== categoryFilter) {
       return false;
     }
     if (priceRangeFilter) {
       const [min, max] = priceRangeFilter.split("-");
-      const productPrice = parseInt(product?.price_update_detail[0]?.price_new);
+      const productPrice = parseInt(productsCustomer?.price_update_detail[0]?.price_new);
       if ((min && productPrice < parseInt(min)) || (max && productPrice > parseInt(max))) {
         return false;
       }
@@ -29,15 +29,15 @@ const Products = () => {
     return true;
   };
 
-  const sortProducts = product => {
-    return product.sort((a, b) => {
+  const sortProducts = productsCustomer => {
+    return productsCustomer.sort((a, b) => {
       const priceA = parseInt(a.price_update_detail[0]?.price_new);
       const priceB = parseInt(b.price_update_detail[0]?.price_new);
       return sortOrder === "asc" ? priceA - priceB : priceB - priceA;
     });
   };
 
-  const filteredAndSortedProducts = sortProducts(products?.filter(filterProducts) || []);
+  const filteredAndSortedProducts = sortProducts(productsCustomer?.filter(filterProducts) || []);
 
   const handleReset = () => {
     setCategoryFilter("");

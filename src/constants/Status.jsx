@@ -21,7 +21,7 @@ export function getOrderStatus(status) {
     case 3:
       return (
         <span className="capitalize py-1 px-2 rounded-md text-xs text-teal-600 bg-teal-100">
-          Đang Giao
+          Đang Vận Chuyển
         </span>
       )
     case 4:

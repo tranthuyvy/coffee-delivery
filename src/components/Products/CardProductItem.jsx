@@ -1,10 +1,8 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
 
 const CardProductItem = ({ product }) => {
   const { product_id, product_name, price_update_detail, image, category, status } = product;
   const formattedPrice = price_update_detail.length > 0 ? (price_update_detail[0].price_new).toLocaleString('en') : '';
-  const [isHovered, setIsHovered] = useState(false);
 
   const handleAddToCart = () => {
     console.log("add cart")
@@ -13,8 +11,6 @@ const CardProductItem = ({ product }) => {
   return (
     <div
       className="bg-white rounded-xl shadow-lg mb-10 relative justify-between col-span-1 w-full md:w-[48%] xl:w-[32%] hover:scale-105 transition duration-500 ease-in-out"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
       <div>
         <div className='bg-primary rounded-bl-[35px] py-2 pl-8 pr-5 text-center absolute top-0 right-0 w-fit'>
@@ -61,29 +57,27 @@ const CardProductItem = ({ product }) => {
               <div className='absolute h-full border-l border-grayWhite top-0 left-[50%]'></div>
             </div>
           </div>
-          {isHovered && (
-            <>
-              <hr className='' />
-              <div className='w-full flex items-center justify-center relative gap-5 transition-opacity duration-300 ease-in-out'>
-                <div className='w-full m-5'>
-                  <button
-                    className="w-full bg-white text-main border-[1px] border-main p-2 rounded-md shadow-md hover:bg-main hover:text-white transition duration-300 ease-in-out"
-                    onClick={handleAddToCart}
-                  >
-                    Thêm Vào Giỏ
-                  </button>
-                </div>
-
-                <div className='w-full m-5'>
-                  <button
-                    className="w-full bg-white text-main border-[1px] border-main p-2 rounded-md shadow-md hover:bg-main hover:text-white transition duration-300 ease-in-out"
-                  >
-                    Mua Ngay
-                  </button>
-                </div>
+          <>
+            <hr className='' />
+            <div className='w-full flex items-center justify-center relative gap-5 transition-opacity duration-300 ease-in-out'>
+              <div className='w-full m-5'>
+                <button
+                  className="font-RobotoMedium w-full bg-white text-primary border-primary hover:bg-primary border-[1px]  p-2 rounded-md shadow-md  hover:text-white transition duration-300 ease-in-out"
+                  onClick={() => handleAddToCart()}
+                >
+                  Thêm Vào Giỏ
+                </button>
               </div>
-            </>
-          )}
+
+              <div className='w-full m-5'>
+                <button
+                  className="font-RobotoMedium w-full bg-white text-main border-main hover:bg-main border-[1px] p-2 rounded-md shadow-md  hover:text-white transition duration-300 ease-in-out"
+                >
+                  Mua Ngay
+                </button>
+              </div>
+            </div>
+          </>
         </div>
       </div>
     </div>

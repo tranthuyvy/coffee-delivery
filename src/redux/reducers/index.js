@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import newsReducer from './newsReducer';
 import productsReducer from './productsReducer';
+import productsCustomerReducer from './productsCustomerReducer';
 import ordersReducer from './ordersReducer';
 import customersReducer from './customersReducer';
 import orderDetailReducer from './orderDetailReducer';
@@ -12,10 +13,12 @@ import userProfileReducer from './userProfileReducer';
 import customerOrdersReducer from './customerOrderReducer';
 import cartReducer from './cartReducer';
 import addOrderReducer from './addOrderReducer';
+import couponReducer from './couponReducer';
 
 const rootReducer = combineReducers({
   news: newsReducer,
   products: productsReducer,
+  productsCustomer: productsCustomerReducer,
   orders: ordersReducer,
   customers: customersReducer,
   orderDetail: orderDetailReducer,
@@ -27,6 +30,7 @@ const rootReducer = combineReducers({
   customerOrders: customerOrdersReducer,
   cart: cartReducer,
   addOrder: addOrderReducer,
+  coupon: couponReducer,
 });
 
 export default rootReducer;
