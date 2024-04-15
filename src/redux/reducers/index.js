@@ -15,6 +15,7 @@ import cartReducer from './cartReducer';
 import addOrderReducer from './addOrderReducer';
 import couponsReducer from './couponsReducer';
 import addCartReducer from './addCartReducer';
+import addCouponReducer from './addCouponReducer';
 
 const rootReducer = combineReducers({
   news: newsReducer,
@@ -32,6 +33,7 @@ const rootReducer = combineReducers({
   cart: cartReducer,
   addOrder: addOrderReducer,
   coupons: couponsReducer,
+  addCoupon: addCouponReducer,
   addCart: addCartReducer,
 });
 

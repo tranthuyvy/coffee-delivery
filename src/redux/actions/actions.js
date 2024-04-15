@@ -50,7 +50,30 @@ import {
   ADD_CART_REQUEST,
   ADD_CART_SUCCESS,
   ADD_CART_FAILURE,
+  RESET_ADD_COUPON_STATE,
+  ADD_COUPON_REQUEST,
+  ADD_COUPON_SUCCESS,
+  ADD_COUPON_FAILURE,
 } from './types';
+
+export const addCouponRequest = (formData) => ({
+  type: ADD_COUPON_REQUEST,
+  payload: formData,
+});
+
+export const addCouponSuccess = (data) => ({
+  type: ADD_COUPON_SUCCESS,
+  payload: data,
+});
+
+export const addCouponFailure = (error) => ({
+  type: ADD_COUPON_FAILURE,
+  error,
+});
+
+export const resetAddCouponState = () => ({
+  type: RESET_ADD_COUPON_STATE
+});
 
 export const addCartRequest = (payload) => ({
   type: ADD_CART_REQUEST,

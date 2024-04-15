@@ -4,6 +4,7 @@ import { getAllCouponsRequest } from "../../redux/actions/actions";
 import { getStatus } from "../../constants/Status";
 import { IoIosAddCircle } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const AllCoupons = () => {
   const dispatch = useDispatch();
@@ -27,26 +28,7 @@ const AllCoupons = () => {
   //   setShowDialog(false);
   // }
 
-  // const handleAddCoupon = async () => {
-  //   try {
-  //     const token = localStorage.getItem("token");
-  //     const response = await axios.post('http://localhost:9999/admin/coupon/add', {
-  //       category_name: newCategoryName
-  //     }, {
-  //       headers: {
-  //         Authorization: `Bearer ${token}`
-  //       }
-  //     });
-  //     console.log(response.data);
-
-  //     handleCloseDialog();
-  //     dispatch(getAllCouponRequest());
-  //   } catch (error) {
-  //     console.error("Error adding category", error);
-  //   }
-  // }
-
-  // const handleDeleteCategory = async (couponId) => {
+  // const handleDeleteCoupon = async (couponId) => {
   //   const confirmDelete = window.confirm(
   //     "Bạn có chắc chắn muốn xóa loại này không?"
   //   );
@@ -105,8 +87,8 @@ const AllCoupons = () => {
                 <td>{coupon?.minimum_value}</td>
                 <td>{coupon?.type}</td>
                 <td>{coupon?.quantity}</td>
-                <td>{getStatus(coupon?.status)}</td>
                 <td>{coupon?.quantity}</td>
+                <td>{getStatus(coupon?.status)}</td>
                 <td>
                   <MdDelete className="cursor-pointer text-primary" fontSize={25} />
                 </td>
@@ -115,9 +97,15 @@ const AllCoupons = () => {
           </tbody>
         </table>
       </div>
-      <div className="fixed right-6 bottom-3">
-        <IoIosAddCircle fontSize={50} className="cursor-pointer text-primary" />
-      </div>
+
+      <Link to="/admin/create-coupon">
+        <div className="fixed right-8 bottom-3">
+          <IoIosAddCircle
+            fontSize={50}
+            className="cursor-pointer text-primary"
+          />
+        </div>
+      </Link>
     </>
   )
 }
