@@ -41,9 +41,9 @@ export const DASHBOARD_SIDEBAR_TOP_LINKS = [
     icon: <HiOutlineServer />
   },
   {
-    key: 'discount',
-    label: 'Discount',
-    path: '/admin/discounts',
+    key: 'coupons',
+    label: 'Coupons',
+    path: '/admin/coupons',
     icon: <HiOutlineReceiptTax />
   },
 ]

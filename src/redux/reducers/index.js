@@ -13,7 +13,7 @@ import userProfileReducer from './userProfileReducer';
 import customerOrdersReducer from './customerOrderReducer';
 import cartReducer from './cartReducer';
 import addOrderReducer from './addOrderReducer';
-import couponReducer from './couponReducer';
+import couponsReducer from './couponsReducer';
 import addCartReducer from './addCartReducer';
 
 const rootReducer = combineReducers({
@@ -31,7 +31,7 @@ const rootReducer = combineReducers({
   customerOrders: customerOrdersReducer,
   cart: cartReducer,
   addOrder: addOrderReducer,
-  coupon: couponReducer,
+  coupons: couponsReducer,
   addCart: addCartReducer,
 });
 

@@ -1,18 +1,17 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllCouponRequest } from "../../redux/actions/actions";
+import { getAllCouponsRequest } from "../../redux/actions/actions";
 import { getStatus } from "../../constants/Status";
 import { IoIosAddCircle } from "react-icons/io";
-import { MdModeEditOutline, MdDelete } from "react-icons/md";
+import { MdDelete } from "react-icons/md";
 
-const AllDiscounts = () => {
+const AllCoupons = () => {
   const dispatch = useDispatch();
-  const coupons = useSelector((state) => state.coupons);
-  // const [showDialog, setShowDialog] = useState(false);
+  const coupons = useSelector((state) => state.coupons.coupons);
 
   useEffect(() => {
     try {
-      dispatch(getAllCouponRequest());
+      dispatch(getAllCouponsRequest());
     } catch (error) {
       console.error("Error dispatch", error);
     }
@@ -78,37 +77,38 @@ const AllDiscounts = () => {
             <tr className="bg-primary">
               <td className="rounded-s-md">ID</td>
               <td>Hình Ảnh</td>
-              <td>Tên Loại</td>
               <td>Ngày Tạo</td>
+              <td>Ngày Kết Thúc</td>
+              <td>Giá Trị</td>
+              <td>Loại</td>
+              <td>Số Lượng</td>
               <td>Người Tạo</td>
               <td>Trạng Thái</td>
-              <td className="rounded-e-md">Hành Động</td>
+              <td className="rounded-e-md">Vô Hiệu Hóa</td>
             </tr>
           </thead>
           <tbody>
-            {coupons.data && coupons?.data.map((coupon, index) => (
-              <tr key={coupons.id}>
+            {coupons.data && coupons?.data.map((coupon) => (
+              <tr key={coupons.coupon_id}>
                 <td>
-                  {index + 1}
+                  {coupon?.coupon_id}
                 </td>
                 <td>
                   <img
                     src={coupon?.image || "https://www.highlandscoffee.com.vn/vnt_upload/weblink/White_logo800.png"}
-                    alt={coupon?.coupon_name}
-                    className="w-[68px] h-[50px] object-contain rounded-md bg-primary"
+                    alt={coupon?.type}
+                    className="w-[68px] object-contain rounded-md bg-primary"
                   />
                 </td>
-                <td>{coupon?.coupon_name}</td>
                 <td>{new Date(coupon?.created_at).toLocaleDateString()}</td>
-                <td>Tui Nè</td>
+                <td>{new Date(coupon?.end_date).toLocaleDateString()}</td>
+                <td>{coupon?.minimum_value}</td>
+                <td>{coupon?.type}</td>
+                <td>{coupon?.quantity}</td>
                 <td>{getStatus(coupon?.status)}</td>
+                <td>{coupon?.quantity}</td>
                 <td>
-                  <span>
-                    <MdModeEditOutline className="cursor-pointer text-primary" fontSize={25} />
-                  </span>
-                  <span>
-                    <MdDelete className="cursor-pointer text-primary" fontSize={25} />
-                  </span>
+                  <MdDelete className="cursor-pointer text-primary" fontSize={25} />
                 </td>
               </tr>
             ))}
@@ -122,4 +122,4 @@ const AllDiscounts = () => {
   )
 }
 
-export default AllDiscounts
+export default AllCoupons;

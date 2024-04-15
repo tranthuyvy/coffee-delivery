@@ -13,7 +13,7 @@ import userProfileSaga from './userProfileSaga';
 import customerOrdersSaga from './customerOrdersSaga';
 import cartSaga from './cartSaga';
 import addOrderSaga from './addOrderSaga';
-import couponsSaga from './couponSaga';
+import couponsSaga from './couponsSaga';
 import putAddCart from './addCartSaga';
 
 export default function* rootSaga() {
