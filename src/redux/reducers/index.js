@@ -11,6 +11,7 @@ import updateProductReducer from './updateProductReducer';
 import userProfileReducer from './userProfileReducer';
 import customerOrdersReducer from './customerOrderReducer';
 import cartReducer from './cartReducer';
+import addOrderReducer from './addOrderReducer';
 
 const rootReducer = combineReducers({
   news: newsReducer,
@@ -25,6 +26,7 @@ const rootReducer = combineReducers({
   user: userProfileReducer,
   customerOrders: customerOrdersReducer,
   cart: cartReducer,
+  addOrder: addOrderReducer,
 });
 
 export default rootReducer;

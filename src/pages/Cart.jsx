@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef } from "react";
 import CartItem from "../components/Cart/CartItem"
 import { useDispatch, useSelector } from "react-redux";
-import { getAllCartRequest } from "../redux/actions/actions";
+import { addOrderRequest, getAllCartRequest } from "../redux/actions/actions";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -24,6 +24,15 @@ const Cart = () => {
     getAllCart();
   };
 
+  const handleDeleteSuccess = () => {
+    getAllCart();
+    console.log("cart again", cart)
+  }
+
+  const handleOrderButtonClick = () => {
+    dispatch(addOrderRequest())
+  }
+
   return (
     <>
       <section className="relative flex flex-col-reverse md:flex-row items-center bg-[url('https://www.highlandscoffee.com.vn/vnt_upload/cake/SPECIALTYCOFFEE/Untitled-1-01.png')]">
@@ -41,7 +50,12 @@ const Cart = () => {
           <div className="space-y-3">
             {cart.data && cart?.data?.cart_detail.length > 0 ? (
               cart?.data?.cart_detail.map((item, index) =>
-                <CartItem key={index} cart={item} onQuantityChange={handleQuantityChange} />
+                <CartItem
+                  key={index}
+                  cart={item}
+                  onQuantityChange={handleQuantityChange}
+                  onDeleteSuccess={handleDeleteSuccess}
+                />
               )
             ) : (
               <p
@@ -85,6 +99,7 @@ const Cart = () => {
 
             <div className="flex justify-center items-center gap-5">
               <button
+                onClick={() => handleOrderButtonClick()}
                 className="w-[50%] bg-green-500 bg-primary text-white p-2 rounded-md mt-5 shadow-md hover:bg-main transition duration-300 ease-in-out"
               >
                 Đặt Hàng

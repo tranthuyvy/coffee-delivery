@@ -2,7 +2,7 @@ import axios from "axios";
 import PropTypes from "prop-types";
 import { useState } from "react";
 
-const CartItem = ({ cart, onQuantityChange }) => {
+const CartItem = ({ cart, onQuantityChange, onDeleteSuccess }) => {
   const { product, price, size } = cart;
   const [quantity, setQuantity] = useState(cart.quantity);
 
@@ -32,6 +32,31 @@ const CartItem = ({ cart, onQuantityChange }) => {
       onQuantityChange(product?.product_id, newQuantity);
     }
   };
+
+  const handleDelete = async () => {
+    try {
+      const apiUrl = 'http://localhost:9999/api/cart/delete/item';
+      const requestBody = {
+        product_id: product?.product_id,
+        size: size
+      };
+      const token = localStorage.getItem('token');
+
+      const response = await axios.post(apiUrl, requestBody, {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      });
+
+      console.log('Delete items successfully:', response.data);
+
+    } catch (error) {
+      console.error('Failed to delete cart items:', error);
+    }
+
+    onDeleteSuccess();
+  }
 
   return (
     <>
@@ -99,6 +124,7 @@ const CartItem = ({ cart, onQuantityChange }) => {
             <div className="flex text-sm lg:text-base mt-4 lg:mt-4">
               <button
                 className="text-black mx-10"
+                onClick={() => handleDelete()}
               >
                 <img
                   src="https://firebasestorage.googleapis.com/v0/b/wed-invitation-790a1.appspot.com/o/delete.png?alt=media&token=6dbf5cb5-a5ad-4ec8-afc0-61ce07d6f2f3"
@@ -117,6 +143,7 @@ const CartItem = ({ cart, onQuantityChange }) => {
 CartItem.propTypes = {
   cart: PropTypes.object.isRequired,
   onQuantityChange: PropTypes.func.isRequired,
+  onDeleteSuccess: PropTypes.func.isRequired,
 };
 
 export default CartItem

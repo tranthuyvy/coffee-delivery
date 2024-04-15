@@ -36,6 +36,10 @@ import {
   GET_ALL_CART_REQUEST,
   GET_ALL_CART_SUCCESS,
   GET_ALL_CART_FAILURE,
+  RESET_ADD_ORDER_STATE,
+  ADD_ORDER_REQUEST,
+  ADD_ORDER_SUCCESS,
+  ADD_ORDER_FAILURE,
 } from './types';
 
 export const getAllCartRequest = () => ({
@@ -106,6 +110,25 @@ export const getCustomerOrdersSuccess = (customerOrders) => ({
 export const getCustomerOrdersFailure = (error) => ({
   type: GET_CUSTOMER_ORDERS_FAILURE,
   payload: error
+});
+
+export const addOrderRequest = (payload) => ({
+  type: ADD_ORDER_REQUEST,
+  payload
+});
+
+export const addOrderSuccess = (data) => ({
+  type: ADD_ORDER_SUCCESS,
+  payload: data,
+});
+
+export const addOrderFailure = (error) => ({
+  type: ADD_ORDER_FAILURE,
+  error,
+});
+
+export const resetAddOrderState = () => ({
+  type: RESET_ADD_ORDER_STATE
 });
 
 export const getAllOrdersRequest = () => ({
