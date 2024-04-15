@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { takeLatest, call, put } from 'redux-saga/effects';
 import { GET_ALL_COUPONS_REQUEST } from '../actions/types';
-import { getAllCouponsSuccess, getAllCouponsFailure } from '../actions/actions';
+import { getAllCouponsSuccess, getAllCouponsFailure, resetAddCouponState } from '../actions/actions';
 
 function* getAllCouponsSaga() {
   try {
@@ -14,6 +14,7 @@ function* getAllCouponsSaga() {
     });
 
     yield put(getAllCouponsSuccess(response.data));
+    yield put(resetAddCouponState());
   } catch (error) {
     yield put(getAllCouponsFailure(error));
   }
