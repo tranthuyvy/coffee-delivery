@@ -9,7 +9,6 @@ import { getAllCartRequest } from "../redux/actions/actions";
 const Navbar = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart.data);
-  console.log("cart", cart)
   const cartQuantity = cart?.total_quantity
   const [showAboutMenu, setShowAboutMenu] = useState(false);
   const [showMenu, setShowMenu] = useState(false);

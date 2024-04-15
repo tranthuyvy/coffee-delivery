@@ -46,7 +46,30 @@ import {
   GET_ALL_COUPON_REQUEST,
   GET_ALL_COUPON_SUCCESS,
   GET_ALL_COUPON_FAILURE,
+  RESET_ADD_CART_STATE,
+  ADD_CART_REQUEST,
+  ADD_CART_SUCCESS,
+  ADD_CART_FAILURE,
 } from './types';
+
+export const addCartRequest = (payload) => ({
+  type: ADD_CART_REQUEST,
+  payload
+});
+
+export const addCartSuccess = (data) => ({
+  type: ADD_CART_SUCCESS,
+  payload: data,
+});
+
+export const addCartFailure = (error) => ({
+  type: ADD_CART_FAILURE,
+  error,
+});
+
+export const resetAddCartState = () => ({
+  type: RESET_ADD_CART_STATE
+});
 
 export const getAllCouponRequest = () => ({
   type: GET_ALL_COUPON_REQUEST

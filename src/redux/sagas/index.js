@@ -14,6 +14,7 @@ import customerOrdersSaga from './customerOrdersSaga';
 import cartSaga from './cartSaga';
 import addOrderSaga from './addOrderSaga';
 import couponsSaga from './couponSaga';
+import putAddCart from './addCartSaga';
 
 export default function* rootSaga() {
   yield all([
@@ -32,5 +33,6 @@ export default function* rootSaga() {
     cartSaga(),
     addOrderSaga(),
     couponsSaga(),
+    putAddCart(),
   ]);
 }

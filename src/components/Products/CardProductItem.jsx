@@ -1,11 +1,17 @@
 import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
+import { addCartRequest } from '../../redux/actions/actions';
 
 const CardProductItem = ({ product }) => {
+  const dispatch = useDispatch();
+  const addCart = useSelector(state => state.addCart);
   const { product_id, product_name, price_update_detail, image, category, status } = product;
   const formattedPrice = price_update_detail.length > 0 ? (price_update_detail[0].price_new).toLocaleString('en') : '';
 
   const handleAddToCart = () => {
-    console.log("add cart")
+    dispatch(addCartRequest({ product_name: `${product_name}`, size: 'M' }));
+    console.log("add to cart")
+    console.log("addCart", addCart)
   };
 
   return (
