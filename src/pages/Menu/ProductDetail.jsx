@@ -2,8 +2,9 @@ import { useParams } from "react-router-dom";
 import CardProductSimilar from "../../components/Products/CardProductSimilar";
 import CardSizeItem from "../../components/Products/CardSizeItem";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { addCartRequest, getAllProductsCustomerRequest } from "../../redux/actions/actions";
+import axios from "axios";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -11,10 +12,36 @@ const ProductDetail = () => {
   const productsCustomer = useSelector(state => state.productsCustomer.productsCustomer.data);
   const selectedProduct = productsCustomer ? productsCustomer.find((item) => item.product_id === id) : null;
   const currentProduct = productsCustomer ? productsCustomer.filter((item) => item.product_id !== id) : [];
+  const category_id = selectedProduct?.category?.category_id;
+  const [sizeData, setSizeData] = useState([]);
 
   useEffect(() => {
     dispatch(getAllProductsCustomerRequest());
   }, [dispatch]);
+
+  useEffect(() => {
+    if (category_id) {
+      fetchData();
+    }
+  }, [selectedProduct]);
+
+  const fetchData = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      const config = {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      };
+
+      const response = await axios.get(`http://localhost:9999/api/order/size/category?category_id=${category_id}`, config);
+      const data = response.data.data;
+
+      setSizeData(data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  }
 
   const handleAddToCart = () => {
     dispatch(addCartRequest({ product_name: `${selectedProduct?.product_name}`, size: 'M' }));
@@ -70,7 +97,7 @@ const ProductDetail = () => {
                 Size
               </p>
               <div className="flex items-center justify-center gap-4 mt-1">
-                {selectedProduct?.size?.map((item, index) => (
+                {sizeData && sizeData.map((item, index) => (
                   <CardSizeItem key={index} size={item} />
                 ))}
 
