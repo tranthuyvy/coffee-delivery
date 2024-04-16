@@ -14,6 +14,7 @@ const ProductDetail = () => {
   const currentProduct = productsCustomer ? productsCustomer.filter((item) => item.product_id !== id) : [];
   const category_id = selectedProduct?.category?.category_id;
   const [sizeData, setSizeData] = useState([]);
+  const [selectedSize, setSelectedSize] = useState(null);
 
   useEffect(() => {
     dispatch(getAllProductsCustomerRequest());
@@ -43,8 +44,16 @@ const ProductDetail = () => {
     }
   }
 
+  const handleSizeClick = (selectedSize) => {
+    setSelectedSize(selectedSize);
+  };
+
   const handleAddToCart = () => {
-    dispatch(addCartRequest({ product_name: `${selectedProduct?.product_name}`, size: 'M' }));
+    if (selectedSize) {
+      dispatch(addCartRequest({ product_name: `${selectedProduct?.product_name}`, size: selectedSize }));
+    } else {
+      console.log("Vui lòng chọn size trước khi thêm vào giỏ hàng");
+    }
   };
 
   return (
@@ -98,7 +107,12 @@ const ProductDetail = () => {
               </p>
               <div className="flex items-center justify-center gap-4 mt-1">
                 {sizeData && sizeData.map((item, index) => (
-                  <CardSizeItem key={index} size={item} />
+                  <CardSizeItem
+                    key={index}
+                    size={item?.size?.size_name}
+                    isSelected={selectedSize === item?.size?.size_name}
+                    onClick={handleSizeClick}
+                  />
                 ))}
 
               </div>

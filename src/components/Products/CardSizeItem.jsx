@@ -1,11 +1,15 @@
 import PropTypes from "prop-types";
 
-const CardSizeItem = ({ size }) => {
+const CardSizeItem = ({ size, isSelected, onClick }) => {
+  console.log("isSelected", isSelected)
   return (
-    <div className="w-[50px] mb-5">
-      <div className="font-serif rounded-lg p-3 text-center border border-opacity-70 border-borderGray bg-white text-primary hover:bg-primary cursor-pointer hover:text-white hover:border-none">
+    <div className={`border border-opacity-70 w-[50px] mb-5 rounded-lg cursor-pointer hover:border-none border-borderGray ${isSelected ? 'bg-primary text-white hover:bg-none' : 'hover:bg-primary hover:text-white'}`}>
+      <div
+        className="font-serif p-3 text-center"
+        onClick={() => onClick(size)}
+      >
         <p className="uppercase text-[16px] lg:text-[17px] sm:text-lg text-inherit 3xl:text-[20px]">
-          {size?.size?.size_name}
+          {size}
         </p>
       </div>
     </div>
@@ -14,6 +18,8 @@ const CardSizeItem = ({ size }) => {
 
 CardSizeItem.propTypes = {
   size: PropTypes.string.isRequired,
+  isSelected: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default CardSizeItem
