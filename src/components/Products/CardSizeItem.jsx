@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 const CardSizeItem = ({ size, isSelected, onClick }) => {
-  console.log("isSelected", isSelected)
+
   return (
     <div className={`border border-opacity-70 w-[50px] mb-5 rounded-lg cursor-pointer hover:border-none border-borderGray ${isSelected ? 'bg-primary text-white hover:bg-none' : 'hover:bg-primary hover:text-white'}`}>
       <div

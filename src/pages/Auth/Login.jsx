@@ -5,6 +5,7 @@ import Helmet from "../../components/Helmet/Helmet";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { getUserProfileRequest } from "../../redux/actions/actions";
+import EarthCanvas from "../../components/Canvas/Earth";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -57,6 +58,7 @@ const Login = () => {
 
   return (
     <Helmet title="Login">
+
       <div className="full-screen relative z-[-1]" >
         <img
           className="fixed h-full w-full hover:cursor-none"
@@ -71,42 +73,48 @@ const Login = () => {
           alt="Logo"
         />
 
-        <div className="layout_login absolute flex-col justify-center items-center mt-[10%] ml-[30%] w-[40%] rounded-[15px]">
-          <h1 className="font-RobotoSemibold text-center mb-8 text-main text-[25px] uppercase">
-            Đăng Nhập
-          </h1>
-          <div className="input">
-            <label className="">Số Điện Thoại</label>
-            <input
-              type="text"
-              value={username}
-              onChange={handleUsernameChange}
-              className="h-8 w-[45%] outline-0 bg-[#ebebeb] p-2 rounded"
-            />
+        <div className="layout_login absolute flex justify-center items-center mt-[8%] ml-[5%] w-[85%] rounded-[15px]">
+          <div className="flex-col col-span-1 w-1/3 h-full object-contain border-r-2 border-neutral-400">
+            <EarthCanvas />
           </div>
-          <div className="input">
-            <label className="">Mật Khẩu</label>
-            <input
-              type="password"
-              value={password}
-              onChange={handlePasswordChange}
-              className="h-8 w-[45%] outline-0 bg-[#ebebeb] p-2 rounded mb-2"
-            />
-          </div>
-          <a className="link_forgotPass" href="/forgotPassword">
-            Quên Mật Khẩu
-          </a>
-          <div className="btn_submit">
-            <button className="uppercase" type="button" onClick={handleLogin}>
-              Đăng nhập
-            </button>
-          </div>
-          <div className="ml-[26%]">
-            <span>Bạn chưa có tài khoản? </span>
-            <a className="link_signup" href="/signup">
-              Đăng Ký Ngay
+          <div className="flex-col col-span-1 w-2/3">
+            <h1 className="font-RobotoSemibold text-center mb-8 text-main text-[25px] uppercase">
+              Đăng Nhập
+            </h1>
+            <div className="input">
+              <label className="">Số Điện Thoại</label>
+              <input
+                type="text"
+                value={username}
+                onChange={handleUsernameChange}
+                className="h-8 w-[45%] outline-0 bg-[#ebebeb] p-2 rounded"
+              />
+            </div>
+            <div className="input">
+              <label className="">Mật Khẩu</label>
+              <input
+                type="password"
+                value={password}
+                onChange={handlePasswordChange}
+                className="h-8 w-[45%] outline-0 bg-[#ebebeb] p-2 rounded mb-2"
+              />
+            </div>
+            <a className="link_forgotPass" href="/forgotPassword">
+              Quên Mật Khẩu
             </a>
+            <div className="btn_submit">
+              <button className="uppercase" type="button" onClick={handleLogin}>
+                Đăng nhập
+              </button>
+            </div>
+            <div className="ml-[26%]">
+              <span>Bạn chưa có tài khoản? </span>
+              <a className="link_signup" href="/signup">
+                Đăng Ký Ngay
+              </a>
+            </div>
           </div>
+
         </div>
       </div>
     </Helmet>
