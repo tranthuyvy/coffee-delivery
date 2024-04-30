@@ -91,3 +91,45 @@ export const address = [
     lng: 0.0,
   },
 ];
+
+export const menu = [
+  {
+    id: 2,
+    path: "/products",
+    title: "Sản phẩm",
+    image: "https://www.highlandscoffee.com.vn/vnt_upload/product/06_2023/HLC_New_logo_5.1_Products__3IN1_PLASTIC.jpg",
+  },
+
+  {
+    id: 4,
+    path: "/product",
+    title: "Cà phê",
+    image: "https://www.highlandscoffee.com.vn/vnt_upload/product/04_2023/New_product/HLC_New_logo_5.1_Products__CARAMEL_MACCHIATTO.jpg",
+  },
+  {
+    id: 1,
+    path: "/coupon",
+    title: "Mã giảm giá",
+    image: "https://firebasestorage.googleapis.com/v0/b/wed-invitation-790a1.appspot.com/o/icon%2Fcoupon.png?alt=media&token=fd0829b9-9680-42dc-9533-42de14fc02a2",
+  },
+  {
+    id: 3,
+    path: "/product",
+    title: "Trà",
+    image: "https://www.highlandscoffee.com.vn/vnt_upload/product/HLCPOSTOFFICE_DRAFT/PNG_FINAL/2_SPECIALTY_TEA/Tra_Oi_Hong.jpg",
+  },
+  {
+    id: 6,
+    path: "/product",
+    title: "Bánh",
+    image: "https://www.highlandscoffee.com.vn/vnt_upload/product/HLCPOSTOFFICE_DRAFT/PNG_FINAL/4_FOOD_MENU/CROP_Cake_2png.jpg",
+  },
+
+  {
+    id: 5,
+    path: "/product",
+    title: "Freeze",
+    image: "https://www.highlandscoffee.com.vn/vnt_upload/product/06_2023/HLC_New_logo_5.1_Products__CARAMEL_FREEZE_PHINDI.jpg",
+  },
+
+]

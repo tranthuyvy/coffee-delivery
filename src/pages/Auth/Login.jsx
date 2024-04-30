@@ -5,7 +5,7 @@ import Helmet from "../../components/Helmet/Helmet";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { getUserProfileRequest } from "../../redux/actions/actions";
-import EarthCanvas from "../../components/Canvas/Earth";
+import CoffeeCanvas from "../../components/Canvas/Coffee";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -73,9 +73,9 @@ const Login = () => {
           alt="Logo"
         />
 
-        <div className="layout_login absolute flex justify-center items-center mt-[8%] ml-[5%] w-[85%] rounded-[15px]">
+        <div className="layout_login absolute flex justify-center items-center mt-[8%] ml-[8%] w-[75%] rounded-[15px]">
           <div className="flex-col col-span-1 w-1/3 h-full object-contain border-r-2 border-neutral-400">
-            <EarthCanvas />
+            <CoffeeCanvas />
           </div>
           <div className="flex-col col-span-1 w-2/3">
             <h1 className="font-RobotoSemibold text-center mb-8 text-main text-[25px] uppercase">
