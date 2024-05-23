@@ -39,7 +39,7 @@
   border-radius: 5px;
   color: white;
   font-style: bold;
-  background-color: #df3f3f;
+  background-color: #b22830;
   cursor: pointer;
 }
 
@@ -57,5 +57,5 @@
 
 .link_forgotPass:hover,
 .link_signup:hover {
-  color: #df3f3f;
+  color: #b22830;
 }
