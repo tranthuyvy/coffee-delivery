@@ -2,9 +2,11 @@ import { useCallback, useEffect, useRef } from "react";
 import CartItem from "../components/Cart/CartItem"
 import { useDispatch, useSelector } from "react-redux";
 import { addOrderRequest, getAllCartRequest } from "../redux/actions/actions";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const cart = useSelector((state) => state.cart.cart);
   const cartDetailRef = useRef(null);
 
@@ -20,17 +22,17 @@ const Cart = () => {
     getAllCart();
   }, [getAllCart]);
 
-  const handleQuantityChange = (product_id, newQuantity) => {
+  const handleQuantityChange = () => {
     getAllCart();
   };
 
   const handleDeleteSuccess = () => {
     getAllCart();
-    console.log("cart again", cart)
   }
 
   const handleOrderButtonClick = () => {
-    dispatch(addOrderRequest())
+    navigate("/checkout");
+    // dispatch(addOrderRequest())
   }
 
   return (

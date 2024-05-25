@@ -31,6 +31,7 @@ import OrdersHistory from "../pages/Order/OrdersHistory";
 import OrderDetail from "../pages/Order/OrderDetail";
 import AllCoupons from "../Admin/pages/AllCoupons";
 import CreateCoupon from "../Admin/pages/CreateCoupon";
+import Checkout from "../pages/Checkout";
 
 const Routers = () => {
   return (
@@ -55,6 +56,7 @@ const Routers = () => {
       <Route path="/cart" element={<Cart />} />
       <Route path="/orders-history" element={<OrdersHistory />} />
       <Route path="/order/:id" element={<OrderDetail />} />
+      <Route path="/checkout" element={<Checkout />} />
 
       <Route path="/admin" element={<Layout />} >
         <Route index element={<Dashboard />} />
