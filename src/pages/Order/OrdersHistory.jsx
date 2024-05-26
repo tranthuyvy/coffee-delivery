@@ -4,6 +4,7 @@ import { getCustomerOrdersRequest } from "../../redux/actions/actions"
 import { useDispatch, useSelector } from "react-redux"
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { sortByDate } from "../../utils/sort";
 
 const OrdersHistory = () => {
   const dispatch = useDispatch()
@@ -19,31 +20,33 @@ const OrdersHistory = () => {
   }, [dispatch])
 
   useEffect(() => {
-    const filtered = customerOrders?.data?.filter((order) => {
-      const orderDate = new Date(order.create_at).getTime();
-      const startDateTimestamp = startDate ? startDate.getTime() : null;
-      const endDateTimestamp = endDate ? endDate.getTime() : null;
+    if (customerOrders.data) {
+      const sortedOrders = sortByDate(customerOrders.data, 'create_at');
 
+      const filtered = sortedOrders.filter((order) => {
+        const orderDate = new Date(order.create_at).getTime();
+        const startDateTimestamp = startDate ? startDate.getTime() : null;
+        const endDateTimestamp = endDate ? endDate.getTime() : null;
 
-      if (startDateTimestamp && orderDate < startDateTimestamp) {
-        return false;
-      }
+        if (startDateTimestamp && orderDate < startDateTimestamp) {
+          return false;
+        }
 
-      if (endDateTimestamp && orderDate > endDateTimestamp) {
-        return false;
-      }
+        if (endDateTimestamp && orderDate > endDateTimestamp) {
+          return false;
+        }
 
-      if (status && order.status !== parseInt(status)) {
+        if (status && order.status !== parseInt(status)) {
+          return false;
+        }
+        return true;
+      });
 
-        return false;
-      }
-      return true;
-    });
-    setFilteredOrders(filtered || []);
+      setFilteredOrders(filtered || []);
 
-    const total = filtered ? filtered.reduce((acc, order) => acc + order.total_price, 0) : 0;
-    setTotalPrice(total);
-
+      const total = filtered ? filtered.reduce((acc, order) => acc + order.total_price, 0) : 0;
+      setTotalPrice(total);
+    }
   }, [customerOrders.data, startDate, endDate, status]);
 
   const handleReset = () => {

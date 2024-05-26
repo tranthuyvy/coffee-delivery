@@ -32,8 +32,7 @@ const OrderItem = ({ order }) => {
               <img
                 key={index}
                 className="w-[100px] rounded-full shadow-md bg-whiteYellow object-cover object-top"
-                src="https://firebasestorage.googleapis.com/v0/b/wed-invitation-790a1.appspot.com/o/Freeze%20Berry.jpg?alt=media&token=a001ab72-82a4-473c-98f0-15280087168f"
-                // src={orderDetail?.product?.image}
+                src={orderDetail?.product?.image}
                 alt={orderDetail?.product?.product_name}
                 loading="lazy"
               />

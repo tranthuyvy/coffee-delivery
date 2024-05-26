@@ -39,6 +39,7 @@ const ProductDetail = () => {
       const data = response.data.data;
 
       setSizeData(data);
+
     } catch (error) {
       console.error('Error fetching data:', error);
     }

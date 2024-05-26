@@ -12,8 +12,6 @@ const CustomerProfile = () => {
 
   }, [dispatch])
 
-  console.log("user", user)
-
   return (
     <>
       <section className="relative flex flex-col-reverse md:flex-row items-center bg-white">

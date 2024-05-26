@@ -31,7 +31,7 @@ import OrdersHistory from "../pages/Order/OrdersHistory";
 import OrderDetail from "../pages/Order/OrderDetail";
 import AllCoupons from "../Admin/pages/AllCoupons";
 import CreateCoupon from "../Admin/pages/CreateCoupon";
-import Checkout from "../pages/Checkout";
+import Checkout from "../pages/Order/Checkout";
 
 const Routers = () => {
   return (

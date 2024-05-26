@@ -1,10 +1,10 @@
 import { Stepper, Step, StepLabel } from "@mui/material";
 
 const steps = [
+  "Checkout",
   "Placed",
-  "Order Confirmed",
+  "Confirmed",
   "Shipped",
-  "Out For Delivery",
   "Delivered",
 ];
 
@@ -14,7 +14,7 @@ const OrderTraker = ({ activeStep }) => {
       <Stepper activeStep={activeStep} alternativeLabel>
         {steps.map((label) => (
           <Step>
-            <StepLabel sx={{ color: "#DB6507", fontSize: "44px" }}>
+            <StepLabel className="" sx={{ color: "#b22830", fontSize: "44px" }}>
               {label}
             </StepLabel>
           </Step>

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef } from "react";
 import CartItem from "../components/Cart/CartItem"
 import { useDispatch, useSelector } from "react-redux";
-import { addOrderRequest, getAllCartRequest } from "../redux/actions/actions";
+import { getAllCartRequest } from "../redux/actions/actions";
 import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
@@ -104,12 +104,7 @@ const Cart = () => {
                 onClick={() => handleOrderButtonClick()}
                 className="w-[50%] bg-green-500 bg-primary text-white p-2 rounded-md mt-5 shadow-md hover:bg-main transition duration-300 ease-in-out"
               >
-                Đặt Hàng
-              </button>
-              <button
-                className="w-[50%] bg-green-500 bg-primary text-white p-2 rounded-md mt-5 shadow-md hover:bg-main transition duration-300 ease-in-out"
-              >
-                Thanh Toán
+                Checkout
               </button>
             </div>
           </div>
