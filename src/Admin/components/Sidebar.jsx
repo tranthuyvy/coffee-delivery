@@ -7,8 +7,8 @@ const Sidebar = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
     navigate("/");
+    localStorage.removeItem("token");
   }
 
   return (
@@ -49,7 +49,7 @@ const Sidebar = () => {
         ))}
         <div className="flex items-center gap-3 p-3 cursor-pointer text-main">
           <HiOutlineLogout />
-          <div onClick={() => handleLogout()}>Logout</div>
+          <div onClick={handleLogout}>Logout</div>
         </div>
       </div>
     </div>

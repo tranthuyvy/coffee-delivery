@@ -7,8 +7,8 @@ const Header = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
     navigate("/");
+    localStorage.removeItem("token");
   }
 
   return (
@@ -132,7 +132,7 @@ const Header = () => {
               <Menu.Item>
                 {({ active }) => (
                   <div
-                    onClick={() => handleLogout()}
+                    onClick={handleLogout}
                     className={`${active && "text-white bg-primary font-normal"} block text-primary focus:bg-hoverPrimary cursor-pointer px-4 py-2 rounded-md`}
                   >
                     Logout

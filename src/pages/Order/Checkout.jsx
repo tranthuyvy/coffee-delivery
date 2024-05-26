@@ -6,7 +6,7 @@ import CartItem from '../../components/Cart/CartItem';
 import { addOrderRequest, getAllCartRequest, getUserProfileRequest } from '../../redux/actions/actions';
 
 const Checkout = () => {
-  const activeStep = 0;
+  const activeStep = -1;
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const cart = useSelector((state) => state.cart.cart);

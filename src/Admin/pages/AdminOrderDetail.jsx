@@ -154,7 +154,7 @@ const AdminOrderDetail = () => {
               Hủy Đơn Hàng
             </button>
           }
-          {!orderDetail?.status === 5 &&
+          {orderDetail?.status !== 5 &&
             <button
               className="mt-5 bg-primary text-white font-RobotoMedium text-[16px] rounded-md p-2 shadow-md hover:bg-hoverPrimary ease-out duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-r border-none"
               onClick={() => handleConfirmOrder()}
