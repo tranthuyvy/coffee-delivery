@@ -1,9 +1,15 @@
-import { Link, useLocation } from "react-router-dom/dist"
+import { Link, useLocation, useNavigate } from "react-router-dom/dist"
 import { DASHBOARD_SIDEBAR_BOTTOM_LINKS, DASHBOARD_SIDEBAR_TOP_LINKS } from "../../constants/MenuLink"
 import { HiOutlineLogout } from "react-icons/hi";
 
 const Sidebar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/");
+  }
 
   return (
     <div className="fixed bg-primary w-60 h-full p-3 flex flex-col text-white font-RobotoMedium">
@@ -43,7 +49,7 @@ const Sidebar = () => {
         ))}
         <div className="flex items-center gap-3 p-3 cursor-pointer text-main">
           <HiOutlineLogout />
-          <div>Logout</div>
+          <div onClick={() => handleLogout()}>Logout</div>
         </div>
       </div>
     </div>

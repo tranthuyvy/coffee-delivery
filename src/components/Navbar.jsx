@@ -31,6 +31,11 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   }
 
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/");
+  }
+
   return (
     <>
       <nav className="hidden md:block md:p-0 fixed w-full bg-main border-gray-200 z-[100] shadow-md">
@@ -353,7 +358,7 @@ const Navbar = () => {
                       <Menu.Item>
                         {({ active }) => (
                           <div
-                            onClick={() => navigate("/logout")}
+                            onClick={() => handleLogout()}
                             className={`${active && "text-white bg-primary font-normal"} block text-primary focus:bg-hoverPrimary cursor-pointer px-4 py-2 rounded-md`}
                           >
                             Logout

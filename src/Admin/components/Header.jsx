@@ -6,6 +6,11 @@ import { useNavigate } from "react-router-dom";
 const Header = () => {
   const navigate = useNavigate();
 
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/");
+  }
+
   return (
     <div className="bg-white h-16 px-4 flex justify-between items-center">
       <div className="relative m-[auto]">
@@ -127,7 +132,7 @@ const Header = () => {
               <Menu.Item>
                 {({ active }) => (
                   <div
-                    onClick={() => navigate("/logout")}
+                    onClick={() => handleLogout()}
                     className={`${active && "text-white bg-primary font-normal"} block text-primary focus:bg-hoverPrimary cursor-pointer px-4 py-2 rounded-md`}
                   >
                     Logout
