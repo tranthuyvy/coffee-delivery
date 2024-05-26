@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getOrderDetailRequest } from "../../redux/actions/actions";
 import axios from "axios";
+import OrderTraker from "../../components/Order/OrderTraker";
 
 const ORDER_STATUS_NEXT = {
   0: "Xác Nhận",
@@ -53,8 +54,15 @@ const AdminOrderDetail = () => {
     }
   };
 
+  const activeStep = orderDetail?.status + 1;
+
   return (
     <>
+      <div className="ml-[18%]">
+        <h1 className="uppercase text-center sm:text-left font-RobotoSemibold text-main text-3xl md:text-3xl xl:text-[3rem] mb-5 mt-0 sm:mt-5 md:leading-tight">
+          <OrderTraker activeStep={activeStep} />
+        </h1>
+      </div>
       <div className="flex">
         <div className="flex flex-[0.6] gap-4 w-[80%] ml-[18%] rounded-md shadow-md bg-white mt-2">
           <div className="w-full ml-5">
@@ -154,7 +162,7 @@ const AdminOrderDetail = () => {
               Hủy Đơn Hàng
             </button>
           }
-          {orderDetail?.status !== 5 &&
+          {orderDetail?.status < 4 &&
             <button
               className="mt-5 bg-primary text-white font-RobotoMedium text-[16px] rounded-md p-2 shadow-md hover:bg-hoverPrimary ease-out duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-r border-none"
               onClick={() => handleConfirmOrder()}
