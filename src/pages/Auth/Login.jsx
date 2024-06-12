@@ -54,7 +54,6 @@ const Login = () => {
         localStorage.setItem('token', token);
         dispatch(getUserProfileRequest());
         console.log("Đăng nhập thành công");
-
       } else {
         console.log("Đăng nhập không thành công");
       }
