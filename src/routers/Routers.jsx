@@ -58,7 +58,7 @@ const Routers = () => {
       <Route path="/order/:id" element={<OrderDetail />} />
       <Route path="/checkout" element={<Checkout />} />
 
-      <Route path="/admin" element={<Layout />} >
+      {/* <Route path="/admin" element={<Layout />} >
         <Route index element={<Dashboard />} />
         <Route path="/admin/products" element={<AllProducts />} />
         <Route path="/admin/create-product" element={<CreateProduct />} />
@@ -71,7 +71,7 @@ const Routers = () => {
         <Route path="/admin/profile" element={<StaffProfile />} />
         <Route path="/admin/coupons" element={<AllCoupons />} />
         <Route path="/admin/create-coupon" element={<CreateCoupon />} />
-      </Route>
+      </Route> */}
     </Routes>
   )
 }

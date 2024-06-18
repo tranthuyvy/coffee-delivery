@@ -24,7 +24,7 @@ const Login = () => {
   useEffect(() => {
     if (user) {
       if (user.user.role && (user.user.role.role_name === "ADMIN" || user.user.role.role_name === "STAFF")) {
-        navigate("/admin");
+        console.log("for admin and staff");
       } else {
         navigate("/home");
       }
